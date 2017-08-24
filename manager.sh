@@ -171,6 +171,15 @@ if ! type "i3" >/dev/null 2>&1; then
   fi
 fi
 
+#FEH
+if ! type "feh" >/dev/null 2>&1; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    sudo apt install feh
+  fi
+fi
+
 # Polybar
 if ! type "polybar" >/dev/null 2>&1; then
   if [ $DISTRO == "ARCH" ]; then
