@@ -29,8 +29,10 @@ fi
 if $UPDATE; then
   if [ $DISTRO == "ARCH" ]; then
     sudo pacman -Syu
+    echo "DONE"
   else
     sudo apt update
+    echo "DONE"
   fi
 fi
 
@@ -131,9 +133,6 @@ if ! type "nvim" >/dev/null 2>&1; then
     sudo apt install python-dev python-pip python3-dev python3-pip
   fi
 
-  mkdir ~/.config
-  mkdir ~/.config/nvim
-  ln -s -f ~/comfy_guration/dotfiles/init.vim ~/.config/nvim/init.vim
 
   # Plugins manager
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -147,4 +146,24 @@ if ! type "nvim" >/dev/null 2>&1; then
   sudo npm install -g eslint-plugin-react
   sudo npm install -g react-tools
   sudo npm install -g syntastic-react
+fi
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#                                                           D O T F I L E S \
+INPUT=false;
+echo
+echo "Do you want to use dotfiles from ~/comfy_guration/dotfiles? (y/n)"
+read -n 1 INPUT ; echo; echo
+
+if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+  INPUT=false;
+  echo "For NVIM? (y/n)"
+  read -n 1 INPUT ; echo; echo
+
+  if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+    mkdir -p ~/.config
+    mkdir -p ~/.config/nvim
+    ln -s -f ~/comfy_guration/dotfiles/init.vim ~/.config/nvim/init.vim
+    echo "DONE"
+  fi
 fi
