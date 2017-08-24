@@ -253,5 +253,5 @@ nnoremap <leader>lp :set ft=php<CR>
 nnoremap <leader>lj :set ft=javascript<CR>
 
 " Open important files O-
-nnoremap <leader>od :e ~/dotfiles/configs/init.vim<CR>
+nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>
 nnoremap <leader>oa :e ~/.agenda.org<CR>
