@@ -133,7 +133,7 @@ if ! type "nvim" >/dev/null 2>&1; then
 
   mkdir ~/.config
   mkdir ~/.config/nvim
-  ln -s -f ~/dotfiles/configs/init.vim ~/.config/nvim/init.vim
+  ln -s -f ~/comfy_guration/dotfiles/init.vim ~/.config/nvim/init.vim
 
   # Plugins manager
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
