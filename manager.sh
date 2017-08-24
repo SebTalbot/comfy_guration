@@ -125,10 +125,8 @@ if ! type "nvim" >/dev/null 2>&1; then
   else
     sudo apt install software-properties-common
     sudo apt install python-software-properties
-
     sudo add-apt-repository ppa:neovim-ppa/stable
     sudo apt update
-
     sudo apt install neovim
     sudo apt install python-dev python-pip python3-dev python3-pip
   fi
@@ -148,18 +146,69 @@ if ! type "nvim" >/dev/null 2>&1; then
   sudo npm install -g syntastic-react
 fi
 
+# i3WM-GAPS
+if ! type "i3" >/dev/null 2>&1; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    sudo add-apt-repository ppa:aguignard/ppa
+    sudo apt-get update
+    sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake
+    sudo apt install i3
+
+    #i3-gaps
+    mkdir -p ~/tmp
+    cd ~/tmp
+    git clone https://www.github.com/Airblader/i3 i3-gaps
+    cd i3-gaps
+    autoreconf --force --install
+    rm -rf build/
+    mkdir -p build && cd build/
+    ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+    make
+    sudo make install
+    cd ~
+  fi
+fi
+
+# Polybar
+if ! type "polybar" >/dev/null 2>&1; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    sudo apt install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev
+    mkdir -p ~/tmp
+    cd ~/tmp
+    git clone --recursive https://github.com/jaagr/polybar
+    mkdir polybar/build
+    cd polybar/build
+    cmake ..
+    sudo make install
+    cd ~
+  fi
+fi
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#                                                           D O T F I L E S \
+#                                                             D O T F I L E S \
 INPUT=false;
 echo
 echo "Do you want to use dotfiles from ~/comfy_guration/dotfiles? (y/n)"
 read -n 1 INPUT ; echo; echo
 
 if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+  # Activate laptop dotfiles
+  LAPTOP=false;
+  INPUT=false;
+  echo "Are you on a laptop (y/n)"
+  read -n 1 INPUT ; echo; echo
+  if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+    LAPTOP=true;
+  fi
+
+  # NVIM dotfiles
   INPUT=false;
   echo "For NVIM? (y/n)"
   read -n 1 INPUT ; echo; echo
-
   if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     mkdir -p ~/.config
     mkdir -p ~/.config/nvim
