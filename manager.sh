@@ -1,4 +1,14 @@
 #!/bin/bash
+# TODO: install rofi
+# TODO: install nm-applet
+# TODO: install amixer
+# TODO: install compton
+# TODO: install powerline fonts
+# TODO: install cmus if
+# TODO: cmus theme
+# TODO: install vis if
+# TODO: vis theme
+
 clear
 echo "  - - - - - - - - - - - - - - - -"
 echo "/ D O T F I L E S   M A N A G E R \\"
@@ -34,6 +44,15 @@ if $UPDATE; then
     sudo apt update
     echo "DONE"
   fi
+fi
+
+# Update repo
+echo "Do you want to install the GUI? (y/n)"
+read -n 1 INPUT ; echo; echo
+
+GUI=false
+if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+  GUI=true
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -110,7 +129,7 @@ fi
 # S O F T W A R E S
 
 # URXVT
-if ! type "urxvt" >/dev/null 2>&1; then
+if ! type "urxvt" >/dev/null 2>&1 && $GUI; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -147,7 +166,7 @@ if ! type "nvim" >/dev/null 2>&1; then
 fi
 
 # i3WM-GAPS
-if ! type "i3" >/dev/null 2>&1; then
+if ! type "i3" >/dev/null 2>&1 && $GUI; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -172,7 +191,7 @@ if ! type "i3" >/dev/null 2>&1; then
 fi
 
 #FEH
-if ! type "feh" >/dev/null 2>&1; then
+if ! type "feh" >/dev/null 2>&1 && $GUI; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -181,7 +200,7 @@ if ! type "feh" >/dev/null 2>&1; then
 fi
 
 # Polybar
-if ! type "polybar" >/dev/null 2>&1; then
+if ! type "polybar" >/dev/null 2>&1 && $GUI; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -216,7 +235,7 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
 
   # NVIM dotfiles
   INPUT=false;
-  echo "For NVIM? (y/n)"
+  echo "Do you want to use NVIM dotfile? (y/n)"
   read -n 1 INPUT ; echo; echo
   if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     mkdir -p ~/.config
