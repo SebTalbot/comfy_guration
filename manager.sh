@@ -243,4 +243,17 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     ln -s -f ~/comfy_guration/dotfiles/init.vim ~/.config/nvim/init.vim
     echo "DONE"
   fi
+
+  # i3wm dotfiles
+  INPUT=false;
+  echo "Do you want to use i3WM dotfile? (y/n)"
+  read -n 1 INPUT ; echo; echo
+  if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+    mkdir -p ~/.config
+    mkdir -p ~/.config/i3/
+    if [ $LAPTOP ] ; then
+      ln -s -f ~/comfy_guration/dotfiles/i3_laptop ~/.config/i3/config
+      echo "DONE"
+    fi
+  fi
 fi
