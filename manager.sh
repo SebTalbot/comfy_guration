@@ -320,6 +320,19 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     fi
   fi
 
+  # polybar dotfile
+  INPUT=false;
+  echo "Do you want to use polybar dotfile? (y/n)"
+  read -n 1 INPUT ; echo; echo
+  if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+    mkdir -p ~/.config
+    mkdir -p ~/.config/polybar/
+    if [ $LAPTOP ] ; then
+      ln -s -f ~/comfy_guration/dotfiles/polybar_laptop ~/.config/polybar/config
+      echo "DONE"
+    fi
+  fi
+
   # URXVT dotfile
   INPUT=false;
   echo "Do you want to use URXVT dotfile? (y/n)"
