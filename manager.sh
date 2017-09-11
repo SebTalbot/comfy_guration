@@ -4,6 +4,7 @@
 # TODO: install amixer
 # TODO: install compton
 # TODO: install powerline fonts
+# TODO: install i3lock blur
 # TODO: install cmus if
 # TODO: cmus theme
 # TODO: install vis if
@@ -196,6 +197,15 @@ if ! type "feh" >/dev/null 2>&1 && $GUI; then
     echo reee
   else
     sudo apt install feh
+  fi
+fi
+
+#ROFI
+if ! type "rofi" >/dev/null 2>&1 && $GUI; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    sudo apt install rofi
   fi
 fi
 
