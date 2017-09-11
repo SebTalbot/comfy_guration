@@ -1,9 +1,4 @@
 #!/bin/bash
-# TODO: install nm-applet
-# TODO: install amixer
-# TODO: install compton
-# TODO: install powerline fonts
-# TODO: install i3lock blur
 # TODO: install cmus if
 # TODO: cmus theme
 # TODO: install vis if
@@ -46,7 +41,7 @@ if $UPDATE; then
   fi
 fi
 
-# Update repo
+# Install gui
 echo "Do you want to install the GUI? (y/n)"
 read -n 1 INPUT ; echo; echo
 
@@ -55,10 +50,19 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
   GUI=true
 fi
 
+# Force
+echo "Do you want to force install? (y/n)"
+read -n 1 INPUT ; echo; echo
+
+FORCE=false
+if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+  FORCE=true
+fi
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #                                                 I N S T A L L   B A S I C S \
 # Git
-if ! type "git" >/dev/null 2>&1; then
+if ! type "git" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -67,7 +71,7 @@ if ! type "git" >/dev/null 2>&1; then
 fi
 
 # WGET
-if ! type "wget" >/dev/null 2>&1; then
+if ! type "wget" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -76,7 +80,7 @@ if ! type "wget" >/dev/null 2>&1; then
 fi
 
 # CURL
-if ! type "curl" >/dev/null 2>&1; then
+if ! type "curl" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -85,14 +89,14 @@ if ! type "curl" >/dev/null 2>&1; then
 fi
 
 # Python
-if ! type "python" >/dev/null 2>&1; then
+if ! type "python" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
     sudo apt install python
   fi
 fi
-if ! type "python3" >/dev/null 2>&1; then
+if ! type "python3" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -101,14 +105,14 @@ if ! type "python3" >/dev/null 2>&1; then
 fi
 
 # PIP
-if ! type "pip" >/dev/null 2>&1; then
+if ! type "pip" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
     sudo apt install python-pip
   fi
 fi
-if ! type "pip3" >/dev/null 2>&1; then
+if ! type "pip3" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -117,7 +121,7 @@ if ! type "pip3" >/dev/null 2>&1; then
 fi
 
 # NPM
-if ! type "npm" >/dev/null 2>&1; then
+if ! type "npm" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -129,7 +133,7 @@ fi
 # S O F T W A R E S
 
 # URXVT
-if ! type "urxvt" >/dev/null 2>&1 && $GUI; then
+if ! type "urxvt" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -138,7 +142,7 @@ if ! type "urxvt" >/dev/null 2>&1 && $GUI; then
 fi
 
 # NVIM && Plugins dependencies
-if ! type "nvim" >/dev/null 2>&1; then
+if ! type "nvim" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -166,7 +170,7 @@ if ! type "nvim" >/dev/null 2>&1; then
 fi
 
 # i3WM-GAPS
-if ! type "i3" >/dev/null 2>&1 && $GUI; then
+if ! type "i3" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -187,11 +191,20 @@ if ! type "i3" >/dev/null 2>&1 && $GUI; then
     make
     sudo make install
     cd ~
+
+    #I3LOCK
+    sudo apt-get install pkg-config libxcb1-dev libxcb1 libgl2ps-dev libx11-dev libglc0 libglc-dev libcairo2-dev libcairo-gobject2 libcairo2-dev libxkbfile-dev libxkbfile1 libxkbcommon-dev libxkbcommon-x11-dev libxcb-xkb-dev libxcb-dpms0-dev libxcb-damage0-dev libpam0g-dev libev-dev libxcb-image0-dev libxcb-util0-dev libxcb-composite0-dev libxcb-xinerama0-dev
+    cd ~/tmp
+    git clone git@github.com:karulont/i3lock-blur.git
+    cd i3lock-blur
+    make
+    sudo make install
+    cd ~
   fi
 fi
 
 #FEH
-if ! type "feh" >/dev/null 2>&1 && $GUI; then
+if ! type "feh" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -200,7 +213,7 @@ if ! type "feh" >/dev/null 2>&1 && $GUI; then
 fi
 
 #ROFI
-if ! type "rofi" >/dev/null 2>&1 && $GUI; then
+if ! type "rofi" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -209,7 +222,7 @@ if ! type "rofi" >/dev/null 2>&1 && $GUI; then
 fi
 
 # Polybar
-if ! type "polybar" >/dev/null 2>&1 && $GUI; then
+if ! type "polybar" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
@@ -226,11 +239,43 @@ if ! type "polybar" >/dev/null 2>&1 && $GUI; then
 fi
 
 #NM-APPLET
-if ! type "rofi" >/dev/null 2>&1 && $GUI; then
+if ! type "nm-applet" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install network-manaer
+    sudo apt install network-manager
+  fi
+fi
+
+#ALSA MIXER
+if ! type "amixer" >/dev/null 2>&1 && $GUI || $FORCE; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    sudo apt install alsa-utils alsamixer
+  fi
+fi
+
+#COMPTON
+if ! type "compton" >/dev/null 2>&1 && $GUI || $FORCE; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    sudo apt install compton
+  fi
+fi
+
+#FONTS
+if $GUI || $FORCE; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    mkdir -p ~/tmp
+    cd ~/tmp
+    git clone git@github.com:powerline/fonts.git
+    cd fonts
+    ./install.sh
+    cd ~
   fi
 fi
 
