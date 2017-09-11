@@ -296,7 +296,7 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     LAPTOP=true;
   fi
 
-  # NVIM dotfiles
+  # NVIM dotfile
   INPUT=false;
   echo "Do you want to use NVIM dotfile? (y/n)"
   read -n 1 INPUT ; echo; echo
@@ -307,7 +307,7 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     echo "DONE"
   fi
 
-  # i3wm dotfiles
+  # i3wm dotfile
   INPUT=false;
   echo "Do you want to use i3WM dotfile? (y/n)"
   read -n 1 INPUT ; echo; echo
@@ -318,5 +318,15 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
       ln -s -f ~/comfy_guration/dotfiles/i3_laptop ~/.config/i3/config
       echo "DONE"
     fi
+  fi
+
+  # URXVT dotfile
+  INPUT=false;
+  echo "Do you want to use URXVT dotfile? (y/n)"
+  read -n 1 INPUT ; echo; echo
+  if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+    ln -s -f ~/comfy_guration/dotfiles/Xresources ~/.Xresources
+    xrdb ~/.Xresources
+    echo "DONE"
   fi
 fi
