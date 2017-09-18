@@ -349,6 +349,7 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
   if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     ln -s -f ~/comfy_guration/dotfiles/Xresources ~/.Xresources
     xrdb ~/.Xresources
+    sudo cp ~/comfy_guration/scripts/clipboard /usr/lib/urxvt/perl/
     echo "DONE"
   fi
 fi
