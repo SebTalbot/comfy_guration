@@ -141,6 +141,15 @@ if ! type "urxvt" >/dev/null 2>&1 && $GUI || $FORCE; then
   fi
 fi
 
+# XCLIP
+if ! type "urxvt" >/dev/null 2>&1 && $GUI || $FORCE; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    sudo apt install xclip
+  fi
+fi
+
 # NVIM && Plugins dependencies
 if ! type "nvim" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
