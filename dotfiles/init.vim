@@ -32,7 +32,7 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-speeddating'
 
-" AUTOCOMP AND SNIPPETS
+" AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
 Plug 'w0rp/ale'
 Plug 'roxma/nvim-completion-manager'
 Plug 'SirVer/ultisnips'
@@ -41,6 +41,7 @@ Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
 "" General
 Plug 'honza/vim-snippets'
+Plug 'j16180339887/Global.vim'
 "" VimScript
 Plug 'Shougo/neco-vim'
 "" CSS
