@@ -1,0 +1,15 @@
+2017-09-27 13:45:27		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, javascript, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-27 13:45:32		Options saved to sec.conf
+2017-09-27 13:45:32		Options saved to weechat.conf
+2017-09-27 13:45:32		Options saved to plugins.conf
+2017-09-27 13:45:32		Options saved to charset.conf
+2017-09-27 13:45:32		Options saved to logger.conf
+2017-09-27 13:45:32		Options saved to exec.conf
+2017-09-27 13:45:32		Options saved to trigger.conf
+2017-09-27 13:45:32		Options saved to aspell.conf
+2017-09-27 13:45:32		Options saved to alias.conf
+2017-09-27 13:45:32		Options saved to xfer.conf
+2017-09-27 13:45:32		Options saved to irc.conf
+2017-09-27 13:45:32		Options saved to relay.conf
+2017-09-27 13:45:32		Options saved to script.conf
+2017-09-27 13:45:34	=!=	You can not write text in this buffer
