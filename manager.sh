@@ -176,6 +176,7 @@ if ! type "nvim" >/dev/null 2>&1 || $FORCE; then
   sudo npm install -g eslint-plugin-react
   sudo npm install -g react-tools
   sudo npm install -g syntastic-react
+  ln -s -f ~/comfy_guration/dotfiles/eslintrc ~/.eslintrc
 fi
 
 # i3WM-GAPS
