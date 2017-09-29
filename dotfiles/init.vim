@@ -236,6 +236,7 @@ nnoremap <leader>wrj :resize +5<CR>
 nnoremap <leader>wrk :resize -5<CR>
 nnoremap <leader>wrh :vertical resize +5<CR>
 nnoremap <leader>wrl :vertical resize -5<CR>
+nnoremap <leader>wr= <C-W>=
 
 " Manipulate tabs T-
 nnoremap <leader>td :tabclose<CR>
