@@ -44,6 +44,8 @@ Plug 'honza/vim-snippets'
 Plug 'j16180339887/Global.vim'
 "" VimScript
 Plug 'Shougo/neco-vim'
+"" HTML
+Plug 'gregsexton/MatchTag'
 "" CSS
 Plug 'othree/csscomplete.vim'
 "" PHP
