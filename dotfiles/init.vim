@@ -54,11 +54,14 @@ Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer ru
 "" JavaScript
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 Plug 'roxma/ncm-flow'
-""" React.js
+"" "" - React.js
 Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
+"" "" - Angular
+Plug 'matthewsimo/angular-vim-snippets'
 "" Python
 Plug 'davidhalter/jedi-vim'
 
