@@ -61,6 +61,7 @@ Plug 'roxma/ncm-flow'
 Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
 "" "" - Angular
+Plug 'burnettk/vim-angular'
 Plug 'matthewsimo/angular-vim-snippets'
 "" Python
 Plug 'davidhalter/jedi-vim'
