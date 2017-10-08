@@ -33,9 +33,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-speeddating'
 
 " AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
-" Plug 'w0rp/ale'
-Plug 'neomake/neomake'
-Plug 'jaawerth/neomake-local-eslint-first'
+Plug 'w0rp/ale'
 Plug 'roxma/nvim-completion-manager'
 Plug 'SirVer/ultisnips'
 Plug 'jiangmiao/auto-pairs'
@@ -179,34 +177,13 @@ let g:UltiSnipsSnippetsDir = "~/comfy_guration/dotfiles/ultisnip"
 " GitGutter
 let g:gitgutter_map_keys = 0
 
-" Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
-call neomake#configure#automake('w')
-call neomake#configure#automake('nw',750)
-call neomake#configure#automake('rw',1000)
-
-highlight NeomakeError ctermfg=232 ctermbg=196
-highlight NeomakeErrorSign ctermfg=196 ctermbg=232
-highlight NeomakeWarning ctermfg=232 ctermbg=226
-highlight NeomakeWarningSign ctermfg=226 ctermbg=232
-
-let g:neomake_error_sign = {
-  \ 'text': 'E>',
-  \ 'texthl': 'NeomakeErrorSign',
-  \ }
-
-let g:neomake_warning_sign = {
-  \ 'text': 'W>',
-  \ 'texthl': 'NeomakeWarningSign',
-  \ }
-
 " Ale
-" let g:ale_javascript_eslint_executable = 'eslint'
-" let g:ale_javascript_eslint_use_global = 0
-" let g:ale_linter_aliases = {'javascript.jsx': 'javascript', 'jsx': 'javascript'}
-" let g:ale_linters = {
-" \   'javascript': ['eslint'],
-" \}
+highlight ALEError ctermbg=196 ctermfg=232
+highlight ALEWarning ctermbg=226 ctermfg=232
+let g:ale_linters = {
+\  'javascript': ['eslint']
+\}
+
 
 " - - - - - - - - - - - - - -
 " C U S T O M   M A P P I N G \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -280,8 +257,8 @@ nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
 
 " Error E-
-" nnoremap <leader>ek :ALEPrevious<CR>
-" nnoremap <leader>ej :ALENext<CR>
+nnoremap <leader>ek :ALEPrevious<CR>
+nnoremap <leader>ej :ALENext<CR>
 
 " Toggling between languages L-
 nnoremap <leader>lh :set ft=html<CR>
