@@ -63,6 +63,8 @@ Plug 'maxmellon/vim-jsx-pretty'
 "" "" - Angular
 Plug 'burnettk/vim-angular'
 Plug 'matthewsimo/angular-vim-snippets'
+"" TypeScript"
+Plug 'leafgarland/typescript-vim'
 "" Python
 Plug 'davidhalter/jedi-vim'
 
