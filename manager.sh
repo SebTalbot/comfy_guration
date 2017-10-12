@@ -306,6 +306,7 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     mkdir -p ~/.config
     mkdir -p ~/.config/nvim
     ln -s -f ~/comfy_guration/dotfiles/init.vim ~/.config/nvim/init.vim
+    ln -s -f ~/comfy_guration/dotfiles/custom_snips ~/.config/nvim/UltiSnips
     echo "DONE"
   fi
 
