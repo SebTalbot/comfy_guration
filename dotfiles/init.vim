@@ -174,7 +174,8 @@ let g:UltiSnipsExpandTrigger		= "<C-L>"
 let g:UltiSnipsJumpForwardTrigger	= "<C-N>"
 let g:UltiSnipsJumpBackwardTrigger	= "<C-P>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
-let g:UltiSnipsSnippetsDir = "~/comfy_guration/dotfiles/ultisnip"
+let g:UltiSnipsSnippetsDir="~/comfy_guration/dotfiles/custom_snips"
+let g:UltiSnipsSnippetsDirectories=["UltiSnips", "~/.config/nvim/UltiSnips"]
 
 " GitGutter
 let g:gitgutter_map_keys = 0
