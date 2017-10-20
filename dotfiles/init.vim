@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'liuchengxu/space-vim-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 
 " APPLICATIONS
@@ -171,8 +171,8 @@ let g:cm_matcher_module = "cm_matchers.fuzzy_matcher"
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger		= "<C-L>"
-let g:UltiSnipsJumpForwardTrigger	= "<C-N>"
-let g:UltiSnipsJumpBackwardTrigger	= "<C-P>"
+let g:UltiSnipsJumpForwardTrigger	= "<C-S-J>"
+let g:UltiSnipsJumpBackwardTrigger	= "<C-S-K>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 let g:UltiSnipsSnippetsDir="~/comfy_guration/dotfiles/custom_snips"
 let g:UltiSnipsSnippetsDirectories=["UltiSnips", "~/.config/nvim/UltiSnips"]
