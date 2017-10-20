@@ -17,7 +17,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'liuchengxu/space-vim-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 
 " APPLICATIONS
@@ -31,6 +30,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-speeddating'
+Plug 'soramugi/auto-ctags.vim'
 
 " AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
 Plug 'w0rp/ale'
@@ -171,14 +171,16 @@ let g:cm_matcher_module = "cm_matchers.fuzzy_matcher"
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger		= "<C-L>"
-let g:UltiSnipsJumpForwardTrigger	= "<C-N>"
-let g:UltiSnipsJumpBackwardTrigger	= "<C-P>"
+let g:UltiSnipsJumpForwardTrigger	= "<C-S-J>"
+let g:UltiSnipsJumpBackwardTrigger	= "<C-S-K>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 let g:UltiSnipsSnippetsDir="~/comfy_guration/dotfiles/custom_snips"
 let g:UltiSnipsSnippetsDirectories=["UltiSnips", "~/.config/nvim/UltiSnips"]
 
-" GitGutter
-let g:gitgutter_map_keys = 0
+" Auto Ctags
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git', 'node_modules']
+let g:auto_ctags_tags_args = '-R *'
 
 " Ale
 highlight ALEError ctermbg=196 ctermfg=232
