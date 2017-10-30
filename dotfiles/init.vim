@@ -57,9 +57,12 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 Plug 'roxma/ncm-flow'
+Plug 'jbgutierrez/vim-babel'
+Plug 'mattn/webapi-vim'
 "" "" - React.js
 Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'justinj/vim-react-snippets'
 "" "" - Angular
 Plug 'burnettk/vim-angular'
 Plug 'matthewsimo/angular-vim-snippets'
