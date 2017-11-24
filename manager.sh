@@ -66,7 +66,7 @@ if ! type "git" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install git
+    sudo apt -y install git
   fi
 fi
 
@@ -75,7 +75,7 @@ if ! type "wget" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install wget
+    sudo apt -y install wget
   fi
 fi
 
@@ -84,7 +84,7 @@ if ! type "curl" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install curl
+    sudo apt -y install curl
   fi
 fi
 
@@ -93,14 +93,14 @@ if ! type "python" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install python
+    sudo apt -y install python
   fi
 fi
 if ! type "python3" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install python3
+    sudo apt -y install python3
   fi
 fi
 
@@ -109,14 +109,14 @@ if ! type "pip" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install python-pip
+    sudo apt -y install python-pip
   fi
 fi
 if ! type "pip3" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install python3-pip
+    sudo apt -y install python3-pip
   fi
 fi
 
@@ -125,7 +125,7 @@ if ! type "npm" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install npm
+    sudo apt -y install npm
   fi
 fi
 
@@ -137,7 +137,7 @@ if ! type "urxvt" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install rxvt-unicode-256color
+    sudo apt -y install rxvt-unicode-256color
   fi
 fi
 
@@ -146,7 +146,7 @@ if ! type "urxvt" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install xclip
+    sudo apt -y install xclip
   fi
 fi
 
@@ -155,12 +155,12 @@ if ! type "nvim" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install software-properties-common
-    sudo apt install python-software-properties
+    sudo apt -y install software-properties-common
+    sudo apt -y install python-software-properties
     sudo add-apt-repository ppa:neovim-ppa/stable
     sudo apt update
-    sudo apt install neovim
-    sudo apt install python-dev python-pip python3-dev python3-pip
+    sudo apt -y install neovim
+    sudo apt -y install python-dev python-pip python3-dev python3-pip
   fi
 
 
@@ -177,9 +177,9 @@ if ! type "i3" >/dev/null 2>&1 && $GUI || $FORCE; then
     echo reee
   else
     sudo add-apt-repository ppa:aguignard/ppa
-    sudo apt-get update
-    sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake
-    sudo apt install i3
+    sudo apt update
+    sudo apt -y install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake
+    sudo apt -y install i3
 
     #i3-gaps
     mkdir -p ~/tmp
@@ -195,7 +195,7 @@ if ! type "i3" >/dev/null 2>&1 && $GUI || $FORCE; then
     cd ~
 
     #I3LOCK
-    sudo apt-get install pkg-config libxcb1-dev libxcb1 libgl2ps-dev libx11-dev libglc0 libglc-dev libcairo2-dev libcairo-gobject2 libcairo2-dev libxkbfile-dev libxkbfile1 libxkbcommon-dev libxkbcommon-x11-dev libxcb-xkb-dev libxcb-dpms0-dev libxcb-damage0-dev libpam0g-dev libev-dev libxcb-image0-dev libxcb-util0-dev libxcb-composite0-dev libxcb-xinerama0-dev
+    sudo apt -y install pkg-config libxcb1-dev libxcb1 libgl2ps-dev libx11-dev libglc0 libglc-dev libcairo2-dev libcairo-gobject2 libcairo2-dev libxkbfile-dev libxkbfile1 libxkbcommon-dev libxkbcommon-x11-dev libxcb-xkb-dev libxcb-dpms0-dev libxcb-damage0-dev libpam0g-dev libev-dev libxcb-image0-dev libxcb-util0-dev libxcb-composite0-dev libxcb-xinerama0-dev
     cd ~/tmp
     git clone git@github.com:karulont/i3lock-blur.git
     cd i3lock-blur
@@ -210,7 +210,7 @@ if ! type "feh" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install feh
+    sudo apt -y install feh
   fi
 fi
 
@@ -219,7 +219,7 @@ if ! type "rofi" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install rofi
+    sudo apt -y install rofi
   fi
 fi
 
@@ -228,7 +228,7 @@ if ! type "polybar" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev
+    sudo apt -y install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev
     mkdir -p ~/tmp
     cd ~/tmp
     git clone --recursive https://github.com/jaagr/polybar
@@ -245,7 +245,7 @@ if ! type "nm-applet" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install network-manager
+    sudo apt -y install network-manager
   fi
 fi
 
@@ -254,7 +254,7 @@ if ! type "amixer" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install alsa-utils alsamixer
+    sudo apt -y install alsa-utils alsamixer
   fi
 fi
 
@@ -263,7 +263,7 @@ if ! type "compton" >/dev/null 2>&1 && $GUI || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
     echo reee
   else
-    sudo apt install compton
+    sudo apt -y install compton
   fi
 fi
 
