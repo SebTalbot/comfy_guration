@@ -227,6 +227,7 @@ nnoremap <leader>* *``
 " Manipulate terminal
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-D> <c-\><c-n>:Bclose!<CR>
+tnoremap <C-A> pwd\|xclip -selection clipboard<CR><C-\><C-n>:cd <C-r>+<CR>i
 
 " Applications toggle A-
 nnoremap <Leader>au :MundoToggle<CR>
