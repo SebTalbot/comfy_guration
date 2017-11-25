@@ -227,13 +227,14 @@ nnoremap <leader>* *``
 " Manipulate terminal
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-D> <c-\><c-n>:Bclose!<CR>
-tnoremap <C-A> pwd\|xclip -selection clipboard<CR><C-\><C-n>:cd <C-r>+<CR>i
+tnoremap <C-A> pwd\|xclip -selection clipboard<CR><C-\><C-n>:cd <C-r>+<CR>
 
 " Applications toggle A-
 nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>an :NERDTreeToggle<CR>
 nnoremap <Leader>ap :CtrlP<CR>
 nnoremap <Leader>ag :Magit<CR>
+nnoremap <Leader>at :e \| lcd %:p:h \| term<CR>
 
 " Manipulate windows W-
 nnoremap <leader>wd <C-W>q
