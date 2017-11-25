@@ -234,7 +234,8 @@ nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>an :NERDTreeToggle<CR>
 nnoremap <Leader>ap :CtrlP<CR>
 nnoremap <Leader>ag :Magit<CR>
-nnoremap <Leader>at :e \| lcd %:p:h \| term<CR>
+nnoremap <Leader>att :te<CR>
+nnoremap <Leader>ata :e \| lcd %:p:h \| term<CR>
 
 " Manipulate windows W-
 nnoremap <leader>wd <C-W>q
