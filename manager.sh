@@ -298,6 +298,14 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     LAPTOP=true;
   fi
 
+  #Bash
+  echo "Do you want to use bash dotfile? (y/n)"
+  read -n 1 INPUT ; echo; echo
+  if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
+    ln -s -f ~/comfy_guration/dotfiles/bashrc_laptop ~/.bashrc
+    echo "DONE"
+  fi
+
   # NVIM dotfile
   INPUT=false;
   echo "Do you want to use NVIM dotfile? (y/n)"
