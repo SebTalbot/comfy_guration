@@ -264,6 +264,7 @@ nnoremap <leader>tn :tabnew %<CR>
 nnoremap <leader>bb :ls<CR>:b<space>
 nnoremap <leader>bt <C-^>
 nnoremap <leader>bd :Bclose!<CR>
+nnoremap <leader>bo :bufdo bd<CR>
 nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
 
