@@ -128,6 +128,7 @@ alias weechat='weechat -d ~/comfy_guration/dotfiles/weechat/'
 
 # Alias neoVim
 alias vi='nvim'
+alias vit='nvim +terminal'
 alias vim='nvim'
 
 # Alias Node.js
