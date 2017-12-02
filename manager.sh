@@ -70,6 +70,15 @@ if ! type "git" >/dev/null 2>&1 || $FORCE; then
   fi
 fi
 
+# Ctags
+if ! type "ctags" >/dev/null 2>&1 || $FORCE; then
+  if [ $DISTRO == "ARCH" ]; then
+    echo reee
+  else
+    sudo apt -y install exuberant-ctags
+  fi
+fi
+
 # WGET
 if ! type "wget" >/dev/null 2>&1 || $FORCE; then
   if [ $DISTRO == "ARCH" ]; then
@@ -315,6 +324,7 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     mkdir -p ~/.config
     mkdir -p ~/.config/nvim
     ln -s -f ~/comfy_guration/dotfiles/init.vim ~/.config/nvim/init.vim
+    ln -s -f ~/comfy_guration/dotfiles/ctagsrc ~/.ctags
     ln -s -f ~/comfy_guration/dotfiles/custom_snips ~/.config/nvim/UltiSnips
     echo "DONE"
   fi
