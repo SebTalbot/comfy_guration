@@ -23,7 +23,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'simnalamburt/vim-mundo'
 Plug 'kien/ctrlp.vim'
 Plug 'jreybert/vimagit'
-Plug 'jceb/vim-orgmode'
+Plug 'hsitz/VimOrganizer'
 
 " COMMANDS
 Plug 'rbgrouleff/bclose.vim'
@@ -176,13 +176,14 @@ let g:cm_matcher_module = "cm_matchers.fuzzy_matcher"
 let g:UltiSnipsExpandTrigger		= "<C-L>"
 let g:UltiSnipsJumpForwardTrigger	= "<C-S-J>"
 let g:UltiSnipsJumpBackwardTrigger	= "<C-S-K>"
+let g:UltiSnipsListSnippets="<C-S>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 let g:UltiSnipsSnippetsDir="~/comfy_guration/dotfiles/custom_snips"
 let g:UltiSnipsSnippetsDirectories=["UltiSnips", "~/.config/nvim/UltiSnips"]
 
 " Auto Ctags
 let g:auto_ctags = 1
-let g:auto_ctags_directory_list = ['.git', 'node_modules']
+let g:auto_ctags_directory_list = ['.git']
 let g:auto_ctags_tags_args = '-R *'
 
 " Ale
