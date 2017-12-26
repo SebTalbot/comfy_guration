@@ -1,6 +1,6 @@
-#                         _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _            
+#                         _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 # - - - - - - - - - - - / D E F A U L T     O P T I O N S \ - - - - - - - - - -
-#                       - - - - - - - - \ / - - - - - - - -          
+#                       - - - - - - - - \ / - - - - - - - -
 
 case $- in
     *i*) ;;
@@ -78,9 +78,9 @@ PERL_LOCAL_LIB_ROOT="/home/snowl/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_R
 PERL_MB_OPT="--install_base \"/home/snowl/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/snowl/perl5"; export PERL_MM_OPT;
 
-#                         _ _ _ _ _ _ _ _ _ _ _ _ _ _ _            
+#                         _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 # - - - - - - - - - - - / P E R S O N A L   O P T I O N S \ - - - - - - - - - -
-#                       - - - - - - - - \ / - - - - - - - -          
+#                       - - - - - - - - \ / - - - - - - - -
 
 # 250 Colors for VIM
 # export VISUAL="vim"
@@ -90,27 +90,39 @@ export TERM=xterm-256color
 # No CTRL+S
 stty -ixon
 
-#                                   _ _ _ _ _                      
+#                                   _ _ _ _ _
 # - - - - - - - - - - - - - - - - / P R O M P T \ - - - - - - - - - - - - - - -
-#                                 - - - \ / - - -                    
+#                                 - - - \ / - - -
 
-source ~/.git-prompt.sh
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
 # Powerline prompt
-PS1='\[\033[46;37m\] \w\[$(tput sgr0)\033[45;36m\] \[\033[30m\] $(__git_ps1)\[\033[40;35m\] \[\033[00m\]'
+source ~/comfy_guration/dotfiles/git-prompt.sh
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
 
-# Keep it simple if running in emacs.
-case "$EMACS" in
-    t)
-    PROMPT_COMMAND=
-    PS1="\w <\$(__git_ps1)> "
-esac
+function PWD {
+  IS_GIT_REPO="$(git rev-parse --is-inside-work-tree 2>/dev/null)";
+  if [ $IS_GIT_REPO ]; then
+    OUTPUT="../"$(git rev-parse --show-toplevel | sed 's#.*/##');
+    GIT_CHILD="$(git rev-parse --show-prefix)";
+    if [ $GIT_CHILD ]; then
+      OUTPUT+="/"${GIT_CHILD::-1};
+    fi
+      echo $OUTPUT;
+  else
+    OUTPUT=$(pwd);
+    HOME="/home/$USER"
+    OUTPUT=${OUTPUT/$HOME/"~"};
+    echo $OUTPUT;
+  fi;
+}
 
-#                                     _ _ _ _ _                        
+PS1='\[\033[46;37m\] $(PWD)\[$(tput sgr0)\033[45;36m\] \
+\[\033[30m\] $(__git_ps1)\[\033[40;35m\] \[\033[00m\]'
+
+#                                     _ _ _ _ _
 # - - - - - - - - - - - - - - - - - / A L I A S \ - - - - - - - - - - - - - - -
-#                                   - - \ _ / - -                      
+#                                   - - \ _ / - -
 
 # Alias to manage dotfiles
 alias config='/usr/bin/git --git-dir=/home/$USER/.dotfiles/ --work-tree=/home/$USER'
