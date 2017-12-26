@@ -118,6 +118,7 @@ set scrolloff=2
 set clipboard+=unnamedplus
 set undofile
 set undodir=~/.nvim/undo
+set shada="NONE"
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " - - - - - - - - - - - - - - - - -
