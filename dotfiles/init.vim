@@ -173,6 +173,10 @@ let g:airline_theme='violet'
 let g:cm_refresh_length = 1
 let g:cm_matcher_module = "cm_matchers.fuzzy_matcher"
 
+" CtrlP
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = 'node_modules\|git'
+
 " Ultisnips
 let g:UltiSnipsExpandTrigger		= "<C-L>"
 let g:UltiSnipsJumpForwardTrigger	= "<C-S-J>"
