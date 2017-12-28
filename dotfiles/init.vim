@@ -118,6 +118,7 @@ set scrolloff=2
 set clipboard+=unnamedplus
 set undofile
 set undodir=~/.nvim/undo
+set shada="NONE"
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " - - - - - - - - - - - - - - - - -
@@ -172,6 +173,10 @@ let g:airline_theme='violet'
 let g:cm_refresh_length = 1
 let g:cm_matcher_module = "cm_matchers.fuzzy_matcher"
 
+" CtrlP
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = 'node_modules\|git'
+
 " Ultisnips
 let g:UltiSnipsExpandTrigger		= "<C-L>"
 let g:UltiSnipsJumpForwardTrigger	= "<C-S-J>"
@@ -182,9 +187,8 @@ let g:UltiSnipsSnippetsDir="~/comfy_guration/dotfiles/custom_snips"
 let g:UltiSnipsSnippetsDirectories=["UltiSnips", "~/.config/nvim/UltiSnips"]
 
 " Auto Ctags
-let g:auto_ctags = 1
-let g:auto_ctags_directory_list = ['.git']
 let g:auto_ctags_tags_args = '-R *'
+let g:auto_ctags_directory_list = ['.git','.svn']
 
 " Ale
 highlight ALEError ctermbg=196 ctermfg=232
@@ -235,6 +239,7 @@ nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>an :NERDTreeToggle<CR>
 nnoremap <Leader>ap :CtrlP<CR>
 nnoremap <Leader>ag :Magit<CR>
+nnoremap <Leader>ac :Ctags<CR>
 nnoremap <Leader>att :te<CR>
 nnoremap <Leader>ata :e \| lcd %:p:h \| term<CR>
 
