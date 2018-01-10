@@ -1,0 +1,13 @@
+" Plugins
+set surround
+
+" Visual
+set relativenumber
+set scrolloff=2
+set showmode
+
+" Workflow
+set hlsearch
+set smartcase
+
+" Mapping
