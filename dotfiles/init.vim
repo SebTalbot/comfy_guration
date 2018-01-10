@@ -174,7 +174,7 @@ let g:cm_refresh_length = 1
 let g:cm_matcher_module = "cm_matchers.fuzzy_matcher"
 
 " CtrlP
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 " Ultisnips
