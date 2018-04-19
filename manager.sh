@@ -312,6 +312,7 @@ if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
   read -n 1 INPUT ; echo; echo
   if [ $INPUT == "y" ] || [ $INPUT == "Y" ] ; then
     ln -s -f ~/comfy_guration/dotfiles/bashrc_laptop ~/.bashrc
+    ln -s -f ~/comfy_guration/dotfiles/inputrc ~/.inputrc
     ln -s -f ~/comfy_guration/dotfiles/git-prompt.sh ~/.git-prompt.sh
     echo "DONE"
   fi
