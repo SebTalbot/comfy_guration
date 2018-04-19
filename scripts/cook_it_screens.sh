@@ -1,4 +1,4 @@
 #!/bin/bash
-xrandr --output VGA1 --right-of LVDS1
-xrandr --output VGA1 --mode 1920x1080
+xrandr --output HDMI-2 --primary
+xrandr --output HDMI-1 --right-of HDMI-2
 feh --bg-scale ~/pictures/background/synthwave1.jpg
