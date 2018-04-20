@@ -67,6 +67,7 @@ if ! type "git" >/dev/null 2>&1 || $FORCE; then
     echo reee
   else
     sudo apt -y install git
+    git config --global core.excludesfile ~/comfy_guration/dotfiles/gitignore_global
   fi
 fi
 
