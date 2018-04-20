@@ -1,19 +1,35 @@
 #!/bin/bash
+B='#00000000'  # blank
+C='#ffffff22'  # clear ish
+D='#ff00ffcc'  # default
+T='#ee00eeee'  # text
+W='#880000bb'  # wrong
+V='#bb00bbbb'  # verifying
 
-i3lock \
-  -B=200  \
-  --indicator \
-  --radius=150 \
-  --textcolor=eeeeeeff \
-  --insidecolor=131313c0 \
-  --ringcolor=875fafff \
-  --linecolor=131313ff \
-  --keyhlcolor=20ad80ff \
-  --bshlcolor=ee3333ff \
-  --separatorcolor=131313ff \
-  --veriftext="P R O C E S S I N G" \
-  --insidevercolor=131313c0 \
-  --ringvercolor=4f97d7ff \
-  --wrongtext="D E N I E D" \
-  --insidewrongcolor=131313c0 \
-  --ringwrongcolor=ee3333ff
+~/softwares/i3lock-color/x86_64-pc-linux-gnu/i3lock \
+  --insidevercolor=$C   \
+  --ringvercolor=$V     \
+  \
+  --insidewrongcolor=$C \
+  --ringwrongcolor=$W   \
+  \
+  --insidecolor='#000000aa'      \
+  --ringcolor=$D        \
+  --linecolor=$B        \
+  --separatorcolor=$D   \
+  \
+  --verifcolor=$T        \
+  --wrongcolor=$T        \
+  --timecolor=$T        \
+  --datecolor=$T        \
+  --layoutcolor=$T      \
+  --keyhlcolor=$W       \
+  --bshlcolor=$W        \
+  \
+  --screen 1            \
+  --blur 5              \
+  --clock               \
+  --indicator           \
+  --timestr="%H:%M:%S"  \
+  --datestr="%A, %m %Y" \
+  --keylayout 2         \
