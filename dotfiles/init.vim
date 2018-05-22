@@ -286,3 +286,4 @@ nnoremap <leader>lj :set ft=javascript<CR>
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>
 nnoremap <leader>oa :e ~/.agenda.org<CR>
+nnoremap <leader>oc :e ~/.config/i3/config<CR>
