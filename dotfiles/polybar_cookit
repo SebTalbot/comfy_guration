@@ -52,7 +52,7 @@ font-1 = Hack:pixelsize=32;2
 
 modules-left = i3 arrow0 arrow
 modules-center = arrow10 arrow9 title arrow0 arrow
-modules-right = arrow8 xkeyboard arrow7 memory arrow6 cpu arrow7 volume arrow6 date 
+modules-right = arrow11 arrow8 xkeyboard arrow7 memory arrow6 cpu arrow7 volume arrow6 date
 
 tray-position = right
 tray-background = ${colors.background}
@@ -88,7 +88,7 @@ font-1 = Hack:pixelsize=32;2
 
 modules-left = i3 arrow0 arrow
 modules-center = arrow10 arrow9 title arrow0 arrow
-modules-right = 
+modules-right = arrow11 arrow8 date
 
 ;-------------------------------------------------------------------------------
 ;	D E C O R A T I O N S
@@ -173,7 +173,7 @@ type = custom/text
 content = " "
 content-font = 2
 content-foreground = ${colors.background}
-content-background = ${colors.trans}
+content-background = ${colors.blue}
 
 [module/arrow9]
 ; grey to bg
@@ -191,6 +191,13 @@ content-font = 2
 content-foreground = ${colors.pink}
 content-background = ${colors.trans}
 
+[module/arrow11]
+; grey to bg
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.blue}
+content-background = ${colors.trans}
 ;-------------------------------------------------------------------------------
 ;	M O D U L E S
 ;-------------------------------------------------------------------------------
@@ -272,8 +279,8 @@ label-unfocused-foreground = ${colors.grey}
 label-unfocused-background = ${colors.background}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = " %index% "
-label-urgent-foreground = ${colors.blue}
+label-urgent = " ! %index% ! "
+label-urgent-foreground = ${colors.green}
 label-urgent-background = ${colors.background}
 
 [module/cpu]
@@ -343,7 +350,7 @@ date = " %Y-%m-%d"
 time= %H:%M:%S
 
 label = %date% %time%
-label-foreground = ${colors.white}
+label-foreground = ${colors.blue}
 label-background = ${colors.background}
 
 [module/volume]
@@ -353,20 +360,20 @@ type = internal/volume
 format-volume = <ramp-volume><label-volume>
 
 label-volume = %percentage%%
-label-volume-foreground = ${colors.blue}
+label-volume-foreground = ${colors.white}
 label-volume-background = ${colors.grey}
 label-muted = " MUTED "
-label-muted-foreground = ${colors.blue}
+label-muted-foreground = ${colors.white}
 label-muted-background = ${colors.grey}
 
 ramp-volume-0 = " VOL "
-ramp-volume-0-foreground = ${colors.blue}
+ramp-volume-0-foreground = ${colors.white}
 ramp-volume-0-background = ${colors.grey}
 ramp-volume-1 = " VOL "
-ramp-volume-1-foreground = ${colors.blue}
+ramp-volume-1-foreground = ${colors.white}
 ramp-volume-1-background = ${colors.grey}
 ramp-volume-2 = " VOL "
-ramp-volume-2-foreground = ${colors.blue}
+ramp-volume-2-foreground = ${colors.white}
 ramp-volume-2-background = ${colors.grey}
 ramp-volume-3 = " VOL "
 ramp-volume-3-foreground = ${colors.blue}
