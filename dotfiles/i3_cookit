@@ -197,7 +197,7 @@ exec --no-startup-id nm-applet
 client.focused					         #d75f87  #d75f87  #181818  #d75f87
 client.unfocused				         #181818  #181818  #315858  #181818
 client.focused_inactive			     #181818  #181818  #2c2e2f  #181818
-client.urgent  	              	 #383a3b  #00ccff  #ee0000  #181818
+client.urgent  	              	 #20ad80  #20ad80  #000000  #181818
 
 # Audio
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 5+ unmute"
@@ -218,7 +218,10 @@ exec --no-startup-id ~/comfy_guration/scripts/cook_it_screens.sh
 focus_follows_mouse no
 
 # Compton
-exec --no-startup-id compton --no-fading-openclose --backend glx --vsync opengl-swc
+# No VSYNC until GLX fix
+exec --no-startup-id compton
+# There is a freeze drop issue with GLX
+# exec --no-startup-id compton --backend glx --vsync opengl-swc
 
 # Caps as Esc
 exec --no-startup-id ~/comfy_guration/scripts/switch_caps_escape.sh
