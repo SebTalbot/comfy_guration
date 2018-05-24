@@ -25,7 +25,7 @@ set $w6 6
 set $w7 7
 set $w8 8
 set $w9 9
-set $w10 0
+set $w10 10
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
