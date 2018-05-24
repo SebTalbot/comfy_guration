@@ -1,10 +1,10 @@
 #!/bin/bash
 B='#00000000'  # blank
 C='#ffffff22'  # clear ish
-D='#ff00ffcc'  # default
-T='#ee00eeee'  # text
-W='#880000bb'  # wrong
-V='#bb00bbbb'  # verifying
+D='#d75f87ff'  # default
+T='#d75f87ff'  # text
+W='#ee3333ff'  # wrong
+V='#875fafff'  # verifying
 
 ~/softwares/i3lock-color/x86_64-pc-linux-gnu/i3lock \
   --insidevercolor=$C   \
