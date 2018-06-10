@@ -8,6 +8,19 @@ set showmode
 
 " Workflow
 set hlsearch
+set ignorecase
 set smartcase
 
+" Clipboard
+set clipboard+=unnamed
+
 " Mapping
+"" Keep selection when indenting
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <space><space> :action ReformatCode<CR>
+
+"" Space-d close tab
+"" Space-f reopen closed tab
+
