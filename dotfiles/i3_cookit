@@ -219,7 +219,7 @@ focus_follows_mouse no
 
 # Compton
 # No VSYNC until GLX fix
-exec --no-startup-id compton
+exec --no-startup-id compton --config ~/comfy_guration/dotfiles/compton_cookit.conf
 # There is a freeze drop issue with GLX
 # exec --no-startup-id compton --backend glx --vsync opengl-swc
 
