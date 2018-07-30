@@ -51,7 +51,7 @@ font-0 = Hack:pixelsize=10:weight=bold;2
 font-1 = Hack:pixelsize=32;2
 
 modules-left = i3 arrow0 arrow
-modules-center = arrow10 arrow9 title arrow13 arrow12
+modules-center = arrow10 arrow9 title2 arrow13 arrow12
 modules-right = arrow11 arrow8 xkeyboard arrow7 memory arrow6 cpu arrow7 volume arrow6 date
 
 tray-position = right
@@ -87,13 +87,20 @@ font-0 = Hack:pixelsize=10:weight=bold;2
 font-1 = Hack:pixelsize=32;2
 
 modules-left = i3 arrow0 arrow
-modules-center = arrow10 arrow9 title arrow13 arrow12
+modules-center = arrow10 arrow9 title2 arrow13 arrow12
 modules-right = arrow11 arrow8 date
 
 ;-------------------------------------------------------------------------------
 ;	D E C O R A T I O N S
 ;-------------------------------------------------------------------------------
 
+[module/title2]
+; background to trans
+type = custom/text
+content = " S N O W L  @  C O O K I T "
+content-font = 2
+content-foreground = ${colors.purple}
+content-background = ${colors.background}
 
 [module/arrow]
 ; background to trans
@@ -306,7 +313,7 @@ label-unfocused-background = ${colors.background}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = "  >%icon%<  "
-label-urgent-foreground = ${colors.red}
+label-urgent-foreground = ${colors.green}
 label-urgent-background = ${colors.background}
 
 label-separator = //
