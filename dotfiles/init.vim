@@ -23,16 +23,16 @@ Plug 'scrooloose/nerdtree'
 Plug 'simnalamburt/vim-mundo'
 Plug 'kien/ctrlp.vim'
 Plug 'jreybert/vimagit'
-Plug 'hsitz/VimOrganizer'
 
 " COMMANDS
 Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-speeddating'
-Plug 'soramugi/auto-ctags.vim'
+" Plug 'ludovicchabant/vim-gutentags'
 
 " AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
+Plug 'rking/ag.vim'
 Plug 'w0rp/ale'
 Plug 'roxma/nvim-completion-manager'
 Plug 'SirVer/ultisnips'
@@ -59,13 +59,11 @@ Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 Plug 'roxma/ncm-flow'
 Plug 'jbgutierrez/vim-babel'
 Plug 'mattn/webapi-vim'
+Plug 'ternjs/tern_for_vim'
 "" "" - React.js
 Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'justinj/vim-react-snippets'
-"" "" - Angular
-Plug 'burnettk/vim-angular'
-Plug 'matthewsimo/angular-vim-snippets'
 "" TypeScript"
 Plug 'leafgarland/typescript-vim'
 "" Python
@@ -159,7 +157,21 @@ let g:python_support_python3_requirements = add(get(g:,'python_support_python3_r
 " JavaScript
 let g:jsx_ext_required = 0
 let g:vim_jsx_pretty_colorful_config = 1
+set path=.,src
+set suffixesadd=.js,.jsx
 
+function! LoadMainNodeModule(fname)
+    let nodeModules = "./node_modules/"
+    let packageJsonPath = nodeModules . a:fname . "/package.json"
+
+    if filereadable(packageJsonPath)
+        return nodeModules . a:fname . "/" . json_decode(join(readfile(packageJsonPath))).main
+    else
+        return nodeModules . a:fname
+    endif
+endfunction
+
+" set includeexpr=LoadMainNodeModule(v:fname)
 " - - - - - - - - - - - - - - -
 " P L U G I N S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
@@ -185,10 +197,6 @@ let g:UltiSnipsListSnippets="<C-S>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 let g:UltiSnipsSnippetsDir="~/comfy_guration/dotfiles/custom_snips"
 let g:UltiSnipsSnippetsDirectories=["UltiSnips", "~/.config/nvim/UltiSnips"]
-
-" Auto Ctags
-let g:auto_ctags_tags_args = '-R *'
-let g:auto_ctags_directory_list = ['.git','.svn']
 
 " Ale
 highlight ALEError ctermbg=196 ctermfg=232
@@ -287,3 +295,6 @@ nnoremap <leader>lj :set ft=javascript<CR>
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>
 nnoremap <leader>oa :e ~/.agenda.org<CR>
 nnoremap <leader>oc :e ~/.config/i3/config<CR>
+
+" Find
+nnoremap <leader>fd :TernDef<CR>
