@@ -214,6 +214,9 @@ exec --no-startup-id unclutter -jitter 10 -idle 1
 # Screens
 exec --no-startup-id ~/comfy_guration/scripts/cook_it_screens.sh
 
+# Trackpoint Configs
+exec --no-startup-id ~/comfy_guration/scripts/tex_yoda_trackpoint_config.sh
+
 # no mouse follow
 focus_follows_mouse no
 
