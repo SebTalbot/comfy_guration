@@ -32,4 +32,8 @@ V='#875fafff'  # verifying
   --indicator           \
   --timestr="%H:%M:%S"  \
   --datestr="%A, %m %Y" \
-  --keylayout 2         \
+  --keylayout 2         
+
+sleep 2
+
+systemctl suspend

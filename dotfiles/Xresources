@@ -17,9 +17,8 @@ URxvt*depth: 32
 URxvt.letterSpace: -1
 
 ! Paste with shift-ctrl-v
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard
 
 ! Colors
 *.boldMode: true
