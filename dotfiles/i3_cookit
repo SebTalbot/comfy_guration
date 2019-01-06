@@ -209,10 +209,13 @@ new_window pixel
 default_border pixel 5
 
 # Hide mouse
-exec --no-startup-id unclutter -idle 1
+exec --no-startup-id unclutter -jitter 10 -idle 1
 
 # Screens
 exec --no-startup-id ~/comfy_guration/scripts/cook_it_screens.sh
+
+# Trackpoint Configs
+exec --no-startup-id ~/comfy_guration/scripts/tex_yoda_trackpoint_config.sh
 
 # no mouse follow
 focus_follows_mouse no
@@ -234,7 +237,7 @@ bindsym $mod+F2 exec ~/comfy_guration/scripts/i3lock.sh
 
 # Screenshot
 for_window [class="Shutter"] floating enable
-bindsym Print exec shutter -s
+bindsym Print exec shutter -s -e -n -o '~/pictures/screenshots/%y_%m_%d_%T.png'
 bindsym $mod+Print exec shutter
 
 # Gaps

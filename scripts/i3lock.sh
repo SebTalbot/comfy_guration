@@ -6,6 +6,7 @@ T='#d75f87ff'  # text
 W='#ee3333ff'  # wrong
 V='#875fafff'  # verifying
 
+setxkbmap us
 ~/softwares/i3lock-color/x86_64-pc-linux-gnu/i3lock \
   --insidevercolor=$C   \
   --ringvercolor=$V     \

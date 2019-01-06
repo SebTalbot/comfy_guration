@@ -78,6 +78,11 @@ PERL_LOCAL_LIB_ROOT="/home/snowl/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_R
 PERL_MB_OPT="--install_base \"/home/snowl/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/snowl/perl5"; export PERL_MM_OPT;
 
+NPM_PACKAGES="${HOME}/.npm-packages"
+PATH="$NPM_PACKAGES/bin:$PATH"
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 #                         _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 # - - - - - - - - - - - / P E R S O N A L   O P T I O N S \ - - - - - - - - - -
 #                       - - - - - - - - \ / - - - - - - - -

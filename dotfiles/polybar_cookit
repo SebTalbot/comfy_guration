@@ -23,7 +23,7 @@ red = #ee3333
 ;-------------------------------------------------------------------------------
 
 [bar/right]
-monitor = HDMI-1
+monitor = HDMI-2
 width = 100%
 height = 14
 radius = 1.0
@@ -59,7 +59,7 @@ tray-background = ${colors.background}
 tray-padding = 4
 
 [bar/left]
-monitor = HDMI-2
+monitor = HDMI-1
 width = 100%
 height = 14
 radius = 1.0
