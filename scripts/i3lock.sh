@@ -1,8 +1,8 @@
 #!/bin/bash
 B='#00000000'  # blank
 C='#ffffff22'  # clear ish
-D='#d75f87ff'  # default
-T='#d75f87ff'  # text
+D='#8A8881ff'  # default
+T='#8A8881ff'  # text
 W='#ee3333ff'  # wrong
 V='#875fafff'  # verifying
 
