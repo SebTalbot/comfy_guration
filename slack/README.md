@@ -3,7 +3,7 @@ add this at the end of `/usr/lib/slack/resources/app.asar.unpacked/src/static/ss
 ```javascript
 document.addEventListener('DOMContentLoaded', function () {
     $.ajax({
-        url: 'https://unpkg.com/install-dark-theme/theme.css',
+        url: 'https://raw.githubusercontent.com/SebTalbot/comfy_guration/master/slack/theme.css',
         success: function (css) {
             $("<style></style>").appendTo('head').html(css);
         }
