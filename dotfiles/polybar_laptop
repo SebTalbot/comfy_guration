@@ -7,6 +7,7 @@ dark = #182725
 mid = #293939
 border = #6E6F69
 light = #8A8881
+highlight = #C08552
 
 ;-------------------------------------------------------------------------------
 ;	B A R S
@@ -57,7 +58,7 @@ content-background = ${colors.light}
 
 [module/arrow_l2]
 type = custom/text
-content = ""
+content = " "
 content-font = 2
 content-foreground = ${colors.light}
 content-background = ${colors.mid}
@@ -126,7 +127,7 @@ content = "◥"
 content-font = 5
 content-foreground = ${colors.mid}
 content-background = ${colors.border}
- 
+
 [module/middle4]
 type = custom/text
 content = "◤"
@@ -188,26 +189,22 @@ enable-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-label-mode = " %mode% "
-label-mode-foreground = ${colors.light}
-label-mode-background = ${colors.mid}
-
 ; focused = Active workspace on focused monitor
-label-focused = " ● "
+label-focused = " "
 label-focused-font = 3
 label-focused-foreground = ${colors.light}
 label-focused-background = ${colors.mid}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = " ○ "
+label-unfocused = " "
 label-unfocused-font = 3
 label-unfocused-foreground = ${colors.light}
 label-unfocused-background = ${colors.mid}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = " ● "
+label-urgent = " "
 label-urgent-font = 3
-label-urgent-foreground = ${colors.dark}
+label-urgent-foreground = ${colors.highlight}
 label-urgent-background = ${colors.mid}
 
 [module/i3_index]
@@ -225,9 +222,9 @@ label-urgent =
 type = internal/i3
 format = <label-state>
 
-ws-icon-default = 
+ws-icon-default = 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
 
 label-focused = "%icon%"
@@ -242,7 +239,7 @@ label-urgent =
 type = internal/i3
 format = <label-state>
 
-ws-icon-default = 
+ws-icon-default = FREE
 ws-icon-0 = 1;WEB
 ws-icon-1 = 2;DEV
 ws-icon-2 = 3;GIT

@@ -15,6 +15,7 @@ URxvt.transparent: false
 URxvt.visualBell: false
 URxvt*depth: 32
 URxvt.letterSpace: -1
+URxvt.internalBorder: 15
 
 ! Paste with shift-ctrl-v
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
