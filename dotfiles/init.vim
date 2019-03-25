@@ -311,4 +311,4 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Open important files O-
 nnoremap <leader>od :e ~/.config/nvim/init.vim<CR>G
-snoremap <leader>ob :e ~/.bashrc<CR>G
+noremap <leader>ob :e ~/.bashrc<CR>G
