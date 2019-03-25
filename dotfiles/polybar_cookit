@@ -286,7 +286,7 @@ ws-icon-4 = 4;4
 ws-icon-5 = 5;5
 ws-icon-6 = 6;6
 ws-icon-7 = 7;7
-ws-icon-8 = 8;8
+ws-icon-8 = 8;8:RUN
 ws-icon-9 = 9;9:DATA
 ws-icon-default =
 
