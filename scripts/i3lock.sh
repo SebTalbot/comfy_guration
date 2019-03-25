@@ -1,20 +1,23 @@
 #!/bin/bash
+A='#182725e0'  # dark
 B='#00000000'  # blank
 C='#ffffff22'  # clear ish
-D='#d75f87ff'  # default
-T='#d75f87ff'  # text
-W='#ee3333ff'  # wrong
-V='#875fafff'  # verifying
+D='#8A8881ff'  # default
+T='#C08552ff'  # text
+W='#B73C33ff'  # wrong
+V='#aa632fff'  # verifying
 
+pkill -u "$USER" -USR1 dunst
 setxkbmap us
+
 ~/softwares/i3lock-color/x86_64-pc-linux-gnu/i3lock \
-  --insidevercolor=$C   \
+  --insidevercolor=$A   \
   --ringvercolor=$V     \
   \
-  --insidewrongcolor=$C \
+  --insidewrongcolor=$A \
   --ringwrongcolor=$W   \
   \
-  --insidecolor='#000000aa'      \
+  --insidecolor=$A \
   --ringcolor=$D        \
   --linecolor=$B        \
   --separatorcolor=$D   \
@@ -24,8 +27,8 @@ setxkbmap us
   --timecolor=$T        \
   --datecolor=$T        \
   --layoutcolor=$T      \
-  --keyhlcolor=$W       \
-  --bshlcolor=$W        \
+  --keyhlcolor=$V       \
+  --bshlcolor=$V        \
   \
   --screen 1            \
   --blur 5              \
@@ -34,3 +37,6 @@ setxkbmap us
   --timestr="%H:%M:%S"  \
   --datestr="%A, %m %Y" \
   --keylayout 2         \
+  -n
+
+pkill -u "$USER" -USR2 dunst
