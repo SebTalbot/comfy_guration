@@ -3,8 +3,8 @@ Xft.antialias: 1
 URxvt*font: xft:Hack Nerd Font:pixelsize=15:style=bold
 
 ! URxvt
-URxvt.modifier: mod1
-URxvt*loginShell: true
+URxvt.modifier: alt
+URxvt*loginShell: false
 URxvt*dynamicColors: on
 URxvt.imLocale: en_US.UTF-8
 URxvt.saveLines: 5000

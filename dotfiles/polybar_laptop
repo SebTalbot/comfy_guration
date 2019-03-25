@@ -8,6 +8,7 @@ mid = #293939
 border = #6E6F69
 light = #8A8881
 highlight = #C08552
+urgent = #B73C33
 
 ;-------------------------------------------------------------------------------
 ;	B A R S
@@ -35,6 +36,10 @@ font-2 = Hack Nerd Font:pixelsize=16;2
 font-3 = Hack Nerd Font:pixelsize=16;4
 ; Middle Arrow
 font-4 = Hack Nerd Font:pixelsize=47;0
+; COM Symbol
+font-5 = Hack Nerd Font:pixelsize=11;0
+; RUN Symbol
+font-6 = Hack Nerd Font:pixelsize=1;0
 
 modules-left = arrow_l1 arrow_l2 i3 arrow_i3 i3_index arrow_i3_index i3_icon i3_name arrow_i3_name arrow_i3_end arrow_i3_name
 modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4
@@ -182,6 +187,18 @@ content-background = ${colors.mid}
 type = internal/i3
 format = <label-state><label-mode>
 
+label-mode = "%mode% "
+label-mode-foreground = ${colors.urgent}
+label-mode-background = ${colors.mid}
+
+; need to add: https://github.com/kenogo/polybar/commit/c2b6fa3fcc2c54da1d06827eaed16b5155585ec3
+ws-num = 10
+show-all = true
+label-empty-foreground = ${colors.border}
+label-empty-background = ${colors.mid}
+label-empty-font = 3
+label-empty = " "
+
 index-sort = true
 enable-click = false
 enable-scroll = false
@@ -190,9 +207,9 @@ enable-scroll = false
 pin-workspaces = true
 
 ; focused = Active workspace on focused monitor
-label-focused = " "
+label-focused = " "
 label-focused-font = 3
-label-focused-foreground = ${colors.light}
+label-focused-foreground = ${colors.highlight}
 label-focused-background = ${colors.mid}
 
 ; unfocused = Inactive workspace on any monitor
@@ -202,9 +219,9 @@ label-unfocused-foreground = ${colors.light}
 label-unfocused-background = ${colors.mid}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = " "
+label-urgent = " "
 label-urgent-font = 3
-label-urgent-foreground = ${colors.highlight}
+label-urgent-foreground = ${colors.urgent}
 label-urgent-background = ${colors.mid}
 
 [module/i3_index]
@@ -226,6 +243,13 @@ ws-icon-default = 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
 
 label-focused = "%icon%"
 label-focused-font = 4
@@ -243,6 +267,13 @@ ws-icon-default = FREE
 ws-icon-0 = 1;WEB
 ws-icon-1 = 2;DEV
 ws-icon-2 = 3;GIT
+ws-icon-3 = 4;FREE
+ws-icon-4 = 5;FREE
+ws-icon-5 = 6;FREE
+ws-icon-6 = 7;FREE
+ws-icon-7 = 8;RUN
+ws-icon-8 = 9;DATA
+ws-icon-9 = 10;COM
 
 label-focused = " %icon% "
 label-focused-foreground = ${colors.light}
@@ -300,10 +331,16 @@ format-discharging-font = 4
 format-discharging-foreground = ${colors.mid}
 format-discharging-background = ${colors.light}
 ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
+ramp-capacity-0-foreground = ${colors.urgent}
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+ramp-capacity-5 = " "
+ramp-capacity-6 = " "
+ramp-capacity-7 = " "
+ramp-capacity-8 = " "
+ramp-capacity-9 = " "
 
 format-full = <label-full>
 format-full-font = 4
@@ -435,24 +472,34 @@ interval = 2
 format = <label>
 format-foreground = ${colors.light}
 format-background = ${colors.mid}
-
 label = " %temperature% "
 
 [module/temperature_symbol]
 type = internal/temperature
 thermal-zone = 0
 interval = 2
+warn-temperature = 55
 
 format = <ramp>
 format-font = 4
 format-foreground = ${colors.light}
 format-background = ${colors.mid}
 
+format-warn = <ramp>
+format-warn-font = 4
+format-warn-foreground = ${colors.urgent}
+format-warn-background = ${colors.mid}
+
 ramp-0 = " "
-ramp-1 = " "
-ramp-2 = " "
-ramp-3 = " "
-ramp-4 = " "
+ramp-1 = " "
+ramp-2 = " "
+ramp-3 = " "
+ramp-4 = " "
+ramp-5 = " "
+ramp-6 = " "
+ramp-7 = " "
+ramp-8 = " "
+ramp-9 = " "
 
 
 ;-------------------------------------------------------------------------------

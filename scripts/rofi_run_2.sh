@@ -6,4 +6,4 @@ rofi -show run \
 	-bw "2" \
 	-color-enabled \
 	-color-window "#182725,#6E6F69,#8A8881" \
-	-color-normal "#182725,#8A8881,#293939,#aa632f,#182725"
+	-color-normal "#182725,#8A8881,#293939,#C08552,#182725"
