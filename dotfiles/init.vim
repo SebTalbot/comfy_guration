@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SebTalbot/vwm.vim'
+Plug 'airblade/vim-gitgutter'
 
 " COMMANDS
 Plug 'rbgrouleff/bclose.vim'
@@ -75,6 +76,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 set wildmenu
 set relativenumber
+set nu
 set hlsearch
 set showmatch
 set noerrorbells
@@ -86,14 +88,14 @@ colorscheme gruvbox
 set colorcolumn=80
 highlight Comment cterm=bold
 highlight Normal ctermbg=NONE
-"highlight ColorColumn ctermbg=6
-"highlight CursorLine ctermbg=6
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
+set updatetime=100
 set autoread
 set ignorecase
+set smartcase
 set nobackup
 set nowb
 set noswapfile
@@ -137,7 +139,9 @@ set suffixesadd=.js,.jsx
 
 " NERDTree
 let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=0
+let NERDTreeShowLineNumbers=1
+let NERDTreeIgnore=['\.tests\.']
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -182,7 +186,10 @@ fun! g:CtrlP_set_test_ignore()
 let g:bclose_no_plugin_maps = 1
 
 " FZF
-" let $FZF_DEFAULT_COMMAND = 'ag --path-to-ignore ~/.agignore'
+com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
+
+" GitGutter
+let g:gitgutter_map_keys = 0
 
 " Rainbow Pairs
 let g:rbpt_max = 16
@@ -204,10 +211,6 @@ let g:vwm#layouts = [
       \    {
       \      'init': ['call termopen("bash", {"detach": 0})'],
       \      'sz': 22,
-      \      'right':
-      \      {
-      \        'init': ['call termopen("bash", {"detach": 0})'],
-      \      }
       \    }
       \  }
       \]
@@ -225,10 +228,6 @@ nnoremap <leader>/ :nohlsearch<CR>
 
 " Start help command in vertical split
 nnoremap <leader>h :vert h<space>
-
-" Paste global clipboard to another line
-nnoremap <leader>p o<ESC>"+p
-nnoremap <leader>P O<ESC>"+p
 
 " Move lines
 nnoremap <C-K> ddkP
@@ -253,13 +252,14 @@ nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>ann :NERDTreeFind<CR>
 nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
-nmap <Leader>af <Plug>(PrettierAsync)
+nnoremap <Leader>af <Plug>(PrettierAsync)
 nnoremap <Leader>at :VwmToggle term<CR>
 
 " Search
 nnoremap <Leader>sf :call CtrlP_set_general_ignore()<CR>:CtrlP<CR>
+nnoremap <Leader>sb :CtrlPBuffer<CR>
 nnoremap <Leader>st :call CtrlP_set_test_ignore()<CR>:CtrlP<CR>
-nnoremap <leader>ss :call fzf#vim#ag('', fzf#vim#with_preview('right'))<CR>
+nnoremap <leader>ss :Ag<CR>
 
 " Manipulate windows W-
 nnoremap <leader>wd <C-W>q
@@ -277,7 +277,7 @@ nnoremap <leader>wrj :resize +5<CR>
 nnoremap <leader>wrk :resize -5<CR>
 nnoremap <leader>wrh :vertical resize +5<CR>
 nnoremap <leader>wrl :vertical resize -5<CR>
-nnoremap <leader>wr= <C-W>=
+nnoremap <leader>wrr <C-W>=
 
 " Manipulate tabs T-
 nnoremap <leader>td :tabclose<CR>
@@ -285,7 +285,7 @@ nnoremap <leader>tt :tabonly<CR>
 nnoremap <leader>tn :tabnew %<CR>
 
 " Manipulate buffers B-
-nnoremap <leader>bb :b
+nnoremap <leader>bb :e#<CR>
 nnoremap <leader>bl :ls<CR>:b<space>
 nnoremap <leader>bt <C-^>
 nnoremap <leader>bd :Bclose!<CR>
@@ -294,20 +294,20 @@ nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
 
 " CoC
+inoremap <silent><expr> <C-Space> coc#refresh()
 nmap <silent> <leader>ek <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>ej <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>le <Plug>(coc-diagnostic-info)
 nmap <silent> <leader>ld <Plug>(coc-definition)
-nmap <silent> <leader>lw <Plug>(coc-declaration)
-nmap <silent> <leader>lb :e#<CR>
 nmap <silent> <leader>ly <Plug>(coc-type-definition)
+nmap <silent> <leader>lw <Plug>(coc-declaration)
 nmap <silent> <leader>li <Plug>(coc-implementation)
 nmap <silent> <leader>lr <Plug>(coc-references)
 nmap <leader>lc <Plug>(coc-rename)
-vmap <leader>lff  <Plug>(coc-format-selected)
+nmap <leader>lff  <Plug>(coc-format-selected)
 nmap <leader>lff  <Plug>(coc-format-selected)
 nmap <leader>lfb  <Plug>(coc-format)
-inoremap <silent><expr> <c-space> coc#refresh()
+nmap <silent> <leader>ll ea<C-Space>
 
 " Open important files O-
 nnoremap <leader>od :e ~/.config/nvim/init.vim<CR>G
