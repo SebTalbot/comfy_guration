@@ -46,6 +46,13 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'html' ] }
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-pyls', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
