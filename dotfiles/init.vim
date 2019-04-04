@@ -13,6 +13,8 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'chrisbra/Colorizer'
 
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
@@ -45,7 +47,8 @@ Plug 'prettier/vim-prettier', {
     \ 'markdown',
     \ 'python',
     \ 'html' ] }
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'Shougo/neco-vim'
+Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
@@ -53,6 +56,7 @@ Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pyls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
@@ -63,14 +67,15 @@ Plug 'SirVer/ultisnips'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 """ React / JSX
-Plug 'mattn/emmet-vim'
-Plug 'Valloric/MatchTagAlways'
 Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'justinj/vim-react-snippets'
+Plug 'mattn/emmet-vim'
+Plug 'Valloric/MatchTagAlways'
 """ Typescrip
 Plug 'ianks/vim-tsx'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
 call plug#end()
 filetype plugin indent on
@@ -91,10 +96,14 @@ set novisualbell
 set cursorline
 set ttimeoutlen=10
 set background=dark
-colorscheme gruvbox
+colorscheme space-vim-dark
 set colorcolumn=80
-highlight Comment cterm=bold
+highlight CursorLine ctermbg=237
+highlight ColorColumn ctermbg=237
 highlight Normal ctermbg=NONE
+highlight Comment cterm=bold
+highlight Identifier ctermfg=5
+highlight Identifier cterm=bold
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -160,6 +169,7 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 " Airline
 set laststatus=2
+let g:airline_theme='violet'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
@@ -261,6 +271,7 @@ nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
 nnoremap <Leader>af <Plug>(PrettierAsync)
 nnoremap <Leader>at :VwmToggle term<CR>
+nnoremap <leader>ac :ColorToggle<CR>
 
 " Search
 nnoremap <Leader>sf :call CtrlP_set_general_ignore()<CR>:CtrlP<CR>
