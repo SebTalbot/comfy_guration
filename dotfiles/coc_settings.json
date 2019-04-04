@@ -1,0 +1,10 @@
+{
+  "diagnostic.hintSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.errorSign": "",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.noSemicolons": true,
+  "suggest.triggerAfterInsertEnter": true,
+  "coc.preferences.extensionUpdateCheck": "daily"
+}
