@@ -70,7 +70,8 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'justinj/vim-react-snippets'
 """ Typescrip
 Plug 'ianks/vim-tsx'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
 call plug#end()
 filetype plugin indent on
@@ -91,10 +92,14 @@ set novisualbell
 set cursorline
 set ttimeoutlen=10
 set background=dark
-colorscheme gruvbox
 set colorcolumn=80
-highlight Comment cterm=bold
-highlight Normal ctermbg=NONE
+if $CURRENT_DEVICE == 'laptop'
+  colorscheme gruvbox
+  highlight Comment cterm=bold
+  highlight Normal ctermbg=NONE
+  highlight Identifier ctermfg=66
+  highlight Identifier cterm=bold
+endif
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
