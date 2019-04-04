@@ -16,4 +16,3 @@ do
   xinput set-prop $i "Device Accel Profile" 7
   xinput set-prop $i "Device Accel Velocity Scaling" 2.0
 done
-
