@@ -97,20 +97,22 @@ set cursorline
 set ttimeoutlen=10
 set background=dark
 set colorcolumn=80
-highlight Comment cterm=bold
-highlight Normal ctermbg=NONE
 set colorcolumn=80
+
 if $CURRENT_DEVICE == 'laptop'
   colorscheme gruvbox
   highlight Identifier ctermfg=66
   highlight Identifier cterm=bold
-elseif $CURRENT_DEVICE == 'cookit'
+else
   colorscheme space-vim-dark
   highlight CursorLine ctermbg=237
   highlight ColorColumn ctermbg=237
   highlight Identifier ctermfg=5
   highlight Identifier cterm=bold
 endif
+
+highlight Comment cterm=bold
+highlight Normal ctermbg=NONE
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
