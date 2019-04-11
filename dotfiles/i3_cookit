@@ -46,7 +46,7 @@ font pango:Hack bold 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -233,7 +233,7 @@ exec --no-startup-id ~/comfy_guration/scripts/switch_caps_escape.sh
 bindsym $mod+space exec ~/comfy_guration/scripts/keyboard_lang.sh
 
 # Lockscreen
-bindsym $mod+F2 exec ~/comfy_guration/scripts/i3lock.sh
+bindsym $mod+F2 exec ~/comfy_guration/scripts/i3lock_cookit.sh
 
 # Screenshot
 for_window [class="Shutter"] floating enable
