@@ -160,7 +160,8 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
 let g:prettier#quickfix_enabled = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+let g:prettier#quickfix_auto_focus = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 
 " Airline
@@ -264,7 +265,7 @@ nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>ann :NERDTreeFind<CR>
 nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
-nnoremap <Leader>af <Plug>(PrettierAsync)
+nmap <Leader>af <Plug>(PrettierAsync)
 nnoremap <Leader>at :VwmToggle term<CR>
 
 " Search
@@ -322,5 +323,5 @@ nmap <leader>lfb  <Plug>(coc-format)
 nmap <silent> <leader>ll ea<C-Space>
 
 " Open important files O-
-nnoremap <leader>od :e ~/.config/nvim/init.vim<CR>G
+nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
 noremap <leader>ob :e ~/.bashrc<CR>G
