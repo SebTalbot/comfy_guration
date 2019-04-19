@@ -337,6 +337,16 @@ nmap <leader>lff  <Plug>(coc-format-selected)
 nmap <leader>lfb  <Plug>(coc-format)
 nmap <silent> <leader>ll ea<C-Space>
 
+" Git
+nnoremap <leader>gg :G<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gh :Gpush<CR>
+nnoremap <leader>gl :Gpull<CR>
+nnoremap <leader>gf :Gfetch<CR>
+
+nnoremap <leader>gs :GitGutterStageHunk<CR>
+
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
 noremap <leader>ob :e ~/.bashrc<CR>G
