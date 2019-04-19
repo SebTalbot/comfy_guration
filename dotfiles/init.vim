@@ -6,6 +6,11 @@ let g:python_host_prog = '/usr/bin/python'
 " - - - - - - -
 " P L U G I N S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
+
+" /!\ ------------------------------------/!\
+"     DON'T FORGET TO :UpdateRemotePlugins
+" /!\ ------------------------------------/!\
+
 call plug#begin('~/.config/nvim/plugged')
 
 " THEMES AND UI
@@ -97,7 +102,6 @@ set cursorline
 set ttimeoutlen=10
 set background=dark
 set colorcolumn=80
-set colorcolumn=80
 
 if $CURRENT_DEVICE == 'laptop'
   colorscheme gruvbox
@@ -109,6 +113,7 @@ else
   highlight ColorColumn ctermbg=237
   highlight Identifier ctermfg=5
   highlight Identifier cterm=bold
+  let g:airline_theme='violet'
 endif
 
 highlight Comment cterm=bold
@@ -174,12 +179,11 @@ let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
 let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 
 " Airline
 set laststatus=2
-let g:airline_theme='violet'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
@@ -279,7 +283,7 @@ nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>ann :NERDTreeFind<CR>
 nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
-nmap <Leader>af <Plug>(PrettierAsync)
+nnoremap <Leader>af  mb:Prettier<CR>'b
 nnoremap <Leader>at :VwmToggle term<CR>
 nnoremap <leader>ac :ColorToggle<CR>
 
@@ -325,7 +329,7 @@ nnoremap gB :bp<CR>
 inoremap <silent><expr> <C-Space> coc#refresh()
 nmap <silent> <leader>ek <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>ej <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>le <Plug>(coc-diagnostic-info)
+nmap <silent> <leader>ee <Plug>(coc-diagnostic-info)
 nmap <silent> <leader>ld <Plug>(coc-definition)
 nmap <silent> <leader>ly <Plug>(coc-type-definition)
 nmap <silent> <leader>lw <Plug>(coc-declaration)
