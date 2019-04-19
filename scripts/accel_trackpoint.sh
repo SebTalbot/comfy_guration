@@ -13,5 +13,5 @@ ids=$(xinput --list | awk -v search="$SEARCH" \
 
 for i in $ids
 do
-  xinput --set-prop $i 329 0.4
+  xinput --set-prop $i 329 0.6
 done
