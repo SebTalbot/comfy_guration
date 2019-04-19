@@ -347,6 +347,9 @@ nnoremap <leader>gf :Gfetch<CR>
 
 nnoremap <leader>gs :GitGutterStageHunk<CR>
 
+nnoremap <leader>gj :GitGutterNextHunk<CR>
+nnoremap <leader>gk :GitGutterPrevHunk<CR>
+
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
 noremap <leader>ob :e ~/.bashrc<CR>G
