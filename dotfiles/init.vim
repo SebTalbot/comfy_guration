@@ -25,6 +25,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SebTalbot/vwm.vim'
@@ -77,6 +78,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'justinj/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
+Plug 'styled-components/vim-styled-components'
 """ Typescrip
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -345,14 +347,14 @@ nmap <silent> <leader>ll ea<C-Space>
 nnoremap <leader>gg :G<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gh :Gpush<CR>
+nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gl :Gpull<CR>
 nnoremap <leader>gf :Gfetch<CR>
-
 nnoremap <leader>gs :GitGutterStageHunk<CR>
-
 nnoremap <leader>gj :GitGutterNextHunk<CR>
 nnoremap <leader>gk :GitGutterPrevHunk<CR>
+nnoremap <leader>ghh :GV<CR>
+nnoremap <leader>ghg :GV!<CR>
 
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
