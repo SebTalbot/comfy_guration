@@ -78,7 +78,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'justinj/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
-Plug 'styled-components/vim-styled-components'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescrip
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
