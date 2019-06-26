@@ -83,6 +83,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+""" GraphQL
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 filetype plugin indent on
@@ -353,8 +355,8 @@ nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gs :GitGutterStageHunk<CR>
 nnoremap <leader>gj :GitGutterNextHunk<CR>
 nnoremap <leader>gk :GitGutterPrevHunk<CR>
-nnoremap <leader>ghh :GV<CR>
-nnoremap <leader>ghg :GV!<CR>
+nnoremap <leader>gha :GV<CR>
+nnoremap <leader>ghc :GV!<CR>
 
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
