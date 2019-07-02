@@ -61,7 +61,7 @@ Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-pyls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
@@ -157,9 +157,6 @@ end
 " - - - - - - - - - - - - - - - - -
 " L A N G U A G E S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
-
-" Coc
-" call coc#add_extension('coc-json', 'coc-tsserver', 'coc-prettier', 'coc-pyls', 'coc-css', 'coc-list', 'coc-emmet')
 
 " Javascript
 let g:jsx_ext_required = 0
@@ -355,8 +352,8 @@ nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gs :GitGutterStageHunk<CR>
 nnoremap <leader>gj :GitGutterNextHunk<CR>
 nnoremap <leader>gk :GitGutterPrevHunk<CR>
-nnoremap <leader>ghh :GV<CR>
-nnoremap <leader>ghg :GV!<CR>
+nnoremap <leader>gha :GV<CR>
+nnoremap <leader>ghc :GV!<CR>
 
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
