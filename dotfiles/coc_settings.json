@@ -6,5 +6,11 @@
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.noSemicolons": true,
   "suggest.triggerAfterInsertEnter": true,
-  "coc.preferences.extensionUpdateCheck": "daily"
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.rootPatterns": [
+    ".vim",
+    ".git",
+    ".hg",
+    ".projections.json"
+  ]
 }

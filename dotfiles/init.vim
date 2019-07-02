@@ -83,6 +83,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+""" GraphQL
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 filetype plugin indent on
