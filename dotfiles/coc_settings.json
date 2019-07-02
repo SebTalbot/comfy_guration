@@ -8,6 +8,7 @@
   "suggest.triggerAfterInsertEnter": true,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.rootPatterns": [
+    ".root",
     ".vim",
     ".git",
     ".hg",
