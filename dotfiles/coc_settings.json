@@ -18,5 +18,9 @@
     "javascript.jsx" : ["javascript"],
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
-  }
+  },
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/comfy_guration/dotfiles/custom_snips"
+  ]
 }
