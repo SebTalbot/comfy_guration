@@ -21,6 +21,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'chrisbra/Colorizer'
 
+
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
 Plug 'kien/ctrlp.vim'
@@ -184,7 +185,6 @@ let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
@@ -345,7 +345,7 @@ nmap <leader>lff  <Plug>(coc-format-selected)
 nmap <leader>lfb  <Plug>(coc-format)
 nmap <silent> <leader>ll ea<C-Space>
 
-imap <C-l> <Plug>(coc-snippets-expand)
+imap <C-x> <Plug>(coc-snippets-expand)
 vmap <C-n> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-p>'
