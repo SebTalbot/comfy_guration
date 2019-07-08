@@ -39,6 +39,8 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 
 " AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/1.x',
@@ -54,6 +56,7 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'html' ] }
 Plug 'Shougo/neco-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'master'}
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
@@ -62,12 +65,11 @@ Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'SirVer/ultisnips'
 
 "" Javascript
 Plug 'pangloss/vim-javascript'
@@ -75,7 +77,7 @@ Plug 'jelera/vim-javascript-syntax'
 """ React / JSX
 Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'justinj/vim-react-snippets'
+Plug 'epilande/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -232,8 +234,9 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " UltiSnip
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<c-l>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " VWM
 let g:vwm#layouts = [
@@ -342,6 +345,11 @@ nmap <leader>lff  <Plug>(coc-format-selected)
 nmap <leader>lfb  <Plug>(coc-format)
 nmap <silent> <leader>ll ea<C-Space>
 
+imap <C-l> <Plug>(coc-snippets-expand)
+vmap <C-n> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-n>'
+let g:coc_snippet_prev = '<c-p>'
+
 " Git
 nnoremap <leader>gg :G<CR>
 nnoremap <leader>gd :Gdiff<CR>
@@ -357,4 +365,5 @@ nnoremap <leader>ghc :GV!<CR>
 
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
+nnoremap <leader>os :e ~/comfy_guration/dotfiles/custom_snips/
 noremap <leader>ob :e ~/.bashrc<CR>G

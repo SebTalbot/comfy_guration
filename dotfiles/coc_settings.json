@@ -13,5 +13,10 @@
     ".git",
     ".hg",
     ".projections.json"
-  ]
+  ],
+  "snippets.extends": {
+    "javascript.jsx" : ["javascript"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  }
 }
