@@ -57,7 +57,7 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'html' ] }
 Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'master'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
@@ -234,9 +234,6 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " UltiSnip
 let g:UltiSnipsEditSplit="vertical"
-" let g:UltiSnipsExpandTrigger="<c-l>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " VWM
 let g:vwm#layouts = [
@@ -365,5 +362,6 @@ nnoremap <leader>ghc :GV!<CR>
 
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
+nnoremap <leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
 nnoremap <leader>os :e ~/comfy_guration/dotfiles/custom_snips/
 noremap <leader>ob :e ~/.bashrc<CR>G
