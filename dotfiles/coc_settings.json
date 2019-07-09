@@ -3,8 +3,6 @@
   "diagnostic.infoSign": "",
   "diagnostic.warningSign": "⚠",
   "diagnostic.errorSign": "",
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.noSemicolons": true,
   "suggest.triggerAfterInsertEnter": true,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.rootPatterns": [
@@ -22,5 +20,7 @@
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "~/comfy_guration/dotfiles/custom_snips"
-  ]
+  ],
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.noSemicolons": true
 }
