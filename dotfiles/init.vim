@@ -57,8 +57,8 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'html' ] }
 Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-neco'
+Plug 'neoclide/coc-neco',
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Need to install manually until fixed ****************************************
 " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
@@ -75,7 +75,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
 
 "" Javascript
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', {'do': 'cp indent/javascript.vim indent/typescript.vim'}
 Plug 'jelera/vim-javascript-syntax'
 """ React / JSX
 Plug 'mxw/vim-jsx'
@@ -87,7 +87,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescrip
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 """ GraphQL
 Plug 'jparise/vim-graphql'
 
@@ -154,9 +153,6 @@ set undofile
 set undodir=~/.nvim/undo
 set shada="NONE"
 set timeoutlen=5000
-setlocal autoindent
-setlocal cindent
-setlocal smartindent
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 if has("autocmd")
   autocmd BufWritePre * :silent !mkdir -p %:p:h
@@ -349,8 +345,8 @@ nmap <leader>lff  <Plug>(coc-format-selected)
 nmap <leader>lfb  <Plug>(coc-format)
 nmap <silent> <leader>ll ea<C-Space>
 
-imap <C-x> <Plug>(coc-snippets-expand)
-vmap <C-n> <Plug>(coc-snippets-select)
+imap <C-l> <Plug>(coc-snippets-expand)
+" vmap <C-n> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-p>'
 
