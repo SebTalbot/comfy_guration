@@ -59,7 +59,8 @@ Plug 'prettier/vim-prettier', {
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-neco'
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+" Need to install manually until fixed ****************************************
+" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
@@ -153,6 +154,9 @@ set undofile
 set undodir=~/.nvim/undo
 set shada="NONE"
 set timeoutlen=5000
+setlocal autoindent
+setlocal cindent
+setlocal smartindent
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 if has("autocmd")
   autocmd BufWritePre * :silent !mkdir -p %:p:h
@@ -182,7 +186,7 @@ let NERDTreeIgnore=['\.tests\.']
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = 1
 let g:prettier#exec_cmd_async = 0
 let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
