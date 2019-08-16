@@ -67,6 +67,7 @@ Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
@@ -85,7 +86,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescrip
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 """ GraphQL
 Plug 'jparise/vim-graphql'
 
@@ -165,7 +166,9 @@ end
 let g:jsx_ext_required = 0
 let g:vim_jsx_pretty_colorful_config = 1
 set path=.,src
-set suffixesadd=.js,.jsx
+
+" GraphQl
+autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
 " - - - - - - - - - - - - - - -
 " P L U G I N S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -180,7 +183,7 @@ let NERDTreeIgnore=['\.tests\.']
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:prettier#autoformat = 0
-let g:prettier#exec_cmd_async = 1
+let g:prettier#exec_cmd_async = 0
 let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
@@ -209,7 +212,7 @@ fun! g:CtrlP_set_general_ignore()
  endfun
 
 fun! g:CtrlP_set_test_ignore()
-  let general_ignore = '\v(\.tests\.ts)@<!$'
+  let general_ignore = '\v(\.tests\.js)@<!$'
   if g:ctrlp_custom_ignore.file != general_ignore
     let g:ctrlp_custom_ignore.file = general_ignore
     call ctrlp#clr()
