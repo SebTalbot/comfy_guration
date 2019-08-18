@@ -3,7 +3,11 @@
   "diagnostic.infoSign": "",
   "diagnostic.warningSign": "⚠",
   "diagnostic.errorSign": "",
+  "typescript.preferences.noSemicolons": true,
   "suggest.triggerAfterInsertEnter": true,
+  "prettier.onlyUseLocalVersion": true,
+  "prettier.requireConfig": true,
+  "coc.preferences.formatOnType": true,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.rootPatterns": [
     ".root",
@@ -14,13 +18,10 @@
   ],
   "snippets.extends": {
     "javascript.jsx" : ["javascript"],
-    "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
+    "javascriptreact": ["javascript"]
   },
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "~/comfy_guration/dotfiles/custom_snips"
-  ],
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.noSemicolons": true
+  ]
 }
