@@ -87,7 +87,7 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescrip
 Plug 'ianks/vim-tsx'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'SebTalbot/yats.vim'
 """ GraphQL
 Plug 'jparise/vim-graphql'
 
@@ -116,12 +116,16 @@ if $CURRENT_DEVICE == 'laptop'
   colorscheme gruvbox
   highlight Identifier ctermfg=66
   highlight Identifier cterm=bold
+  highlight Symbol ctermfg=66
+  highlight Symbol cterm=bold
 else
   colorscheme space-vim-dark
   highlight CursorLine ctermbg=237
   highlight ColorColumn ctermbg=237
   highlight Identifier ctermfg=5
   highlight Identifier cterm=bold
+  highlight Symbol ctermfg=75
+  highlight Symbol cterm=bold
   let g:airline_theme='violet'
 endif
 
