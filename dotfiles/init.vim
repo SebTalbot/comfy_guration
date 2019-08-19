@@ -72,14 +72,15 @@ Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
 
 "" Javascript
 Plug 'pangloss/vim-javascript', {'do': 'cp indent/javascript.vim indent/typescript.vim'}
 Plug 'jelera/vim-javascript-syntax'
 """ React / JSX
 Plug 'mxw/vim-jsx'
-Plug 'maxmellon/vim-jsx-pretty'
+" Broke typescript syntax highlight
+" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'epilande/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
@@ -178,7 +179,7 @@ autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
-let NERDTreeIgnore=['\.tests\.']
+" let NERDTreeIgnore=['\.tests\.']
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -229,11 +230,11 @@ com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '-
 let g:gitgutter_map_keys = 0
 
 " Rainbow Pairs
-let g:rbpt_max = 16
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" let g:rbpt_max = 16
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " UltiSnip
 let g:UltiSnipsEditSplit="vertical"
