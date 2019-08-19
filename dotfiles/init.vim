@@ -116,7 +116,7 @@ if $CURRENT_DEVICE == 'laptop'
   colorscheme gruvbox
   highlight Identifier ctermfg=66
   highlight Identifier cterm=bold
-  highlight Symbol ctermfg=66
+  highlight Symbol ctermfg=205
   highlight Symbol cterm=bold
 else
   colorscheme space-vim-dark
@@ -124,7 +124,7 @@ else
   highlight ColorColumn ctermbg=237
   highlight Identifier ctermfg=5
   highlight Identifier cterm=bold
-  highlight Symbol ctermfg=75
+  highlight Symbol ctermfg=219
   highlight Symbol cterm=bold
   let g:airline_theme='violet'
 endif
