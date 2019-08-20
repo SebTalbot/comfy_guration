@@ -18,6 +18,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'chrisbra/Colorizer'
 
@@ -61,14 +62,14 @@ Plug 'neoclide/coc-neco',
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Need to install manually until fixed ****************************************
 " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
@@ -183,7 +184,17 @@ autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
-" let NERDTreeIgnore=['\.tests\.']
+let NERDTreeCascadeSingleChildDir=0
+let NERDTreeCascadeOpenSingleChildDir=0
+let NERDTreeWinSizeMax= 60
+let NERDTreeIgnore=['\.tests\.']
+
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:NERDTreePatternMatchHighlightColor = {}
+let g:NERDTreePatternMatchHighlightColor['.*tests.ts$'] = 'FE405F'
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -217,7 +228,7 @@ fun! g:CtrlP_set_general_ignore()
  endfun
 
 fun! g:CtrlP_set_test_ignore()
-  let general_ignore = '\v(\.tests\.js)@<!$'
+  let general_ignore = '\v(\.tests\.ts)@<!$'
   if g:ctrlp_custom_ignore.file != general_ignore
     let g:ctrlp_custom_ignore.file = general_ignore
     call ctrlp#clr()
