@@ -186,6 +186,7 @@ let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
 let NERDTreeCascadeSingleChildDir=0
 let NERDTreeCascadeOpenSingleChildDir=0
+let NERDTreeMinimalUI=1
 let NERDTreeWinSizeMax= 60
 let NERDTreeIgnore=['\.tests\.']
 
@@ -381,6 +382,6 @@ nnoremap <leader>ghc :GV!<CR>
 
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
-nnoremap <leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
 nnoremap <leader>os :e ~/comfy_guration/dotfiles/custom_snips/
+nnoremap <leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
 noremap <leader>ob :e ~/.bashrc<CR>G

@@ -1,0 +1,67 @@
+Xft.rgba: rgba
+Xft.antialias: 1
+URxvt*font: xft:Hack Nerd Font:pixelsize=15:style=bold
+
+opacity-rule = [ "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a", "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'" ]; 
+
+! URxvt
+URxvt.modifier: alt
+URxvt*loginShell: false
+URxvt*dynamicColors: on
+URxvt.imLocale: en_US.UTF-8
+URxvt.saveLines: 5000
+URxvt.scrollBar: false
+URxvt.scrollstyle: plain
+URxvt*termName: xterm-256color
+URxvt.transparent: false
+URxvt.visualBell: false
+URxvt*depth: 32
+URxvt.letterSpace: -1
+URxvt.internalBorder: 15
+
+! Paste with shift-ctrl-v
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.iso14755: False
+
+! Colors
+*.boldMode: true
+*.colorBDMode: false
+!*.colorBD: cyan
+
+! Base16 Eighties
+#define col1 rgba:1800/2700/2500/e0e0
+#define col2 #B73C33
+#define col3 #AD6143
+#define col4 #A8A392
+#define col5 #C08552
+#define col6 #aa632f
+#define col7 #5D5E5A
+#define col8 #D8C5B8
+
+*.foreground:   #8A8881
+*.background:   col1
+*.cursorColor:  col8
+*.cursorBlink:  true
+
+*.color0:       col1
+*.color1:       col2
+*.color2:       col3
+*.color3:       col4
+*.color4:       col5
+*.color5:       col6
+*.color6:       col7
+*.color7:       col8
+*.color8:       col1
+*.color9:       col2
+*.color10:      col3
+*.color11:      col4
+*.color12:      col5
+*.color13:      col6
+*.color14:      col7
+*.color15:      col8
+! *.color16:      base09
+! *.color17:      base0F
+! *.color18:      base01
+! *.color19:      base02
+! *.color20:      base04
+! *.color21:      base06
