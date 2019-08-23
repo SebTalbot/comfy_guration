@@ -22,7 +22,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'chrisbra/Colorizer'
-Plug 'unblevable/quick-scope'
 
 
 " APPLICATIONS
@@ -134,10 +133,6 @@ endif
 
 highlight Comment cterm=bold
 highlight Normal ctermbg=NONE
-
-highlight QuickScopePrimary ctermfg=NONE cterm=underline,bold
-highlight QuickScopeSecondary ctermfg=NONE
-
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
