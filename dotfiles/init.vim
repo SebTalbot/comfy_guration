@@ -2,6 +2,7 @@
 " D E P E N D E N C I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
 let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " - - - - - - -
 " P L U G I N S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -21,6 +22,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'chrisbra/Colorizer'
+Plug 'unblevable/quick-scope'
 
 
 " APPLICATIONS
@@ -133,6 +135,10 @@ endif
 highlight Comment cterm=bold
 highlight Normal ctermbg=NONE
 
+highlight QuickScopePrimary ctermfg=NONE cterm=underline,bold
+highlight QuickScopeSecondary ctermfg=NONE
+
+
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
@@ -193,6 +199,8 @@ let NERDTreeIgnore=['\.tests\.']
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+let g:appendArtifactFix = 0
+
 
 let g:NERDTreePatternMatchHighlightColor = {}
 let g:NERDTreePatternMatchHighlightColor['.*tests.ts$'] = 'FE405F'
@@ -240,7 +248,7 @@ fun! g:CtrlP_set_test_ignore()
 let g:bclose_no_plugin_maps = 1
 
 " FZF
-com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
+com! -bar -bang AgWithoutDir call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
 
 " GitGutter
 let g:gitgutter_map_keys = 0
@@ -312,7 +320,7 @@ nnoremap <leader>ac :ColorToggle<CR>
 nnoremap <Leader>sf :call CtrlP_set_general_ignore()<CR>:CtrlP<CR>
 nnoremap <Leader>sb :CtrlPBuffer<CR>
 nnoremap <Leader>st :call CtrlP_set_test_ignore()<CR>:CtrlP<CR>
-nnoremap <leader>ss :Ag<CR>
+nnoremap <leader>ss :AgWithoutDir<CR>
 
 " Manipulate windows W-
 nnoremap <leader>wd <C-W>q
