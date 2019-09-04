@@ -243,6 +243,9 @@ fun! g:CtrlP_set_test_ignore()
 let g:bclose_no_plugin_maps = 1
 
 " FZF
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 com! -bar -bang AgWithoutDir call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
 
 com! -bar -bang FilesWithoutTests call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
@@ -357,7 +360,7 @@ nmap <silent> <leader>ek <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>ej <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>ee <Plug>(coc-diagnostic-info)
 nmap <silent> <leader>ld <Plug>(coc-definition)
-nmap <silent> <leader>ly <Plug>(coc-type-definition)
+nmap <silent> <leader>lt <Plug>(coc-type-definition)
 nmap <silent> <leader>lw <Plug>(coc-declaration)
 nmap <silent> <leader>li <Plug>(coc-implementation)
 nmap <silent> <leader>lr <Plug>(coc-references)
