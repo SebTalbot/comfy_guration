@@ -245,6 +245,8 @@ let g:bclose_no_plugin_maps = 1
 " FZF
 com! -bar -bang AgWithoutDir call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
 
+com! -bar -bang FilesWithoutTests call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
+
 " GitGutter
 let g:gitgutter_map_keys = 0
 
@@ -312,10 +314,10 @@ nnoremap <Leader>at :VwmToggle term<CR>
 nnoremap <leader>ac :ColorToggle<CR>
 
 " Search
-nnoremap <Leader>sf :call CtrlP_set_general_ignore()<CR>:CtrlP<CR>
+nnoremap <Leader>sf :FilesWithoutTests<CR>
+nnoremap <leader>ss :AgWithoutDir<CR>
 nnoremap <Leader>sb :CtrlPBuffer<CR>
 nnoremap <Leader>st :call CtrlP_set_test_ignore()<CR>:CtrlP<CR>
-nnoremap <leader>ss :AgWithoutDir<CR>
 
 " Manipulate windows W-
 nnoremap <leader>wd <C-W>q
