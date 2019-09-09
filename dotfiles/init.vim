@@ -206,7 +206,7 @@ let g:prettier#autoformat = 1
 let g:prettier#exec_cmd_async = 0
 let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 
 " Airline
 set laststatus=2
@@ -280,8 +280,9 @@ let g:vwm#layouts = [
 "
 let mapleader = "\<Space>"
 
-" Disable C-Z
+" Disable mapping
 nnoremap <c-z> <nop>
+vnoremap u gv
 
 " Hide search highlight
 nnoremap <leader>/ :nohlsearch<CR>

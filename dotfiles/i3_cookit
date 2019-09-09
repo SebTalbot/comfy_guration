@@ -206,7 +206,7 @@ bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
 
 # Disable title bar
 new_window pixel
-default_border pixel 5
+# default_border normal
 
 # Hide mouse
 exec --no-startup-id unclutter -jitter 10 -idle 1

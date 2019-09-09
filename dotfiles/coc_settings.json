@@ -3,11 +3,10 @@
   "diagnostic.infoSign": "",
   "diagnostic.warningSign": "⚠",
   "diagnostic.errorSign": "",
-  "typescript.preferences.noSemicolons": true,
   "suggest.triggerAfterInsertEnter": true,
   "prettier.onlyUseLocalVersion": true,
   "prettier.requireConfig": true,
-  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnType": false,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.rootPatterns": [
     ".root",
