@@ -44,20 +44,6 @@ Plug 'tomtom/tcomment_vim'
 " AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-    \ 'javascript',
-    \ 'typescript',
-    \ 'css',
-    \ 'less',
-    \ 'scss',
-    \ 'json',
-    \ 'graphql',
-    \ 'markdown',
-    \ 'python',
-    \ 'html' ] }
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco',
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
@@ -74,15 +60,13 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'kien/rainbow_parentheses.vim'
 
 "" Javascript
-Plug 'pangloss/vim-javascript', {'do': 'cp indent/javascript.vim indent/typescript.vim'}
+" Plug 'pangloss/vim-javascript', {'do': 'cp indent/javascript.vim indent/typescript.vim'}
 Plug 'jelera/vim-javascript-syntax'
 """ React / JSX
 Plug 'mxw/vim-jsx'
 " Broke typescript syntax highlight
-" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'epilande/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
@@ -200,13 +184,16 @@ let g:appendArtifactFix = 0
 let g:NERDTreePatternMatchHighlightColor = {}
 let g:NERDTreePatternMatchHighlightColor['.*tests.ts$'] = 'FE405F'
 
-" Prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-let g:prettier#autoformat = 1
-let g:prettier#exec_cmd_async = 0
-let g:prettier#quickfix_enabled = 0
-let g:prettier#quickfix_auto_focus = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+" Coc
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html CocCommand prettier.formatFile
 
 " Airline
 set laststatus=2
@@ -248,17 +235,10 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 com! -bar -bang AgWithoutDir call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
 
-com! -bar -bang FilesWithoutTests call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
+com! -bar -bang FilesPreview call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
 
 " GitGutter
 let g:gitgutter_map_keys = 0
-
-" Rainbow Pairs
-" let g:rbpt_max = 16
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
 
 " UltiSnip
 let g:UltiSnipsEditSplit="vertical"
@@ -313,15 +293,15 @@ nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>ann :NERDTreeFind<CR>
 nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
-nnoremap <Leader>af  mb:Prettier<CR>'b
+nnoremap <Leader>af  :CocCommand prettier.formatFile<CR>
 nnoremap <Leader>at :VwmToggle term<CR>
 nnoremap <leader>ac :ColorToggle<CR>
 
 " Search
-nnoremap <Leader>sf :FilesWithoutTests<CR>
+nnoremap <Leader>sf :FilesPreview<CR>!node_modules !.tests.<Space>
+nnoremap <Leader>st :FilesPreview<CR>!node_modules '.tests.<Space>
 nnoremap <leader>ss :AgWithoutDir<CR>
 nnoremap <Leader>sb :CtrlPBuffer<CR>
-nnoremap <Leader>st :call CtrlP_set_test_ignore()<CR>:CtrlP<CR>
 
 " Manipulate windows W-
 nnoremap <leader>wd <C-W>q
@@ -356,6 +336,8 @@ nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
 
 " CoC
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 inoremap <silent><expr> <C-Space> coc#refresh()
 nmap <silent> <leader>ek <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>ej <Plug>(coc-diagnostic-next)
@@ -366,9 +348,6 @@ nmap <silent> <leader>lw <Plug>(coc-declaration)
 nmap <silent> <leader>li <Plug>(coc-implementation)
 nmap <silent> <leader>lr <Plug>(coc-references)
 nmap <leader>lc <Plug>(coc-rename)
-nmap <leader>lff  <Plug>(coc-format-selected)
-nmap <leader>lff  <Plug>(coc-format-selected)
-nmap <leader>lfb  <Plug>(coc-format)
 nmap <silent> <leader>ll ea<C-Space>
 
 imap <C-l> <Plug>(coc-snippets-expand)

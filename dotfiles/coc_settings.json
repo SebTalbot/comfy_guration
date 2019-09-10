@@ -6,7 +6,7 @@
   "suggest.triggerAfterInsertEnter": true,
   "prettier.onlyUseLocalVersion": true,
   "prettier.requireConfig": true,
-  "coc.preferences.formatOnType": false,
+  "tsserver.formatOnType": false,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.rootPatterns": [
     ".root",
@@ -16,7 +16,7 @@
     ".projections.json"
   ],
   "snippets.extends": {
-    "javascript.jsx" : ["javascript"],
+    "javascript.jsx": ["javascript"],
     "javascriptreact": ["javascript"]
   },
   "snippets.ultisnips.directories": [
