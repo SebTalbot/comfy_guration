@@ -6,6 +6,7 @@
   "suggest.triggerAfterInsertEnter": true,
   "prettier.onlyUseLocalVersion": true,
   "prettier.requireConfig": true,
+  "typescript.updateImportsOnFileMove.enable": true,
   "tsserver.formatOnType": false,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.rootPatterns": [

@@ -193,7 +193,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html CocCommand prettier.formatFile
 
 " Airline
 set laststatus=2
@@ -287,6 +286,9 @@ nnoremap <leader>* *``
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-D> <c-\><c-n>:Bclose!<CR>
 tnoremap <C-A> pwd\|xclip -selection clipboard<CR><C-\><C-n>:cd <C-r>+<CR>
+
+" Yank
+nnoremap <Leader>yf :let @+ = expand('%:r')<CR>
 
 " Applications toggle A-
 nnoremap <Leader>au :MundoToggle<CR>
