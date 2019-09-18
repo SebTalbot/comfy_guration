@@ -284,6 +284,9 @@ tnoremap <Esc> <C-\><C-n>
 tnoremap <C-D> <c-\><c-n>:Bclose!<CR>
 tnoremap <C-A> pwd\|xclip -selection clipboard<CR><C-\><C-n>:cd <C-r>+<CR>
 
+" Yank
+nnoremap <Leader>yf :let @+ = expand('%:r')<CR>
+
 " Applications toggle A-
 nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>ann :NERDTreeFind<CR>
