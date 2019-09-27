@@ -8,6 +8,7 @@
   "prettier.requireConfig": true,
   "typescript.updateImportsOnFileMove.enable": true,
   "tsserver.formatOnType": false,
+  "prettier.eslintIntegration": false,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.rootPatterns": [
     ".root",
