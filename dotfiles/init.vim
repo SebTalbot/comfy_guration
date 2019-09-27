@@ -1,6 +1,5 @@
 " - - - - - - - - - - - -
 " D E P E N D E N C I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-"
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
@@ -21,7 +20,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
-Plug 'chrisbra/Colorizer'
+" Plug 'chrisbra/Colorizer'
 
 
 " APPLICATIONS
@@ -32,12 +31,11 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SebTalbot/vwm.vim'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 " COMMANDS
 Plug 'rbgrouleff/bclose.vim'
 Plug 'schickling/vim-bufonly'
-Plug 'danro/rename.vim'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 
@@ -57,8 +55,8 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
 
 "" Javascript
@@ -72,7 +70,7 @@ Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescrip
-Plug 'ianks/vim-tsx'
+" Plug 'ianks/vim-tsx'
 Plug 'SebTalbot/yats.vim'
 """ GraphQL
 Plug 'jparise/vim-graphql'
@@ -95,7 +93,6 @@ set noerrorbells
 set novisualbell
 set cursorline
 set ttimeoutlen=10
-set background=dark
 set colorcolumn=80
 
 if $CURRENT_DEVICE == 'laptop'
@@ -105,6 +102,7 @@ if $CURRENT_DEVICE == 'laptop'
   highlight Symbol ctermfg=205
   highlight Symbol cterm=bold
 else
+  " set termguicolors
   colorscheme space-vim-dark
   highlight CursorLine ctermbg=237
   highlight ColorColumn ctermbg=237
@@ -116,7 +114,8 @@ else
 endif
 
 highlight Comment cterm=bold
-highlight Normal ctermbg=NONE
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -193,7 +192,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
@@ -233,7 +231,6 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 com! -bar -bang AgWithoutDir call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
-
 com! -bar -bang FilesPreview call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
 
 " GitGutter
@@ -341,6 +338,7 @@ nnoremap gB :bp<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 inoremap <silent><expr> <C-Space> coc#refresh()
+imap <C-l> <Plug>(coc-snippets-expand)
 nmap <silent> <leader>ek <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>ej <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>ee <Plug>(coc-diagnostic-info)
@@ -351,24 +349,22 @@ nmap <silent> <leader>li <Plug>(coc-implementation)
 nmap <silent> <leader>lr <Plug>(coc-references)
 nmap <leader>lc <Plug>(coc-rename)
 nmap <silent> <leader>ll ea<C-Space>
-
-imap <C-l> <Plug>(coc-snippets-expand)
 " vmap <C-n> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-p>'
 
 " Git
-nnoremap <leader>gg :G<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gp :Gpush<CR>
-nnoremap <leader>gl :Gpull<CR>
-nnoremap <leader>gf :Gfetch<CR>
-nnoremap <leader>gs :GitGutterStageHunk<CR>
-nnoremap <leader>gj :GitGutterNextHunk<CR>
-nnoremap <leader>gk :GitGutterPrevHunk<CR>
-nnoremap <leader>gha :GV<CR>
-nnoremap <leader>ghc :GV!<CR>
+" nnoremap <leader>gg :G<CR>
+" nnoremap <leader>gd :Gdiff<CR>
+" nnoremap <leader>gc :Gcommit<CR>
+" nnoremap <leader>gp :Gpush<CR>
+" nnoremap <leader>gl :Gpull<CR>
+" nnoremap <leader>gf :Gfetch<CR>
+" nnoremap <leader>gs :GitGutterStageHunk<CR>
+" nnoremap <leader>gj :GitGutterNextHunk<CR>
+" nnoremap <leader>gk :GitGutterPrevHunk<CR>
+" nnoremap <leader>gha :GV<CR>
+" nnoremap <leader>ghc :GV!<CR>
 
 " Open important files O-
 nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
