@@ -26,12 +26,12 @@ Plug 'liuchengxu/space-vim-dark'
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
 Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SebTalbot/vwm.vim'
-" Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 
 " COMMANDS
 Plug 'rbgrouleff/bclose.vim'
@@ -171,7 +171,7 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeCascadeSingleChildDir=0
 let NERDTreeCascadeOpenSingleChildDir=0
 let NERDTreeMinimalUI=1
-let NERDTreeWinSizeMax= 60
+let NERDTreeWinSizeMax= 80
 let NERDTreeIgnore=['\.tests\.']
 
 let g:NERDTreeFileExtensionHighlightFullName = 1
@@ -340,8 +340,8 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 inoremap <silent><expr> <C-Space> coc#refresh()
 imap <C-l> <Plug>(coc-snippets-expand)
-nmap <silent> <leader>ek <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>ej <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>ek <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <leader>ej <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>ee <Plug>(coc-diagnostic-info)
 nmap <silent> <leader>ld <Plug>(coc-definition)
 nmap <silent> <leader>lt <Plug>(coc-type-definition)
