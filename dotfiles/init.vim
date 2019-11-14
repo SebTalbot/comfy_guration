@@ -96,6 +96,8 @@ else
   highlight Identifier cterm=bold
   highlight Symbol ctermfg=219
   highlight Symbol cterm=bold
+  highlight CocHighlightText ctermfg=16
+  highlight CocHighlightText ctermbg=45
   let g:airline_theme='violet'
 endif
 
@@ -180,7 +182,7 @@ function! s:show_documentation()
   endif
 endfunction
 
-autocmd User CocNvimInit echo 'CoC started'
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Airline
 set laststatus=2
