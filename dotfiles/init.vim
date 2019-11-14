@@ -106,29 +106,31 @@ highlight NonText ctermbg=none
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
-set updatetime=100
 set autoread
-set ignorecase
-set smartcase
-set nobackup
-set nowb
-set noswapfile
-set smarttab
-set tabstop=2
-set shiftwidth=2
+set clipboard+=unnamedplus
 set expandtab
-set hidden
 set foldenable
-set foldmethod=indent
 set foldlevelstart=20
+set foldmethod=indent
+set hidden
+set ignorecase
+set nobackup
+set noswapfile
+set nowb
+set scrolloff=2
+set shada="NONE"
+set shiftwidth=2
+set shortmess+=c
+set signcolumn=yes
+set smartcase
+set smarttab
 set splitbelow
 set splitright
-set scrolloff=2
-set clipboard+=unnamedplus
-set undofile
-set undodir=~/.nvim/undo
-set shada="NONE"
+set tabstop=2
 set timeoutlen=5000
+set undodir=~/.nvim/undo
+set undofile
+set updatetime=100
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 if has("autocmd")
   autocmd BufWritePre * :silent !mkdir -p %:p:h
@@ -169,7 +171,7 @@ let g:appendArtifactFix = 0
 let g:NERDTreePatternMatchHighlightColor = {}
 let g:NERDTreePatternMatchHighlightColor['.*tests.ts$'] = 'FE405F'
 
-" Coc
+" CoC
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -177,6 +179,8 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+autocmd User CocNvimInit echo 'CoC started'
 
 " Airline
 set laststatus=2
@@ -280,7 +284,7 @@ nnoremap <Leader>af :CocCommand prettier.formatFile<CR>
 nnoremap <Leader>ann :NERDTreeFind<CR>
 nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
-nnoremap <Leader>ar :CocCommand workspace.renameCurrentFile
+nnoremap <Leader>ar :CocCommand workspace.renameCurrentFile<CR>
 nnoremap <Leader>at :VwmToggle term<CR>
 nnoremap <Leader>au :MundoToggle<CR>
 
