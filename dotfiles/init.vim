@@ -45,22 +45,9 @@ Plug 'honza/vim-snippets'
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco',
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-" Need to install manually until fixed ****************************************
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
 Plug 'jiangmiao/auto-pairs'
 
 "" Javascript
-" Plug 'pangloss/vim-javascript', {'do': 'cp indent/javascript.vim indent/typescript.vim'}
 Plug 'jelera/vim-javascript-syntax'
 """ React / JSX
 Plug 'mxw/vim-jsx'
@@ -70,7 +57,6 @@ Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescrip
-" Plug 'ianks/vim-tsx'
 Plug 'SebTalbot/yats.vim'
 """ GraphQL
 Plug 'jparise/vim-graphql'
@@ -261,114 +247,119 @@ nnoremap <c-z> <nop>
 vnoremap u gv
 
 " Hide search highlight
-nnoremap <leader>/ :nohlsearch<CR>
+nnoremap <Leader>/ :nohlsearch<CR>
 
 " Start help command in vertical split
-nnoremap <leader>h :vert h<space>
+nnoremap <Leader>h :vert h<space>
 
 " Move lines
-nnoremap <C-K> ddkP
 nnoremap <C-J> ddp
-vnoremap <C-K> dkP`[V`]
+nnoremap <C-K> ddkP
 vnoremap <C-J> dp`[V`]
+vnoremap <C-K> dkP`[V`]
 
 " Stay in visual mode after indent
 vnoremap < <gv
 vnoremap > >gv
 
 " Highlight same variable
-nnoremap <leader>* *``
+nnoremap <Leader>* *``
 
 " Manipulate terminal
-tnoremap <Esc> <C-\><C-n>
-tnoremap <C-D> <c-\><c-n>:Bclose!<CR>
 tnoremap <C-A> pwd\|xclip -selection clipboard<CR><C-\><C-n>:cd <C-r>+<CR>
+tnoremap <C-D> <c-\><c-n>:Bclose!<CR>
+tnoremap <Esc> <C-\><C-n>
 
-" Yank
-nnoremap <Leader>yy :let @+ = expand('%:r')<CR>
+" Yank Y-
 nnoremap <Leader>yf :let @+ = expand('%:t:r')<CR>
+nnoremap <Leader>yy :let @+ = expand('%:r')<CR>
 
 " Applications toggle A-
-nnoremap <Leader>au :MundoToggle<CR>
+nnoremap <Leader>ac :ColorToggle<CR>
+nnoremap <Leader>af :CocCommand prettier.formatFile<CR>
 nnoremap <Leader>ann :NERDTreeFind<CR>
 nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
-nnoremap <Leader>af  :CocCommand prettier.formatFile<CR>
+nnoremap <Leader>ar :CocCommand workspace.renameCurrentFile
 nnoremap <Leader>at :VwmToggle term<CR>
-nnoremap <leader>ac :ColorToggle<CR>
+nnoremap <Leader>au :MundoToggle<CR>
 
-" Search
-nnoremap <Leader>sf :FilesPreview<CR>!node_modules !.tests.<Space>
-nnoremap <Leader>st :FilesPreview<CR>!node_modules '.tests.<Space>
-nnoremap <leader>ss :AgWithoutDir<CR>
+" Search S-
 nnoremap <Leader>sb :CtrlPBuffer<CR>
+nnoremap <Leader>sf :FilesPreview<CR>!node_modules !.tests.<Space>
+nnoremap <Leader>ss :AgWithoutDir<CR>
+nnoremap <Leader>st :FilesPreview<CR>!node_modules '.tests.<Space>
 
 " Manipulate windows W-
-nnoremap <leader>wd <C-W>q
-nnoremap <leader>wv <C-W>v
-nnoremap <leader>ws <C-W>s
-nnoremap <leader>wj <C-W><C-J>
-nnoremap <leader>wk <C-W><C-K>
-nnoremap <leader>wl <C-W><C-L>
-nnoremap <leader>wh <C-W><C-H>
-nnoremap <leader>wJ <C-W><S-J>
-nnoremap <leader>wK <C-W><S-K>
-nnoremap <leader>wL <C-W><S-L>
-nnoremap <leader>wH <C-W><S-H>
-nnoremap <leader>wrj :resize +5<CR>
-nnoremap <leader>wrk :resize -5<CR>
-nnoremap <leader>wrh :vertical resize +5<CR>
-nnoremap <leader>wrl :vertical resize -5<CR>
-nnoremap <leader>wrr <C-W>=
+nnoremap <Leader>wH <C-W><S-H>
+nnoremap <Leader>wJ <C-W><S-J>
+nnoremap <Leader>wK <C-W><S-K>
+nnoremap <Leader>wL <C-W><S-L>
+nnoremap <Leader>wd <C-W>q
+nnoremap <Leader>wh <C-W><C-H>
+nnoremap <Leader>wj <C-W><C-J>
+nnoremap <Leader>wk <C-W><C-K>
+nnoremap <Leader>wl <C-W><C-L>
+nnoremap <Leader>wrh :vertical resize +5<CR>
+nnoremap <Leader>wrj :resize +5<CR>
+nnoremap <Leader>wrk :resize -5<CR>
+nnoremap <Leader>wrl :vertical resize -5<CR>
+nnoremap <Leader>wrr <C-W>=
+nnoremap <Leader>ws <C-W>s
+nnoremap <Leader>wv <C-W>v
 
 " Manipulate tabs T-
-nnoremap <leader>td :tabclose<CR>
-nnoremap <leader>tt :tabonly<CR>
-nnoremap <leader>tn :tabnew %<CR>
+nnoremap <Leader>td :tabclose<CR>
+nnoremap <Leader>tn :tabnew %<CR>
+nnoremap <Leader>tt :tabonly<CR>
 
 " Manipulate buffers B-
-nnoremap <leader>bb :e#<CR>
-nnoremap <leader>bl :ls<CR>:b<space>
-nnoremap <leader>bt <C-^>
-nnoremap <leader>bd :Bclose!<CR>
-nnoremap <leader>bo :BufOnly<CR>
-nnoremap gb :bn<CR>
+nnoremap <Leader>bb :e#<CR>
+nnoremap <Leader>bd :Bclose!<CR>
+nnoremap <Leader>bl :ls<CR>:b<space>
+nnoremap <Leader>bo :BufOnly<CR>
+nnoremap <Leader>bt <C-^>
 nnoremap gB :bp<CR>
+nnoremap gb :bn<CR>
 
 " CoC
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-inoremap <silent><expr> <C-Space> coc#refresh()
 imap <C-l> <Plug>(coc-snippets-expand)
-nmap <silent> <leader>ek <Plug>(coc-diagnostic-prev-error)
-nmap <silent> <leader>ej <Plug>(coc-diagnostic-next-error)
-nmap <silent> <leader>ee <Plug>(coc-diagnostic-info)
-nmap <silent> <leader>ld <Plug>(coc-definition)
-nmap <silent> <leader>lt <Plug>(coc-type-definition)
-nmap <silent> <leader>lw <Plug>(coc-declaration)
-nmap <silent> <leader>li <Plug>(coc-implementation)
-nmap <silent> <leader>lr <Plug>(coc-references)
-nmap <leader>lc <Plug>(coc-rename)
-nmap <silent> <leader>ll ea<C-Space>
+inoremap <silent><expr> <C-Space> coc#refresh()
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+" - errors E-
+nmap <silent> <Leader>eJ <Plug>(coc-diagnostic-next-error)
+nmap <silent> <Leader>eK <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <Leader>ee <Plug>(coc-diagnostic-info)
+nmap <silent> <Leader>ej <Plug>(coc-diagnostic-next)
+nmap <silent> <Leader>ek <Plug>(coc-diagnostic-prev)
+" - LSP L-
+nmap <Leader>lc <Plug>(coc-rename)
+nmap <silent> <Leader>ld <Plug>(coc-definition)
+nmap <silent> <Leader>li <Plug>(coc-implementation)
+nmap <silent> <Leader>ll ea<C-Space>
+nmap <silent> <Leader>lr <Plug>(coc-references)
+nmap <silent> <Leader>lt <Plug>(coc-type-definition)
+nmap <silent> <Leader>lw <Plug>(coc-declaration)
+
 " vmap <C-n> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-p>'
 
 " Git
-" nnoremap <leader>gg :G<CR>
-" nnoremap <leader>gd :Gdiff<CR>
-" nnoremap <leader>gc :Gcommit<CR>
-" nnoremap <leader>gp :Gpush<CR>
-" nnoremap <leader>gl :Gpull<CR>
-" nnoremap <leader>gf :Gfetch<CR>
-" nnoremap <leader>gs :GitGutterStageHunk<CR>
-" nnoremap <leader>gj :GitGutterNextHunk<CR>
-" nnoremap <leader>gk :GitGutterPrevHunk<CR>
-" nnoremap <leader>gha :GV<CR>
-" nnoremap <leader>ghc :GV!<CR>
+" nnoremap <Leader>gg :G<CR>
+" nnoremap <Leader>gd :Gdiff<CR>
+" nnoremap <Leader>gc :Gcommit<CR>
+" nnoremap <Leader>gp :Gpush<CR>
+" nnoremap <Leader>gl :Gpull<CR>
+" nnoremap <Leader>gf :Gfetch<CR>
+" nnoremap <Leader>gs :GitGutterStageHunk<CR>
+" nnoremap <Leader>gj :GitGutterNextHunk<CR>
+" nnoremap <Leader>gk :GitGutterPrevHunk<CR>
+" nnoremap <Leader>gha :GV<CR>
+" nnoremap <Leader>ghc :GV!<CR>
 
 " Open important files O-
-nnoremap <leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
-nnoremap <leader>os :e ~/comfy_guration/dotfiles/custom_snips/
-nnoremap <leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
-noremap <leader>ob :e ~/.bashrc<CR>G
+nnoremap <Leader>ob :e ~/.bashrc<CR>G
+nnoremap <Leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
+nnoremap <Leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
+nnoremap <Leader>os :e ~/comfy_guration/dotfiles/custom_snips/
