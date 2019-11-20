@@ -96,8 +96,6 @@ else
   highlight Identifier cterm=bold
   highlight Symbol ctermfg=219
   highlight Symbol cterm=bold
-  highlight CocHighlightText ctermfg=16
-  highlight CocHighlightText ctermbg=45
   let g:airline_theme='violet'
 endif
 
@@ -182,8 +180,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
@@ -222,6 +218,7 @@ let g:bclose_no_plugin_maps = 1
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right'), <bang>0)
 com! -bar -bang AgWithoutDir call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
 com! -bar -bang FilesPreview call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
 
@@ -291,6 +288,7 @@ nnoremap <Leader>at :VwmToggle term<CR>
 nnoremap <Leader>au :MundoToggle<CR>
 
 " Search S-
+nnoremap <Leader>sa :Ag<CR>
 nnoremap <Leader>sb :CtrlPBuffer<CR>
 nnoremap <Leader>sf :FilesPreview<CR>!node_modules !.tests.<Space>
 nnoremap <Leader>ss :AgWithoutDir<CR>
