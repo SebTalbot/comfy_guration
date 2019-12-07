@@ -14,13 +14,14 @@ let g:python3_host_prog = '/usr/bin/python3'
 call plug#begin('~/.config/nvim/plugged')
 
 " THEMES AND UI
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'TroyFletcher/vim-colors-synthwave'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
 " Plug 'chrisbra/Colorizer'
+Plug 'flrnd/plastic.vim'
 
 
 " APPLICATIONS
@@ -56,7 +57,7 @@ Plug 'epilande/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-""" Typescrip
+""" Typescript
 Plug 'SebTalbot/yats.vim'
 """ GraphQL
 Plug 'jparise/vim-graphql'
@@ -80,28 +81,28 @@ set novisualbell
 set cursorline
 set ttimeoutlen=10
 set colorcolumn=80
+set termguicolors
 
 if $CURRENT_DEVICE == 'laptop'
   colorscheme gruvbox
-  highlight Identifier ctermfg=66
-  highlight Identifier cterm=bold
-  highlight Symbol ctermfg=205
-  highlight Symbol cterm=bold
+  " highlight Identifier guifg=66
+  highlight Identifier gui=bold
+  " highlight Symbol guifg=205
+  highlight Symbol gui=bold
 else
-  " set termguicolors
   colorscheme space-vim-dark
-  highlight CursorLine ctermbg=237
-  highlight ColorColumn ctermbg=237
-  highlight Identifier ctermfg=5
-  highlight Identifier cterm=bold
-  highlight Symbol ctermfg=219
-  highlight Symbol cterm=bold
+  highlight CursorLine guibg=#161818
+  highlight ColorColumn guibg=#161818
+  highlight Identifier guifg=#D75F87
+  highlight Identifier gui=bold
+  highlight Symbol guifg=#4FC7D7
+  highlight Symbol gui=bold
   let g:airline_theme='violet'
 endif
 
-highlight Comment cterm=bold
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+highlight Comment gui=bold
+highlight Normal guibg=none
+highlight NonText guibg=none
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -159,14 +160,13 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeCascadeSingleChildDir=0
 let NERDTreeCascadeOpenSingleChildDir=0
 let NERDTreeMinimalUI=1
-let NERDTreeWinSizeMax= 80
+let NERDTreeWinSizeMax= 100
 let NERDTreeIgnore=['\.tests\.']
 
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:appendArtifactFix = 0
-
 
 let g:NERDTreePatternMatchHighlightColor = {}
 let g:NERDTreePatternMatchHighlightColor['.*tests.ts$'] = 'FE405F'
