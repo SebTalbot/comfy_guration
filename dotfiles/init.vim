@@ -20,7 +20,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
-" Plug 'chrisbra/Colorizer'
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'flrnd/plastic.vim'
 
 
@@ -91,18 +91,40 @@ if $CURRENT_DEVICE == 'laptop'
   highlight Symbol gui=bold
 else
   colorscheme space-vim-dark
-  highlight CursorLine guibg=#161818
-  highlight ColorColumn guibg=#161818
+  highlight CursorLine guibg=#131517
+  highlight ColorColumn guibg=#131517
   highlight Identifier guifg=#D75F87
   highlight Identifier gui=bold
-  highlight Symbol guifg=#4FC7D7
+  highlight Symbol guifg=#4FC7D3
   highlight Symbol gui=bold
   let g:airline_theme='violet'
+  let g:terminal_ansi_colors = [
+        \ '#1E1E1E',
+        \ '#B73C33',
+        \ '#20AD80',
+        \ '#D75F87',
+        \ '#4F97D7',
+        \ '#875FAF',
+        \ '#4FC7D7',
+        \ '#D9E9E7',
+        \ '#888A85',
+        \ '#B73C33',
+        \ '#20AD80',
+        \ '#D75F87',
+        \ '#4F97D7',
+        \ '#875FAF',
+        \ '#4FC7D7',
+        \ '#D9E9E7',
+     \ ]
 endif
 
 highlight Comment gui=bold
 highlight Normal guibg=none
 highlight NonText guibg=none
+for i in range(16)
+    let g:terminal_color_{i} = g:terminal_ansi_colors[i]
+endfor
+unlet! g:terminal_ansi_colors
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -239,6 +261,12 @@ let g:vwm#layouts = [
       \    }
       \  }
       \]
+
+" Hexokinase
+let g:Hexokinase_refreshEvents = ['BufWrite', 'BufCreate']
+let g:Hexokinase_highlighters = ['foregroundfull']
+let g:Hexokinase_highlighters = ['backgroundfull']
+
 
 " - - - - - - - - - - - - - -
 " C U S T O M   M A P P I N G \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
