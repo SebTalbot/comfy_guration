@@ -86,7 +86,9 @@ set termguicolors
 
 if $CURRENT_DEVICE == 'laptop'
   colorscheme gruvbox
+  highlight Identifier guifg='#EBA96F'
   highlight Identifier gui=bold
+  highlight Symbol guifg='#C56BD4'
   highlight Symbol gui=bold
   let g:terminal_ansi_colors = [
         \ '#182725',
