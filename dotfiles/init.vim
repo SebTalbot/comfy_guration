@@ -20,7 +20,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'morhetz/gruvbox'
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " Needs golang
 Plug 'flrnd/plastic.vim'
 
 
@@ -85,10 +86,26 @@ set termguicolors
 
 if $CURRENT_DEVICE == 'laptop'
   colorscheme gruvbox
-  " highlight Identifier guifg=66
   highlight Identifier gui=bold
-  " highlight Symbol guifg=205
   highlight Symbol gui=bold
+  let g:terminal_ansi_colors = [
+        \ '#182725',
+        \ '#B73C33',
+        \ '#AD6143',
+        \ '#A8A392',
+        \ '#C08552',
+        \ '#AA632F',
+        \ '#5D5E5A',
+        \ '#A89984',
+        \ '#888A85',
+        \ '#B73C33',
+        \ '#AD6143',
+        \ '#A8A392',
+        \ '#C08552',
+        \ '#AA632F',
+        \ '#5D5E5A',
+        \ '#D8C5B8',
+     \ ]
 else
   colorscheme space-vim-dark
   highlight CursorLine guibg=#131517
