@@ -140,6 +140,9 @@ endif
 highlight Comment gui=bold
 highlight Normal guibg=none
 highlight NonText guibg=none
+
+highlight CocErrorHighlight guifg=#FF0000
+
 for i in range(16)
     let g:terminal_color_{i} = g:terminal_ansi_colors[i]
 endfor
