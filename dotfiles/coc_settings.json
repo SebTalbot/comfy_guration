@@ -1,8 +1,8 @@
 {
   "diagnostic.hintSign": "",
   "diagnostic.infoSign": "",
-  "diagnostic.warningSign": "⚠",
-  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "∆",
+  "diagnostic.errorSign": "✘",
   "suggest.triggerAfterInsertEnter": true,
   "prettier.onlyUseLocalVersion": true,
   "prettier.requireConfig": true,
