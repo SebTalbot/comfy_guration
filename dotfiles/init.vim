@@ -265,6 +265,17 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right'), <bang>0)
 com! -bar -bang AgWithoutDir call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
 com! -bar -bang FilesPreview call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
+function! BuffersToCloseList()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+com! BCloseMultiple call fzf#run(fzf#wrap({
+  \ 'source': BuffersToCloseList(),
+  \ 'sink*': { lines -> execute('bwipeout '.join(map(lines, {_, line -> split(line)[0]}))) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
 
 " GitGutter
 let g:gitgutter_map_keys = 0
@@ -339,7 +350,7 @@ nnoremap <Leader>au :MundoToggle<CR>
 
 " Search S-
 nnoremap <Leader>sa :Ag<CR>
-nnoremap <Leader>sb :CtrlPBuffer<CR>
+nnoremap <Leader>sb :Buffers<CR>
 nnoremap <Leader>sf :FilesPreview<CR>!node_modules !.tests.<Space>
 nnoremap <Leader>ss :AgWithoutDir<CR>
 nnoremap <Leader>st :FilesPreview<CR>!node_modules '.tests.<Space>
@@ -369,8 +380,8 @@ nnoremap <Leader>tt :tabonly<CR>
 
 " Manipulate buffers B-
 nnoremap <Leader>bb :e#<CR>
-nnoremap <Leader>bd :Bclose!<CR>
-nnoremap <Leader>bl :ls<CR>:b<space>
+nnoremap <Leader>bdd :Bclose!<CR>
+nnoremap <Leader>bdl :BCloseMultiple<CR>
 nnoremap <Leader>bo :BufOnly<CR>
 nnoremap <Leader>bt <C-^>
 nnoremap gB :bp<CR>

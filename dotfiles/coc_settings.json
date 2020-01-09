@@ -7,6 +7,7 @@
   "prettier.onlyUseLocalVersion": true,
   "prettier.requireConfig": true,
   "typescript.updateImportsOnFileMove.enable": true,
+  "javascript.updateImportsOnFileMove.enable": true,
   "tsserver.formatOnType": false,
   "prettier.eslintIntegration": false,
   "coc.preferences.extensionUpdateCheck": "daily",
