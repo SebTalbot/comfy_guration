@@ -380,10 +380,10 @@ nnoremap <Leader>tt :tabonly<CR>
 
 " Manipulate buffers B-
 nnoremap <Leader>bb :e#<CR>
+nnoremap <Leader>bdo :BufOnly<CR>
 nnoremap <Leader>bdd :Bclose!<CR>
 nnoremap <Leader>bdl :BCloseMultiple<CR>
-nnoremap <Leader>bo :BufOnly<CR>
-nnoremap <Leader>bt <C-^>
+nnoremap <Leader>bl :Buffers<CR>
 nnoremap gB :bp<CR>
 nnoremap gb :bn<CR>
 
