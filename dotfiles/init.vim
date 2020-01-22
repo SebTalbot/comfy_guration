@@ -23,7 +23,7 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'morhetz/gruvbox'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " Needs golang
 Plug 'flrnd/plastic.vim'
-
+Plug 'Yggdroot/indentLine'
 
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
@@ -135,6 +135,7 @@ else
         \ '#4FC7D7',
         \ '#D9E9E7',
      \ ]
+  let g:indentLine_color_gui = '#5d8aa8'
 endif
 
 highlight Comment gui=bold
