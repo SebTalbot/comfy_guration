@@ -138,7 +138,7 @@ else
   let g:indentLine_color_gui = '#5d8aa8'
 endif
 
-highlight Comment gui=bold
+highlight Comment gui=bold,italic
 highlight Normal guibg=none
 highlight NonText guibg=none
 
@@ -193,6 +193,9 @@ set path=.,src
 
 " GraphQl
 autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
+
+" JSON
+let g:vim_json_syntax_conceal = 0
 
 " - - - - - - - - - - - - - - -
 " P L U G I N S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -301,6 +304,8 @@ let g:Hexokinase_refreshEvents = ['BufWrite', 'BufCreate']
 let g:Hexokinase_highlighters = ['foregroundfull']
 let g:Hexokinase_highlighters = ['backgroundfull']
 
+" IndentLine
+autocmd Filetype json let g:indentLine_setConceal = 0
 
 " - - - - - - - - - - - - - -
 " C U S T O M   M A P P I N G \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
