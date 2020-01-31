@@ -25,7 +25,7 @@ red = #ee3333
 [bar/right]
 monitor = HDMI-2
 width = 100%
-height = 16
+height = 17
 radius = 1.0
 fixed-center = true
 
@@ -47,8 +47,8 @@ border-color = #131313
 ; module-margin-left = 1
 ; module-margin-right = 2
 
-font-0 = EssentialPragmataPro:pixelsize=11:weight=bold;2.5
-font-1 = EssentialPragmataPro:pixelsize=32;2.5
+font-0 = EssentialPragmataPro:pixelsize=11:weight=bold;3
+font-1 = EssentialPragmataPro:pixelsize=32;3
 
 modules-left = i3 arrow0 arrow
 modules-center = arrow10 arrow9 title2 arrow13 arrow12
@@ -61,7 +61,7 @@ tray-padding = 4
 [bar/left]
 monitor = HDMI-1
 width = 100%
-height = 15
+height = 17
 radius = 1.0
 fixed-center = true
 
@@ -83,8 +83,8 @@ border-color = #131313
 ; module-margin-left = 1
 ; module-margin-right = 2
 
-font-0 = EssentialPragmataPro:pixelsize=11:weight=bold;2
-font-1 = EssentialPragmataPro:pixelsize=32;2
+font-0 = EssentialPragmataPro:pixelsize=11:weight=bold;3
+font-1 = EssentialPragmataPro:pixelsize=32;3
 
 modules-left = i3 arrow0 arrow
 modules-center = arrow10 arrow9 title2 arrow13 arrow12
