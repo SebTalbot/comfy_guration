@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rofi -show run \
-	-font "Hack Bold 9" \
+	-font "EssentialPragmataPro Bold 11" \
 	-sidebar-mode \
 	-bw "2" \
 	-color-enabled \
