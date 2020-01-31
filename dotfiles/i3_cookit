@@ -46,7 +46,8 @@ font pango:Hack bold 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole --stylesheet ~/comfy_guration/dotfiles/konsole_cookit.css
+# bindsym $mod+Return exec konsole --stylesheet ~/comfy_guration/dotfiles/konsole_cookit.css
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -189,7 +190,7 @@ exec_always --no-startup-id ~/comfy_guration/scripts/polybar/lauch_cookit.sh
 # }
 
 # Network manager tray icon
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 ## Style
 # border color
