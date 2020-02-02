@@ -90,6 +90,7 @@ if $CURRENT_DEVICE == 'laptop'
   highlight Identifier gui=bold
   highlight Symbol guifg=#FE8019
   highlight Symbol gui=bold
+  highlight NonText guifg=#B73C33
   let g:terminal_ansi_colors = [
         \ '#182725',
         \ '#B73C33',
