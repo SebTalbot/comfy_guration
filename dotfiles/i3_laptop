@@ -207,7 +207,7 @@ focus_follows_mouse no
 exec --no-startup-id feh --bg-scale ~/pictures/background/montreal.jpg
 
 # Compton
-exec compton --paint-on-overlay --vsync opengl-swc -f -O 1 -I 1 --config /home/snowl/comfy_guration/dotfiles/compton_laptop.conf
+exec compton --paint-on-overlay --vsync -f -O 1 -I 1 --config /home/snowl/comfy_guration/dotfiles/compton_laptop.conf
 
 # Caps as Esc
 exec --no-startup-id ~/comfy_guration/scripts/switch_caps_escape.sh

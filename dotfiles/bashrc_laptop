@@ -125,7 +125,7 @@ function PWD {
 
 PS1='\[$(tput bold)\033[46;37m\] $(PWD)\[$(tput sgr0)\033[44;36m\] \
 \[\033[40;34m\]\033[7m$(tput bold)$(__git_ps1) \[$(tput sgr0)\033[49;34m\] \[\033[00m\]'
-PROMPT_COMMAND='echo -en "\033]0; $(PWD) \a"'
+PROMPT_COMMAND='echo -en "\033]0;$(PWD)\a"'
 
 #                                     _ _ _ _ _
 # - - - - - - - - - - - - - - - - - / A L I A S \ - - - - - - - - - - - - - - -
