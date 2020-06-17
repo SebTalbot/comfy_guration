@@ -161,6 +161,8 @@ alias gotoc="cd /home/snowl/documents/projects/cookit"
 alias gotocap="cd /home/snowl/documents/projects/cookit/cookit-api"
 alias gotocec="cd /home/snowl/documents/projects/cookit/cookit-ecom"
 alias gotocad="cd /home/snowl/documents/projects/cookit/cookit-admin"
+alias gotom="cd /home/snowl/documents/projects/magie/"
+alias gotoma="cd /home/snowl/documents/projects/magie/magie-api/"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`

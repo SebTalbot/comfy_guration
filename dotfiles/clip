@@ -18,7 +18,7 @@ Plug 'TroyFletcher/vim-colors-synthwave'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'morhetz/gruvbox'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " Needs golang
