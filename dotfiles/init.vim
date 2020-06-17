@@ -24,6 +24,10 @@ Plug 'morhetz/gruvbox'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " Needs golang
 Plug 'flrnd/plastic.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'SebTalbot/spacebox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arzg/vim-colors-xcode'
 
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
@@ -45,8 +49,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc-neco',
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-neco',
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 
 "" Javascript
@@ -55,7 +59,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'mxw/vim-jsx'
 " Broke typescript syntax highlight
 Plug 'epilande/vim-react-snippets'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescript
@@ -110,7 +114,7 @@ if $CURRENT_DEVICE == 'laptop'
         \ '#D8C5B8',
      \ ]
 else
-  colorscheme space-vim-dark
+  colorscheme spacebox
   highlight CursorLine guibg=#131517
   highlight ColorColumn guibg=#131517
   highlight Identifier guifg=#D75F87
@@ -141,7 +145,7 @@ endif
 
 highlight Comment gui=bold,italic
 highlight Normal guibg=none
-highlight NonText guibg=none
+highlight NonText guifg=#e1e1e1 guibg=none
 
 highlight CocErrorHighlight guifg=#FF0000
 
