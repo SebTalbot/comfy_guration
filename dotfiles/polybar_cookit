@@ -56,7 +56,7 @@ modules-right = arrow11 arrow8 xkeyboard arrow7 memory arrow6 cpu arrow7 volume 
 
 tray-position = right
 tray-background = ${colors.background}
-tray-padding = 0
+tray-padding = 5
 
 [bar/left]
 monitor = HDMI-1
@@ -64,6 +64,7 @@ width = 100%
 height = 17
 radius = 1.0
 fixed-center = true
+tray-position = 
 
 background = ${colors.trans}
 foreground = ${colors.foreground}
