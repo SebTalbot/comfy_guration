@@ -6,9 +6,11 @@ let g:python3_host_prog = '/usr/bin/python3'
 " - - - - - - -
 " P L U G I N S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
+
 " /!\ ------------------------------------/!\
 "     DON'T FORGET TO :UpdateRemotePlugins
 " /!\ ------------------------------------/!\
+
 call plug#begin('~/.config/nvim/plugged')
 
 " THEMES AND UI
@@ -16,7 +18,7 @@ Plug 'TroyFletcher/vim-colors-synthwave'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'brentyi/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'morhetz/gruvbox'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " Needs golang
@@ -27,43 +29,11 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arzg/vim-colors-xcode'
 
-" APPLICATIONS
-Plug 'simnalamburt/vim-mundo'
-Plug 'kien/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'SebTalbot/vwm.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/gv.vim'
-
 " COMMANDS
 Plug 'rbgrouleff/bclose.vim'
 Plug 'schickling/vim-bufonly'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
-
-" AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Shougo/neco-vim'
-" Plug 'neoclide/coc-neco',
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jiangmiao/auto-pairs'
-
-"" Javascript
-Plug 'jelera/vim-javascript-syntax'
-""" React / JSX
-Plug 'mxw/vim-jsx'
-" Broke typescript syntax highlight
-Plug 'epilande/vim-react-snippets'
-" Plug 'mattn/emmet-vim'
-Plug 'Valloric/MatchTagAlways'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-""" Typescript
-Plug 'SebTalbot/yats.vim'
-""" GraphQL
-Plug 'jparise/vim-graphql'
 
 call plug#end()
 filetype plugin indent on
@@ -85,6 +55,7 @@ set cursorline
 set ttimeoutlen=10
 set colorcolumn=80
 set termguicolors
+
 if $CURRENT_DEVICE == 'laptop'
   colorscheme gruvbox
   highlight Identifier guifg=#458588
@@ -139,10 +110,13 @@ else
      \ ]
   let g:indentLine_color_gui = '#5d8aa8'
 endif
+
 highlight Comment gui=bold,italic
 highlight Normal guibg=none
 highlight NonText guifg=#e1e1e1 guibg=none
+
 highlight CocErrorHighlight guifg=#FF0000
+
 for i in range(16)
     let g:terminal_color_{i} = g:terminal_ansi_colors[i]
 endfor
@@ -181,24 +155,18 @@ if has("autocmd")
   autocmd BufWritePre * :silent !mkdir -p %:p:h
 end
 
-" - - - - - - - - - - - - - - - - -
-" L A N G U A G E S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-"
-
-" Javascript
-let g:jsx_ext_required = 0
-let g:vim_jsx_pretty_colorful_config = 1
-set path=.,src
-
-" GraphQl
-autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
-
-" JSON
-let g:vim_json_syntax_conceal = 0
-
 " - - - - - - - - - - - - - - -
 " P L U G I N S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
+
+" Airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_powerline_fonts = 1
+
+" Bclose
+let g:bclose_no_plugin_maps = 1
 
 " NERDTree
 let NERDTreeQuitOnOpen=1
@@ -209,95 +177,14 @@ let NERDTreeCascadeOpenSingleChildDir=0
 let NERDTreeMinimalUI=1
 let NERDTreeWinSizeMax= 100
 let NERDTreeIgnore=['\.tests\.', '\.test\.']
+
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:appendArtifactFix = 0
+
 let g:NERDTreePatternMatchHighlightColor = {}
 let g:NERDTreePatternMatchHighlightColor['.*test(s|).ts$'] = 'FE405F'
-
-" CoC
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Airline
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_powerline_fonts = 1
-
-" CtrlP
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_regexp = 0
-let g:ctrlp_use_caching = 1
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v.(node_modules)',
-  \ 'file': '\v.(\.tests\.)',
-  \ }
-fun! g:CtrlP_set_general_ignore()
-  let general_ignore = '\v.(\.tests\.)'
-  if g:ctrlp_custom_ignore.file != general_ignore
-    let g:ctrlp_custom_ignore.file = general_ignore
-    call ctrlp#clr()
-  endif
- endfun
-fun! g:CtrlP_set_test_ignore()
-  let general_ignore = '\v(\.tests\.ts)@<!$'
-  if g:ctrlp_custom_ignore.file != general_ignore
-    let g:ctrlp_custom_ignore.file = general_ignore
-    call ctrlp#clr()
-  endif
- endfun
-
-" Bclose
-let g:bclose_no_plugin_maps = 1
-
-" FZF
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right'), <bang>0)
-com! -bar -bang AgWithoutDir call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
-com! -bar -bang FilesPreview call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
-function! BuffersToCloseList()
-  redir => list
-  silent ls
-  redir END
-  return split(list, "\n")
-endfunction
-com! BCloseMultiple call fzf#run(fzf#wrap({
-  \ 'source': BuffersToCloseList(),
-  \ 'sink*': { lines -> execute('bwipeout '.join(map(lines, {_, line -> split(line)[0]}))) },
-  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
-\ }))
-
-" GitGutter
-let g:gitgutter_map_keys = 0
-
-" UltiSnip
-let g:UltiSnipsEditSplit="vertical"
-
-" VWM
-let g:vwm#layouts = [
-      \  {
-      \    'name': 'term',
-      \    'bot':
-      \    {
-      \      'init': ['call termopen("bash", {"detach": 0})'],
-      \      'sz': 22,
-      \    }
-      \  }
-      \]
-
-" Hexokinase
-let g:Hexokinase_refreshEvents = ['BufWrite', 'BufCreate']
-let g:Hexokinase_highlighters = ['foregroundfull']
-let g:Hexokinase_highlighters = ['backgroundfull']
 
 " IndentLine
 autocmd Filetype json let g:indentLine_setConceal = 0
@@ -308,7 +195,6 @@ autocmd Filetype json let g:indentLine_setConceal = 0
 let mapleader = "\<Space>"
 
 " Disable mapping
-nnoremap Q <nop>
 nnoremap <c-z> <nop>
 vnoremap u gv
 
@@ -339,24 +225,6 @@ tnoremap <Esc> <C-\><C-n>
 " Yank Y-
 nnoremap <Leader>yf :let @+ = expand('%:t:r')<CR>
 nnoremap <Leader>yy :let @+ = expand('%:r')<CR>
-
-" Applications toggle A-
-nnoremap <Leader>ac :ColorToggle<CR>
-nnoremap <Leader>afp :CocCommand prettier.formatFile<CR>
-nnoremap <Leader>afe :CocCommand eslint.executeAutofix<CR>
-nnoremap <Leader>ann :NERDTreeFind<CR>
-nnoremap <Leader>anq :NERDTreeClose<CR>
-nnoremap <Leader>ant :NERDTreeToggle<CR>
-nnoremap <Leader>ar :CocCommand workspace.renameCurrentFile<CR>
-nnoremap <Leader>at :VwmToggle term<CR>
-nnoremap <Leader>au :MundoToggle<CR>
-
-" Search S-
-nnoremap <Leader>sa :Ag<CR>
-nnoremap <Leader>sb :Buffers<CR>
-nnoremap <Leader>sf :FilesPreview<CR>!node_modules !.tests.<Space>
-nnoremap <Leader>ss :AgWithoutDir<CR>
-nnoremap <Leader>st :FilesPreview<CR>!node_modules '.tests.<Space>
 
 " Manipulate windows W-
 nnoremap <Leader>wH <C-W><S-H>
@@ -390,44 +258,8 @@ nnoremap <Leader>bl :Buffers<CR>
 nnoremap gB :bp<CR>
 nnoremap gb :bn<CR>
 
-" CoC
-imap <C-l> <Plug>(coc-snippets-expand)
-inoremap <silent><expr> <C-Space> coc#refresh()
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-" - errors E-
-nmap <silent> <Leader>eJ <Plug>(coc-diagnostic-next-error)
-nmap <silent> <Leader>eK <Plug>(coc-diagnostic-prev-error)
-nmap <silent> <Leader>ee <Plug>(coc-diagnostic-info)
-nmap <silent> <Leader>ej <Plug>(coc-diagnostic-next)
-nmap <silent> <Leader>ek <Plug>(coc-diagnostic-prev)
-" - LSP L-
-nmap <Leader>lc <Plug>(coc-rename)
-nmap <silent> <Leader>ld <Plug>(coc-definition)
-nmap <silent> <Leader>li <Plug>(coc-implementation)
-nmap <silent> <Leader>ll ea<C-Space>
-nmap <silent> <Leader>lr <Plug>(coc-references)
-nmap <silent> <Leader>lt <Plug>(coc-type-definition)
-nmap <silent> <Leader>lw <Plug>(coc-declaration)
-
-" vmap <C-n> <Plug>(coc-snippets-select)
-let g:coc_snippet_next = '<c-n>'
-let g:coc_snippet_prev = '<c-p>'
-
-" Git
-" nnoremap <Leader>gg :G<CR>
-" nnoremap <Leader>gd :Gdiff<CR>
-" nnoremap <Leader>gc :Gcommit<CR>
-" nnoremap <Leader>gp :Gpush<CR>
-" nnoremap <Leader>gl :Gpull<CR>
-" nnoremap <Leader>gf :Gfetch<CR>
-" nnoremap <Leader>gs :GitGutterStageHunk<CR>
-" nnoremap <Leader>gj :GitGutterNextHunk<CR>
-" nnoremap <Leader>gk :GitGutterPrevHunk<CR>
-" nnoremap <Leader>gha :GV<CR>
-" nnoremap <Leader>ghc :GV!<CR>
-
 " Open important files O-
 nnoremap <Leader>ob :e ~/.bashrc<CR>G
 nnoremap <Leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
-nnoremap <Leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
+nnoremap <Leader>od :e ~/comfy_guration/dotfiles/init_light.vim<CR>G
 nnoremap <Leader>os :e ~/comfy_guration/dotfiles/custom_snips/
