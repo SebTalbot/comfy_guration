@@ -28,6 +28,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arzg/vim-colors-xcode'
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
+
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
 Plug 'kien/ctrlp.vim'
@@ -202,7 +203,10 @@ let g:vim_json_syntax_conceal = 0
 "
 
 " Lens
+let g:lens#disabled = 0
+let g:lens#disabled_filetypes = ['Mundo', 'MundoDiff']
 let g:lens#width_resize_max = 200
+let g:lens#width_resize_min = 10
 
 " NERDTree
 let NERDTreeQuitOnOpen=1
@@ -353,7 +357,7 @@ nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
 nnoremap <Leader>ar :CocCommand workspace.renameCurrentFile<CR>
 nnoremap <Leader>at :VwmToggle term<CR>
-nnoremap <Leader>au :MundoToggle<CR>
+nnoremap <Leader>au :call lens#toggle()<CR>:MundoToggle<CR>
 
 " Search S-
 nnoremap <Leader>sa :Ag<CR>
