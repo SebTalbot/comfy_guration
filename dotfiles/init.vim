@@ -380,7 +380,7 @@ nnoremap <Leader>wrh :vertical resize +5<CR>
 nnoremap <Leader>wrj :resize +5<CR>
 nnoremap <Leader>wrk :resize -5<CR>
 nnoremap <Leader>wrl :vertical resize -5<CR>
-nnoremap <Leader>wrr <C-W>=
+nnoremap <Leader>wrr :call lens#run()<CR>
 nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
 
@@ -395,8 +395,8 @@ nnoremap <Leader>bdo :BufOnly<CR>
 nnoremap <Leader>bdd :Bclose!<CR>
 nnoremap <Leader>bdl :BCloseMultiple<CR>
 nnoremap <Leader>bl :Buffers<CR>
-nnoremap gB :bp<CR>
-nnoremap gb :bn<CR>
+nnoremap gB :bp<CR>:call lens#run()<CR>
+nnoremap gb :bn<CR>:call lens#run()<CR>
 
 " CoC
 imap <C-l> <Plug>(coc-snippets-expand)
