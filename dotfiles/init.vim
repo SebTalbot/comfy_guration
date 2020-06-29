@@ -26,7 +26,8 @@ Plug 'SebTalbot/spacebox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arzg/vim-colors-xcode'
-
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
 Plug 'kien/ctrlp.vim'
@@ -200,6 +201,9 @@ let g:vim_json_syntax_conceal = 0
 " P L U G I N S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
 
+" Lens
+let g:lens#width_resize_max = 200
+
 " NERDTree
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
@@ -207,7 +211,7 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeCascadeSingleChildDir=0
 let NERDTreeCascadeOpenSingleChildDir=0
 let NERDTreeMinimalUI=1
-let NERDTreeWinSizeMax= 100
+" let NERDTreeWinSizeMax= 100
 let NERDTreeIgnore=['\.tests\.', '\.test\.']
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
