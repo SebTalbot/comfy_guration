@@ -7,7 +7,7 @@ T='#4F97D7ff'  # text
 W='#B73C33ff'  # wrong
 V='#4F97D7ff'  # verifying
 
-pkill -u "$USER" -USR1 dunst
+pkill -xu $EUID -USR1 dunst
 setxkbmap us
 
 ~/softwares/i3lock-color/x86_64-pc-linux-gnu/i3lock \
@@ -39,4 +39,4 @@ setxkbmap us
   --keylayout 2         \
   -n
 
-pkill -u "$USER" -USR2 dunst
+pkill -xu $EUID -USR2 dunst

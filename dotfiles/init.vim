@@ -207,7 +207,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 " Lens
 let g:lens#disabled = 0
-let g:lens#disabled_filetypes = ['Mundo', 'MundoDiff', 'fzf']
+let g:lens#disabled_filetypes = ['Mundo', 'MundoDiff', 'GV', 'git']
 let g:lens#width_resize_max = 200
 let g:lens#width_resize_min = 80
 
@@ -421,22 +421,18 @@ nmap <silent> <Leader>lr <Plug>(coc-references)
 nmap <silent> <Leader>lt <Plug>(coc-type-definition)
 nmap <silent> <Leader>lw <Plug>(coc-declaration)
 
+" Git G-
+nmap [c <Plug>(GitGutterPrevHunk)
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap <Leader>ghp <Plug>(GitGutterPreviewHunk)
+nmap <Leader>ghs <Plug>(GitGutterStageHunk)
+nmap <Leader>ghu <Plug>(GitGutterUndoHunk)
+nmap <Leader>gdh :diffget //2 | diffupdate
+nmap <Leader>gdl :diffget //3 | diffupdate
+
 " vmap <C-n> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-p>'
-
-" Git
-" nnoremap <Leader>gg :G<CR>
-" nnoremap <Leader>gd :Gdiff<CR>
-" nnoremap <Leader>gc :Gcommit<CR>
-" nnoremap <Leader>gp :Gpush<CR>
-" nnoremap <Leader>gl :Gpull<CR>
-" nnoremap <Leader>gf :Gfetch<CR>
-" nnoremap <Leader>gs :GitGutterStageHunk<CR>
-" nnoremap <Leader>gj :GitGutterNextHunk<CR>
-" nnoremap <Leader>gk :GitGutterPrevHunk<CR>
-" nnoremap <Leader>gha :GV<CR>
-" nnoremap <Leader>ghc :GV!<CR>
 
 " Open important files O-
 nnoremap <Leader>ob :e ~/.bashrc<CR>G
