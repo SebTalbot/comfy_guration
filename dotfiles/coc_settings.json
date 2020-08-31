@@ -23,6 +23,7 @@
   "suggest.triggerAfterInsertEnter": true,
   "tsserver.enableJavascript": true,
   "tsserver.formatOnType": false,
+  "tsserver.implicitProjectConfig.checkJs": true,
   "tsserver.log": "verbose",
   "tsserver.trace.server":  "verbose",
   "typescript.updateImportsOnFileMove.enable": true,

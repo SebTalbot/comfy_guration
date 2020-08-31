@@ -28,6 +28,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arzg/vim-colors-xcode'
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
+Plug 'bluz71/vim-moonfly-colors'
 
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
@@ -51,19 +52,19 @@ Plug 'honza/vim-snippets'
 Plug 'Shougo/neco-vim'
 " Plug 'neoclide/coc-neco',
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
 Plug 'jiangmiao/auto-pairs'
 
 "" Javascript
 Plug 'jelera/vim-javascript-syntax'
 """ React / JSX
 Plug 'mxw/vim-jsx'
-" Broke typescript syntax highlight
 Plug 'epilande/vim-react-snippets'
 " Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescript
-Plug 'SebTalbot/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 """ GraphQL
 Plug 'jparise/vim-graphql'
 
@@ -113,7 +114,7 @@ if $CURRENT_DEVICE == 'laptop'
         \ '#D8C5B8',
      \ ]
 else
-  colorscheme spacebox
+  colorscheme moonfly
   highlight CursorLine guibg=#131517
   highlight ColorColumn guibg=#131517
   highlight Identifier guifg=#D75F87
@@ -195,8 +196,10 @@ set path=.,src
 " GraphQl
 autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
-" JSON
+" MARKDOWN CONCEAL
 let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 " - - - - - - - - - - - - - - -
 " P L U G I N S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -206,7 +209,7 @@ let g:vim_json_syntax_conceal = 0
 let g:lens#disabled = 0
 let g:lens#disabled_filetypes = ['Mundo', 'MundoDiff', 'GV', 'git']
 let g:lens#width_resize_max = 200
-let g:lens#width_resize_min = 10
+let g:lens#width_resize_min = 80
 
 " NERDTree
 let NERDTreeQuitOnOpen=1
@@ -381,6 +384,7 @@ nnoremap <Leader>wrj :resize +5<CR>
 nnoremap <Leader>wrk :resize -5<CR>
 nnoremap <Leader>wrl :vertical resize -5<CR>
 nnoremap <Leader>wrr :call lens#run()<CR>
+nnoremap <Leader>wre <C-W>=
 nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
 
