@@ -64,7 +64,7 @@ Plug 'epilande/vim-react-snippets'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescript
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'SebTalbot/yats.vim'
 """ GraphQL
 Plug 'jparise/vim-graphql'
 
