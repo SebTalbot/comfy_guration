@@ -165,6 +165,7 @@ set ignorecase
 set nobackup
 set noswapfile
 set nowb
+set pumblend=20
 set scrolloff=2
 set shada="NONE"
 set shiftwidth=2
