@@ -197,10 +197,6 @@ set path=.,src
 " GraphQl
 autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
-" MARKDOWN CONCEAL
-let g:vim_json_syntax_conceal = 0
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
 
 " - - - - - - - - - - - - - - -
 " P L U G I N S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -236,6 +232,7 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
 
 " Airline
 set laststatus=2
@@ -287,6 +284,7 @@ com! BCloseMultiple call fzf#run(fzf#wrap({
   \ 'sink*': { lines -> execute('bwipeout '.join(map(lines, {_, line -> split(line)[0]}))) },
   \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
+let g:fzf_layout = { 'down': '~40%' }
 
 " GitGutter
 let g:gitgutter_map_keys = 0
@@ -440,3 +438,9 @@ nnoremap <Leader>ob :e ~/.bashrc<CR>G
 nnoremap <Leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
 nnoremap <Leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
 nnoremap <Leader>os :e ~/comfy_guration/dotfiles/custom_snips/
+
+" MARKDOWN CONCEAL
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+set conceallevel=0
