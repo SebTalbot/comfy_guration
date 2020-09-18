@@ -45,6 +45,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'schickling/vim-bufonly'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
 Plug 'SirVer/ultisnips'
@@ -232,6 +233,18 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+let g:coc_global_extensions = [
+	\ 'coc-css',
+	\ 'coc-eslint',
+	\ 'coc-highlight',
+	\ 'coc-html',
+	\ 'coc-java',
+	\ 'coc-json',
+	\ 'coc-prettier',
+	\ 'coc-python',
+	\ 'coc-snippets',
+	\ 'coc-tsserver'
+\ ]
 
 
 " Airline
@@ -311,6 +324,12 @@ let g:Hexokinase_highlighters = ['backgroundfull']
 
 " IndentLine
 autocmd Filetype json let g:indentLine_setConceal = 0
+
+" MARKDOWN CONCEAL
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+set conceallevel=0
 
 " - - - - - - - - - - - - - -
 " C U S T O M   M A P P I N G \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -439,8 +458,3 @@ nnoremap <Leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
 nnoremap <Leader>od :e ~/comfy_guration/dotfiles/init.vim<CR>G
 nnoremap <Leader>os :e ~/comfy_guration/dotfiles/custom_snips/
 
-" MARKDOWN CONCEAL
-let g:vim_json_syntax_conceal = 0
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
-set conceallevel=0
