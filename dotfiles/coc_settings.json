@@ -6,7 +6,7 @@
   "diagnostic.infoSign": "",
   "diagnostic.warningSign": "∆",
   "eslint.enable": true,
-  "eslint.run": "onType",
+  "eslint.run": "onSave",
   "eslint.autoFix": true,
   "eslint.trace.server": "off",
   "eslint.filetypes": [
