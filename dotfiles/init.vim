@@ -22,7 +22,6 @@ Plug 'morhetz/gruvbox'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' } " Needs golang
 Plug 'flrnd/plastic.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'SebTalbot/spacebox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arzg/vim-colors-xcode'

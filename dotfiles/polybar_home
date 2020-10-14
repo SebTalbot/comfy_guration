@@ -9,7 +9,7 @@ background-alt = #333
 foreground = #b2b2b2
 foreground-alt = #ee3333
 
-trans = #DA292b2e
+trans = #ED1e1e1e
 white = #eee
 grey = #444444
 pink = #d75f87
@@ -23,9 +23,9 @@ red = #ee3333
 ;-------------------------------------------------------------------------------
 
 [bar/right]
-monitor = DVI-I-1
+monitor = DP-0
 width = 100%
-height = 14
+height = 17
 radius = 1.0
 fixed-center = true
 
@@ -47,8 +47,8 @@ border-color = #131313
 ; module-margin-left = 1
 ; module-margin-right = 2
 
-font-0 = Hack:pixelsize=10:weight=bold;2
-font-1 = Hack:pixelsize=32;2
+font-0 = EssentialPragmataPro:pixelsize=11:weight=bold;3
+font-1 = EssentialPragmataPro:pixelsize=32;3
 
 modules-left = i3 arrow0 arrow
 modules-center = arrow10 arrow9 title2 arrow13 arrow12
@@ -56,14 +56,15 @@ modules-right = arrow11 arrow8 xkeyboard arrow7 memory arrow6 cpu arrow7 volume 
 
 tray-position = right
 tray-background = ${colors.background}
-tray-padding = 4
+tray-padding = 5
 
 [bar/left]
-monitor = DVI-D-0
+monitor = DVI-I-1
 width = 100%
-height = 14
+height = 17
 radius = 1.0
 fixed-center = true
+tray-position = 
 
 background = ${colors.trans}
 foreground = ${colors.foreground}
@@ -83,8 +84,8 @@ border-color = #131313
 ; module-margin-left = 1
 ; module-margin-right = 2
 
-font-0 = Hack:pixelsize=10:weight=bold;2
-font-1 = Hack:pixelsize=32;2
+font-0 = EssentialPragmataPro:pixelsize=11:weight=bold;3
+font-1 = EssentialPragmataPro:pixelsize=32;3
 
 modules-left = i3 arrow0 arrow
 modules-center = arrow10 arrow9 title2 arrow13 arrow12
@@ -286,7 +287,7 @@ ws-icon-4 = 4;4
 ws-icon-5 = 5;5
 ws-icon-6 = 6;6
 ws-icon-7 = 7;7
-ws-icon-8 = 8;8
+ws-icon-8 = 8;8:RUN
 ws-icon-9 = 9;9:DATA
 ws-icon-default =
 
@@ -392,7 +393,7 @@ label-foreground = ${colors.blue}
 label-background = ${colors.background}
 
 [module/volume]
-type = internal/alsa
+type = internal/volume
 
 ; mapping = true
 format-volume = <ramp-volume><label-volume>
