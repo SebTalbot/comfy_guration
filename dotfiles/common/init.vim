@@ -68,6 +68,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'SebTalbot/yats.vim'
 """ GraphQL
 Plug 'jparise/vim-graphql'
+""" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
 filetype plugin indent on
