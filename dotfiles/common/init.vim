@@ -70,6 +70,8 @@ Plug 'SebTalbot/yats.vim'
 Plug 'jparise/vim-graphql'
 """ Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+""" Ruby
+Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
 filetype plugin indent on
@@ -227,6 +229,7 @@ let g:coc_global_extensions = [
 	\ 'coc-json',
 	\ 'coc-prettier',
 	\ 'coc-python',
+  \ 'coc-solargraph',
 	\ 'coc-snippets',
 	\ 'coc-tsserver'
 \ ]

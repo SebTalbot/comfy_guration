@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ZSH configuration
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export ZSH="/home/snowl/.oh-my-zsh"
@@ -36,9 +36,14 @@ VI_MODE_SET_CURSOR=true
 MODE_INDICATOR=""
 
 alias t=tree
+alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
+alias python=python3
+alias pip=pip3
 
 # Needed for docker and kubernetes
 # eval $(minikube docker-env)
+
+eval "`pip completion --zsh`"
 
 # kubectl auto complete
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
