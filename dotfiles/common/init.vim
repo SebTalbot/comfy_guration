@@ -70,6 +70,9 @@ Plug 'SebTalbot/yats.vim'
 Plug 'jparise/vim-graphql'
 """ Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+""" LaTeX
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 """ Ruby
 Plug 'vim-ruby/vim-ruby'
 
@@ -231,7 +234,8 @@ let g:coc_global_extensions = [
 	\ 'coc-python',
   \ 'coc-solargraph',
 	\ 'coc-snippets',
-	\ 'coc-tsserver'
+	\ 'coc-tsserver',
+  \ 'coc-vimtex'
 \ ]
 
 
@@ -318,6 +322,10 @@ let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 set conceallevel=0
+
+" LaTeX Live Preview
+let g:livepreview_previewer = '~/comfy_guration/scripts/mupdf_inotif'
+let g:livepreview_engine = 'pdflatex'
 
 " - - - - - - - - - - - - - -
 " C U S T O M   M A P P I N G \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
