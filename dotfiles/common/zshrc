@@ -16,8 +16,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="dd/mm/yyyy"
 plugins=(
+  docker
   git
   kubectl
+  npx
   vi-mode
   zsh-syntax-highlighting
 )
@@ -35,19 +37,29 @@ VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
 MODE_INDICATOR=""
 
+# Alias
+alias zr=source ~/.zshrc
 alias t=tree
-alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
 alias python=python3
 alias pip=pip3
 
-# Needed for docker and kubernetes
-# eval $(minikube docker-env)
+## Tmux
+alias ta='tmux attach -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tk='tmux kill-session -t'
+alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
 
-eval "`pip completion --zsh`"
+# Autocompletion
+## pip
+[[ $commands[pip] ]] && eval "`pip completion --zsh`"
 
-# kubectl auto complete
+## kubectl, minikube and skaffold
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+[[ $commands[minikube] ]] && source <(minikube completion zsh)
+[[ $commands[skaffold] ]] && source <(skaffold completion zsh)
 
+## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
