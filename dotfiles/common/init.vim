@@ -449,7 +449,7 @@ let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-p>'
 
 " Open important files O-
-nnoremap <Leader>ob :e ~/.bashrc<CR>G
+nnoremap <Leader>ob :e ~/.zshrc<CR>G
 nnoremap <Leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
-nnoremap <Leader>od :e ~/comfy_guration/dotfiles/common/init.vim<CR>G
+nnoremap <Leader>od :e ~/.config/nvim/init.vim<CR>G
 
