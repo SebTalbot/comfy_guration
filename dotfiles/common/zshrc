@@ -1,0 +1,66 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# ZSH configuration
+# export TERM="xterm-256color"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
+export ZSH="/home/snowl/.oh-my-zsh"
+export UPDATE_ZSH_DAYS=7
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+HYPHEN_INSENSITIVE="true"
+HIST_STAMPS="dd/mm/yyyy"
+plugins=(
+  docker
+  git
+  kubectl
+  npx
+  vi-mode
+  zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+set show-mode-in-prompt On
+
+# User configuration
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US:en
+export EDITOR="nvim"
+
+KEYTIMEOUT=1
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
+MODE_INDICATOR=""
+
+# Alias
+alias zr=source ~/.zshrc
+alias t=tree
+alias python=python3
+alias pip=pip3
+
+## Tmux
+alias ta='tmux attach -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tk='tmux kill-session -t'
+alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
+
+# Autocompletion
+## pip
+[[ $commands[pip] ]] && eval "`pip completion --zsh`"
+
+## kubectl, minikube and skaffold
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+[[ $commands[minikube] ]] && source <(minikube completion zsh)
+[[ $commands[skaffold] ]] && source <(skaffold completion zsh)
+
+## fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -19,7 +19,7 @@
   "javascript.suggest.paths": true,
   "javascript.suggest.autoImports": true,
   "javascript.preferences.importModuleSpecifier": "non-relative",
-  "javascript.updateImportsOnFileMove.enable": true,
+  "javascript.updateImportsOnFileMove.enable": false,
   "prettier.eslintIntegration": true,
   "prettier.onlyUseLocalVersion": true,
   "prettier.requireConfig": true,
@@ -33,6 +33,6 @@
   "tsserver.trace.server":  "verbose",
   "typescript.suggest.autoImports": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.updateImportsOnFileMove.enable": true,
+  "typescript.updateImportsOnFileMove.enable": false,
   "typescript.validate.enable": true
 }
