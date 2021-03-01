@@ -29,6 +29,7 @@ Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'arcticicestudio/nord-vim'
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
@@ -122,16 +123,8 @@ if $CURRENT_DEVICE == 'laptop'
         \ '#D8C5B8',
      \ ]
 else
-  colorscheme nord
-  " highlight CursorLine guibg=#202030
-  " highlight ColorColumn guibg=#202030
-  " highlight Identifier guifg=#D75F87
-  " highlight Identifier gui=bold
-  " highlight Symbol guifg=#4FC7D3
-  " highlight Symbol gui=bold
-  " highlight Visual guifg=#1E1E1E guibg=#D75F87
-  let g:airline_theme='nord'
-  " let g:indentLine_color_gui = '#5d8aa8'
+  colorscheme spaceduck
+  let g:airline_theme = 'spaceduck'
 endif
 highlight Comment gui=bold,italic
 highlight Normal guibg=none

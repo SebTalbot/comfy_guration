@@ -3,223 +3,141 @@
 ;-------------------------------------------------------------------------------
 
 [colors]
-background = #131313
-background-alt = #333
+foreground = #ecf0c1
+background = #30365F
 
-foreground = #b2b2b2
-foreground-alt = #ee3333
-
-trans = #ED1e1e1e
+trans = #b50f111b
+red = #e33400
+orange = #e39400
+green = #5ccc96
+pink = #ce6f8f
+blue = #00a3cc
+purple = #b3a1e6
+purple2 = #7a5ccc
+grey = #686f9a
 white = #eee
-grey = #444444
-pink = #d75f87
-blue = #4f97d7
-purple = #875faf
-green = #20ad80
-red = #ee3333
 
 ;-------------------------------------------------------------------------------
 ;	B A R S
 ;-------------------------------------------------------------------------------
 
 [bar/right]
-monitor = DP-0
+monitor = DP-4
 width = 100%
-height = 17
+height = 20
 radius = 1.0
 fixed-center = true
 
 background = ${colors.trans}
 foreground = ${colors.foreground}
 
-; line-size = 3
-; line-color = #fff
+border-bottom-size = 4
+border-bottom-color = ${colors.purple}
 
-border-size = 2
-border-color = #131313
+font-0 = PragmataProLigaturized:pixelsize=14:weight=bold;3
+font-1 = PragmataProLigaturized:pixelsize=16;3
+font-2 = HackNerdFont:pixelsize=14;3
+font-3 = HackNerdFont:pixelsize=37;0
 
-; border-bottom-size = 2
-; border-bottom-color = #131313
-
-; padding-left = 0
-; padding-right = 2
-
-; module-margin-left = 1
-; module-margin-right = 2
-
-font-0 = EssentialPragmataPro:pixelsize=11:weight=bold;3
-font-1 = EssentialPragmataPro:pixelsize=32;3
-
-modules-left = i3 arrow0 arrow
-modules-center = arrow10 arrow9 title2 arrow13 arrow12
-modules-right = arrow11 arrow8 xkeyboard arrow7 memory arrow6 cpu arrow7 volume arrow6 date
+modules-left = i3 arrow arrow0
+modules-center = middle0 middle1 day middle2 date_symbols middle1 time middle2 middle3
+modules-right = volume
 
 tray-position = right
-tray-background = ${colors.background}
-tray-padding = 5
+tray-background = ${colors.trans}
+tray-padding = 8
 
 [bar/left]
-monitor = DVI-I-1
+monitor = DP-2
 width = 100%
-height = 17
+height = 15
 radius = 1.0
 fixed-center = true
-tray-position = 
+tray-position =
 
 background = ${colors.trans}
 foreground = ${colors.foreground}
 
-; line-size = 3
-; line-color = #fff
+border-bottom-size = 3
+border-bottom-color = ${colors.purple}
 
-border-size = 2
-border-color = #131313
+font-0 = PragmataProLigaturized:pixelsize=11:weight=bold;3
+font-1 = PragmataProLigaturized:pixelsize=14;3
 
-; border-bottom-size = 2
-; border-bottom-color = #131313
-
-; padding-left = 0
-; padding-right = 2
-
-; module-margin-left = 1
-; module-margin-right = 2
-
-font-0 = EssentialPragmataPro:pixelsize=11:weight=bold;3
-font-1 = EssentialPragmataPro:pixelsize=32;3
-
-modules-left = i3 arrow0 arrow
-modules-center = arrow10 arrow9 title2 arrow13 arrow12
-modules-right = arrow11 arrow8 date
+modules-left =
+modules-center =
+modules-right = arrow1 arrow2 i3
 
 ;-------------------------------------------------------------------------------
 ;	D E C O R A T I O N S
 ;-------------------------------------------------------------------------------
 
-[module/title2]
-; background to trans
-type = custom/text
-content = " S N O W L  @  C O O K I T "
-content-font = 2
-content-foreground = ${colors.purple}
-content-background = ${colors.background}
-
 [module/arrow]
-; background to trans
+; background to purple
 type = custom/text
 content = " "
 content-font = 2
-content-foreground = ${colors.pink}
-content-background = ${colors.trans}
+content-foreground = ${colors.background}
+content-background = ${colors.purple}
 
 [module/arrow0]
-; background to trans
+; purple to trans
 type = custom/text
 content = " "
 content-font = 2
-content-foreground = ${colors.background}
-content-background = ${colors.pink}
+content-foreground = ${colors.purple}
+content-background = ${colors.trans}
 
 [module/arrow1]
-; grey to Blue
+; trans to purple
 type = custom/text
 content = " "
 content-font = 2
-content-foreground = ${colors.blue}
-content-background = ${colors.grey}
+content-foreground = ${colors.purple}
+content-background = ${colors.trans}
 
 [module/arrow2]
-; Blue to Purple
-type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.purple}
-content-background = ${colors.blue}
-
-[module/arrow3]
-; Purple to pink
-type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.pink}
-content-background = ${colors.purple}
-
-[module/arrow4]
-; pink to green
-type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.green}
-content-background = ${colors.pink}
-
-[module/arrow5]
-; green to grey
-type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.grey}
-content-background = ${colors.green}
-
-[module/arrow6]
-; grey to bg
-type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.background}
-content-background = ${colors.grey}
-
-[module/arrow7]
-; bg to grey
-type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.grey}
-content-background = ${colors.background}
-
-[module/arrow8]
-; grey to bg
-type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.background}
-content-background = ${colors.blue}
-
-[module/arrow9]
-; grey to bg
+; purple to background
 type = custom/text
 content = " "
 content-font = 2
 content-foreground = ${colors.background}
 content-background = ${colors.purple}
 
-[module/arrow10]
-; background to trans
+; MIDDLE ---------
+
+[module/middle0]
 type = custom/text
-content = " "
-content-font = 2
+content = "◥"
+content-font = 4
 content-foreground = ${colors.purple}
 content-background = ${colors.trans}
 
-[module/arrow11]
-; grey to bg
+[module/middle1]
 type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.blue}
-content-background = ${colors.trans}
+content = "◥"
+content-font = 4
+content-foreground = ${colors.background}
+content-background = ${colors.purple}
 
-[module/arrow12]
-; background to trans
+[module/middle2]
 type = custom/text
-content = " "
-content-font = 2
+content = "◤"
+content-font = 4
+content-foreground = ${colors.background}
+content-background = ${colors.purple}
+
+[module/middle3]
+type = custom/text
+content = "◤"
+content-font = 4
 content-foreground = ${colors.purple}
 content-background = ${colors.trans}
 
-[module/arrow13]
-; background to trans
+[module/date_symbols]
 type = custom/text
-content = " "
-content-font = 2
+content = "  "
+content-font = 3
 content-foreground = ${colors.background}
 content-background = ${colors.purple}
 
@@ -230,17 +148,14 @@ content-background = ${colors.purple}
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-
 format-prefix = " KEY "
 format-prefix-font = 1
 format-prefix-foreground = ${colors.blue}
 format-prefix-background = ${colors.background}
-
 label-layout = %layout%
 label-layout-font = 1
 label-layout-foreground = ${colors.blue}
 label-layout-background = ${colors.background}
-
 ; label-indicator-padding = 2
 ; label-indicator-margin = 1
 ; label-indicator-background = ${colors.blue}
@@ -249,36 +164,29 @@ label-layout-background = ${colors.background}
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors.red}
 
 [module/i3index]
 type = internal/i3
 format = <label-state>
-
 label-focused = "%name% "
 label-focused-foreground = ${colors.background}
 label-focused-background = ${colors.pink}
-
 label-visible = "%name% "
 label-visible-foreground = ${colors.trans}
 label-visible-background = ${colors.pink}
-
 label-unfocused =
 label-urgent =
 
 [module/i3]
 type = internal/i3
 format = <label-state><label-mode>
-
 index-sort = false
 enable-click = false
 enable-scroll = false
-
 ws-icon-0 = 10;0:COM
 ws-icon-1 = 1;1:WEB
 ws-icon-2 = 2;2:DEV
@@ -290,36 +198,29 @@ ws-icon-7 = 7;7
 ws-icon-8 = 8;8:RUN
 ws-icon-9 = 9;9:DATA
 ws-icon-default =
-
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
-
 label-mode = " <%mode%> "
 label-mode-foreground = ${colors.red}
 label-mode-background = ${colors.background}
-
 ; focused = Active workspace on focused monitor
 label-focused = " %icon% "
-label-focused-foreground = ${colors.blue}
+label-focused-foreground = ${colors.pink}
 label-focused-background = ${colors.background}
-
 label-visible = " %icon% "
-label-visible-foreground = ${colors.foreground}
+label-visible-foreground = ${colors.purple}
 label-visible-background = ${colors.background}
-
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = " %icon% "
 label-unfocused-foreground = ${colors.grey}
 label-unfocused-background = ${colors.background}
-
 ; urgent = Workspace with urgency hint set
 label-urgent = "  >%icon%<  "
 label-urgent-foreground = ${colors.green}
 label-urgent-background = ${colors.background}
-
 label-separator = //
 label-separator-padding = 0
-label-separator-foreground = ${colors.pink}
+label-separator-foreground = ${colors.purple}
 label-separator-background = ${colors.background}
 
 [module/cpu]
@@ -355,14 +256,14 @@ format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.red}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.red}
 
 [module/eth]
 type = internal/network
@@ -371,31 +272,35 @@ interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.red}
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.red}
 
-[module/date]
+[module/day]
 type = internal/date
 interval = 5
-
 date = " %Y-%m-%d"
-
 time= %H:%M:%S
+label = %date%
+label-foreground = ${colors.purple}
+label-background = ${colors.background}
 
-label = %date% %time%
-label-foreground = ${colors.blue}
+[module/time]
+type = internal/date
+interval = 5
+time= %H:%M:%S
+label = %time%
+label-foreground = ${colors.purple}
 label-background = ${colors.background}
 
 [module/volume]
-type = internal/volume
-
-; mapping = true
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 format-volume = <ramp-volume><label-volume>
 
 label-volume = %percentage%%
@@ -472,7 +377,7 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.red}
 
 [module/powermenu]
 type = custom/menu
@@ -484,7 +389,7 @@ label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = ${colors.red}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
