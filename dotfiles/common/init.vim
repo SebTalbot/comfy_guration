@@ -122,6 +122,10 @@ if $CURRENT_DEVICE == 'laptop'
         \ '#5D5E5A',
         \ '#D8C5B8',
      \ ]
+    for i in range(16)
+        let g:terminal_color_{i} = g:terminal_ansi_colors[i]
+    endfor
+    unlet! g:terminal_ansi_colors
 else
   colorscheme spaceduck
   let g:airline_theme = 'spaceduck'
@@ -130,10 +134,6 @@ highlight Comment gui=bold,italic
 highlight Normal guibg=none
 highlight NonText guifg=#e1e1e1 guibg=none
 highlight CocErrorHighlight guifg=#FF0000
-" for i in range(16)
-"     let g:terminal_color_{i} = g:terminal_ansi_colors[i]
-" endfor
-" unlet! g:terminal_ansi_colors
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _

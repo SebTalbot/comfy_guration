@@ -39,7 +39,7 @@ font pango:Hack Nerd Font bold 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -181,7 +181,7 @@ default_border pixel 5
 
 # Polybar
 exec_always --no-startup-id xrandr --output HDMI-2 --same-as eDP-1
-exec_always --no-startup-id ~/comfy_guration/scripts/polybar/lauch.sh
+exec_always --no-startup-id ~/comfy_guration/scripts/laptop/polybar.sh
 
 # Network manager tray icon
 exec --no-startup-id nm-applet
@@ -198,17 +198,14 @@ bindsym XF86MonBrightnessDown exec "let '$SCREEN_BRIGHTNESS-=0.1' | xrandr --out
 # Screenshots
 bindsym $mod+n exec shutter -s -e -n -o '~/pictures/screenshots/%y_%m_%d_%T.png'
 
-# Hide mouse
-exec --no-startup-id unclutter -idle 1
-
 # no mouse follow
 focus_follows_mouse no
 
 # Background
-exec --no-startup-id feh --bg-scale ~/pictures/background/montreal.jpg
+exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/montreal.jpg
 
-# Compton
-exec compton --paint-on-overlay --vsync -f -O 1 -I 1 --config /home/snowl/comfy_guration/dotfiles/laptop/compton_laptop.conf
+# Picom
+exec --no-startup-id picom --experimental-backends --config ~/comfy_guration/dotfiles/laptop/picom.conf
 
 # Caps as Esc
 exec --no-startup-id ~/comfy_guration/scripts/switch_caps_escape.sh
