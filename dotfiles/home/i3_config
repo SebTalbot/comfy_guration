@@ -50,9 +50,9 @@ bindsym $mod+Return exec konsole
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # - Audio -----------------------------
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 5+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5- unmute"
-bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
 # - Screenshot
 for_window [class="Shutter"] floating enable
@@ -167,6 +167,7 @@ bindsym $mod+r mode "resize"
 # SCRIPTS ---------------------------------------------------------------------
 
 # startup script
+exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
 exec --no-startup-id ~/comfy_guration/scripts/home/lauch_screen.sh
 exec --no-startup-id picom --experimental-backends --config ~/comfy_guration/dotfiles/home/picom.conf
 exec --no-startup-id dunst

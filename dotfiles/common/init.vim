@@ -129,11 +129,15 @@ if $CURRENT_DEVICE == 'laptop'
 else
   colorscheme spaceduck
   let g:airline_theme = 'spaceduck'
+  highlight Visual guibg=#b3a1e6 guifg=#1b1c36
+  highlight LineNr guifg=#686f9a
+  highlight Comment guifg=#686f9a
 endif
 highlight Comment gui=bold,italic
 highlight Normal guibg=none
 highlight NonText guifg=#e1e1e1 guibg=none
-highlight CocErrorHighlight guifg=#FF0000
+highlight CocErrorHighlight guifg=#e33400
+highlight CocWarningHighlight guifg=#e39400
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -230,7 +234,6 @@ let g:coc_global_extensions = [
 	\ 'coc-tsserver',
   \ 'coc-vimtex'
 \ ]
-
 
 " Airline
 set laststatus=2
@@ -445,4 +448,3 @@ let g:coc_snippet_prev = '<c-p>'
 nnoremap <Leader>ob :e ~/.zshrc<CR>G
 nnoremap <Leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
 nnoremap <Leader>od :e ~/.config/nvim/init.vim<CR>G
-
