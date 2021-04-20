@@ -127,9 +127,8 @@ else
   let g:airline_theme = 'spaceduck'
   highlight Visual guibg=#b3a1e6 guifg=#1b1c36
   highlight LineNr guifg=#686f9a
-  highlight Comment guifg=#686f9a
+  highlight Comment gui=bold guibg=none guifg=#686f9a 
 endif
-highlight Comment gui=bold,italic
 highlight Normal guibg=none
 highlight NonText guifg=#e1e1e1 guibg=none
 highlight CocErrorHighlight guifg=#e33400
@@ -147,7 +146,8 @@ set clipboard+=unnamedplus
 set expandtab
 set foldenable
 set foldlevelstart=20
-set foldmethod=indent
+set foldmethod=syntax
+let javaScript_fold=1
 set hidden
 set ignorecase
 set nobackup
@@ -216,10 +216,13 @@ let g:NERDTreePatternMatchHighlightColor['.*test(s|).ts$'] = 'FE405F'
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
 let g:coc_global_extensions = [
 	\ 'coc-css',
 	\ 'coc-eslint',
@@ -399,9 +402,9 @@ nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
 
 " Manipulate tabs T-
-nnoremap <Leader>td :tabclose<CR>
-nnoremap <Leader>tn :tabnew %<CR>
-nnoremap <Leader>tt :tabonly<CR>
+" nnoremap <Leader>td :tabclose<CR>
+" nnoremap <Leader>tn :tabnew %<CR>
+" nnoremap <Leader>tt :tabonly<CR>
 
 " Manipulate buffers B-
 nnoremap <Leader>bb :e#<CR>
@@ -409,27 +412,33 @@ nnoremap <Leader>bdo :BufOnly<CR>
 nnoremap <Leader>bdd :Bclose!<CR>
 nnoremap <Leader>bdl :BCloseMultiple<CR>
 nnoremap <Leader>bl :Buffers<CR>
-nnoremap gB :bp<CR>:call lens#run()<CR>
-nnoremap gb :bn<CR>:call lens#run()<CR>
+nnoremap <Leader>bp :bp<CR>:call lens#run()<CR>
+nnoremap <Leader>bn :bn<CR>:call lens#run()<CR>
 
 " CoC
 imap <C-l> <Plug>(coc-snippets-expand)
 inoremap <silent><expr> <C-Space> coc#refresh()
+" nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+" vmap <C-n> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-n>'
+let g:coc_snippet_prev = '<c-p>'
+
 " - errors E-
-nmap <silent> <Leader>eJ <Plug>(coc-diagnostic-next-error)
-nmap <silent> <Leader>eK <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <Leader>eN <Plug>(coc-diagnostic-next-error)
+nmap <silent> <Leader>eP <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <Leader>ee <Plug>(coc-diagnostic-info)
-nmap <silent> <Leader>ej <Plug>(coc-diagnostic-next)
-nmap <silent> <Leader>ek <Plug>(coc-diagnostic-prev)
+nmap <silent> <Leader>en <Plug>(coc-diagnostic-next)
+nmap <silent> <Leader>ep <Plug>(coc-diagnostic-prev)
+
 " - LSP L-
 nmap <Leader>lc <Plug>(coc-rename)
-nmap <silent> <Leader>ld <Plug>(coc-definition)
-nmap <silent> <Leader>li <Plug>(coc-implementation)
+nmap <silent> <Leader>ld :call CocActionAsync('jumpDefinition')<CR>
+nmap <silent> <Leader>li :call CocActionAsync('jumpImplementation', v:false)<CR>
 nmap <silent> <Leader>ll ea<C-Space>
-nmap <silent> <Leader>lr <Plug>(coc-references)
-nmap <silent> <Leader>lt <Plug>(coc-type-definition)
-nmap <silent> <Leader>lw <Plug>(coc-declaration)
+nmap <silent> <Leader>lr :call CocActionAsync('jumpReferences', v:false)<CR>
+nmap <silent> <Leader>lt :call CocActionAsync('jumpTypeDefinition', v:false)<CR>
+nmap <silent> <Leader>lw :call CocActionAsync('jumpDeclaration', v:false)<CR>
 
 " Git G-
 nmap [c <Plug>(GitGutterPrevHunk)
@@ -439,10 +448,6 @@ nmap <Leader>ghs <Plug>(GitGutterStageHunk)
 nmap <Leader>ghu <Plug>(GitGutterUndoHunk)
 nmap <Leader>gdh :diffget //2 | diffupdate
 nmap <Leader>gdl :diffget //3 | diffupdate
-
-" vmap <C-n> <Plug>(coc-snippets-select)
-let g:coc_snippet_next = '<c-n>'
-let g:coc_snippet_prev = '<c-p>'
 
 " Open important files O-
 nnoremap <Leader>ob :e ~/.zshrc<CR>G
