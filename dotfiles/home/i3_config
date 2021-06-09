@@ -174,4 +174,4 @@ exec --no-startup-id dunst
 exec --no-startup-id pkill unclutter
 
 # Lockscreen
-# bindsym $mod+F2 exec ~/comfy_guration/scripts/i3lock_cookit.sh
+bindsym $mod+Ctrl+L exec ~/comfy_guration/scripts/home/i3lock.sh
