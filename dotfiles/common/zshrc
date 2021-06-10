@@ -7,6 +7,7 @@ fi
 
 # ZSH configuration
 # export TERM="xterm-256color"
+export TERM=tmux-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export ZSH="/home/snowl/.oh-my-zsh"
@@ -42,6 +43,7 @@ alias zr=source ~/.zshrc
 alias t=tree
 alias python=python3
 alias pip=pip3
+alias clip=xclip -selection clipboard
 alias vi=nvim
 
 ## Tmux
@@ -65,4 +67,3 @@ alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
