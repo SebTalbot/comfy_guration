@@ -205,7 +205,7 @@ focus_follows_mouse no
 exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/montreal.jpg
 
 # Picom
-exec --no-startup-id picom --experimental-backends --config ~/comfy_guration/dotfiles/laptop/picom.conf
+exec --no-startup-id picom --experimental-backends -f --config ~/comfy_guration/dotfiles/laptop/picom.conf
 
 # Caps as Esc
 exec --no-startup-id ~/comfy_guration/scripts/switch_caps_escape.sh
@@ -223,7 +223,7 @@ exec --no-startup-id ~/softwares/i3-battery-popup/i3-battery-popup -n
 bindsym $mod+space exec ~/comfy_guration/scripts/keyboard_lang.sh
 
 # Lockscreen
-bindsym $mod+F2 exec ~/comfy_guration/scripts/i3lock.sh
+# bindsym $mod+shift+l exec ~/comfy_guration/scripts/i3lock.sh
 
 # Gaps
 #smart_gaps on
