@@ -223,7 +223,7 @@ exec --no-startup-id ~/softwares/i3-battery-popup/i3-battery-popup -n
 bindsym $mod+space exec ~/comfy_guration/scripts/keyboard_lang.sh
 
 # Lockscreen
-# bindsym $mod+shift+l exec ~/comfy_guration/scripts/i3lock.sh
+bindsym $mod+Ctrl+L exec ~/comfy_guration/scripts/laptop/i3lock.sh
 
 # Gaps
 #smart_gaps on

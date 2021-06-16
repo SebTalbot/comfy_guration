@@ -10,6 +10,7 @@ fi
 export TERM=tmux-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
+export NPM_CONFIG_PREFIX=~/.npm-global
 export ZSH="/home/snowl/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
 
