@@ -451,5 +451,6 @@ nmap <Leader>gdl :diffget //3 | diffupdate
 
 " Open important files O-
 nnoremap <Leader>ob :e ~/.zshrc<CR>G
+nnoremap <Leader>oi :e ~/.config/i3/config<CR>G
 nnoremap <Leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
 nnoremap <Leader>od :e ~/.config/nvim/init.vim<CR>G
