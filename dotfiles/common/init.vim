@@ -173,6 +173,8 @@ if has("autocmd")
   autocmd BufWritePre * :silent !mkdir -p %:p:h
 end
 
+autocmd FileType json set conceallevel=0
+
 " - - - - - - - - - - - - - - - - -
 " L A N G U A G E S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "

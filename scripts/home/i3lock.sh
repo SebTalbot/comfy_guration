@@ -7,7 +7,7 @@ T='#b3a1e6ff'  # text
 W='#ce6f8fff'  # wrong
 V='#ecf0c1ff'  # verifying
 
-killall -s SIGSTOP notify-osd
+killall -SIGUSR1 dunst # pause
 setxkbmap us
 
 i3lock \
@@ -39,4 +39,4 @@ i3lock \
   --keylayout 2         \
   -n
 
-killall -s SIGCONT notify-osd
+killall -SIGUSR2 dunst # resume
