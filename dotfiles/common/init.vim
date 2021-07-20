@@ -71,9 +71,6 @@ Plug 'SebTalbot/yats.vim'
 Plug 'jparise/vim-graphql'
 """ Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-""" LaTeX
-Plug 'lervag/vimtex'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 """ Ruby
 Plug 'vim-ruby/vim-ruby'
 
@@ -236,8 +233,7 @@ let g:coc_global_extensions = [
 	\ 'coc-python',
   \ 'coc-solargraph',
 	\ 'coc-snippets',
-	\ 'coc-tsserver',
-  \ 'coc-vimtex'
+	\ 'coc-tsserver'
 \ ]
 
 " Airline

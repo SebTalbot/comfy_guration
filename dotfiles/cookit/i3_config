@@ -1,0 +1,177 @@
+# Variables
+set $mod Mod4
+
+set $up k
+set $right l
+set $down j
+set $left h
+
+set $w1 1
+set $w2 2
+set $w3 3
+set $w4 4
+set $w5 5
+set $w6 6
+set $w7 7
+set $w8 8
+set $w9 9
+set $w10 10
+
+# - SETTINGS --------------------------------------------------------------------
+# - No mouse follow
+focus_follows_mouse no
+
+# - STYLE -----------------------------------------------------------------------
+# - Font
+font pango:Hack bold 9
+
+# - Border color
+# - class                        border   backgr.  text
+client.focused					         #b3a1e6  #b3a1e6  #30365F  #b3a1e6
+client.unfocused				         #30365F  #30365F  #315858  #30365F
+client.focused_inactive			     #30365F  #30365F  #2c2e2f  #30365F
+client.urgent  	              	 #20ad80  #20ad80  #30365F  #30365F
+
+# - Gaps
+# smart_gaps on
+# smart_borders on
+gaps inner 20
+gaps outer 30
+
+# - Disable title bar
+new_window pixel
+
+# - Keybindings ---------------------------------------------------------------
+## - Applications
+# start a terminal
+bindsym $mod+Return exec konsole
+
+# - Menu
+bindsym $mod+d exec --no-startup-id ~/comfy_guration/scripts/cookit/rofi_run.sh
+
+# - Audio -----------------------------
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+# - Screenshot
+for_window [class="Shutter"] floating enable
+bindsym Print exec shutter -s -e -n -o '~/pictures/screenshots/%y_%m_%d_%T.png'
+
+## - Window manipulations -------------
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# - Kill focused window
+bindsym $mod+Shift+q kill
+
+# - Change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# - Alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# - Move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# - Alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# - Split in horizontal orientation
+bindsym $mod+c split h
+
+# - Split in vertical orientation
+bindsym $mod+v split v
+
+# - Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# - Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# - Toggle tiling / floating
+bindsym $mod+Shift+x floating toggle
+
+# - Change focus between tiling / floating windows
+bindsym $mod+x focus mode_toggle
+
+# - Focus the parent container
+bindsym $mod+a focus parent
+
+# - Focus the child container
+#bindsym $mod+d focus child
+
+# - Switch to workspace
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
+bindsym $mod+0 workspace $w10
+
+# - Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7
+bindsym $mod+Shift+8 move container to workspace $w8
+bindsym $mod+Shift+9 move container to workspace $w9
+bindsym $mod+Shift+0 move container to workspace $w10
+
+# - Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# - Restart i3
+bindsym $mod+Shift+r restart
+
+# - Exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# - Resize mode
+mode "resize" {
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $down resize grow height 10 px or 10 ppt
+        bindsym $up resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+# SCRIPTS ---------------------------------------------------------------------
+
+# startup script
+exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
+exec --no-startup-id ~/comfy_guration/scripts/cookit/lauch_screen.sh
+exec --no-startup-id picom --experimental-backends -f --config ~/comfy_guration/dotfiles/cookit/picom.conf
+exec --no-startup-id dunst
+exec --no-startup-id pkill unclutter
+
+# Lockscreen
+bindsym $mod+Ctrl+L exec ~/comfy_guration/scripts/home/i3lock.sh

@@ -1,0 +1,451 @@
+;-------------------------------------------------------------------------------
+;	V A R I A B L E S
+;-------------------------------------------------------------------------------
+
+[colors]
+foreground = #ecf0c1
+background = #30365F
+
+trans = #b50f111b
+red = #e33400
+orange = #e39400
+green = #5ccc96
+pink = #ce6f8f
+blue = #00a3cc
+purple = #b3a1e6
+purple2 = #7a5ccc
+grey = #686f9a
+white = #eee
+
+;-------------------------------------------------------------------------------
+;	B A R S
+;-------------------------------------------------------------------------------
+
+[bar/right]
+monitor = HDMI-1
+width = 100%
+height = 15
+radius = 1.0
+fixed-center = true
+
+background = ${colors.trans}
+foreground = ${colors.foreground}
+
+border-bottom-size = 4
+border-bottom-color = ${colors.purple}
+
+font-0 = PragmataPro:pixelsize=11:weight=bold;3
+font-1 = PragmataPro:pixelsize=14;3
+font-2 = Hack:pixelsize=10;3
+font-3 = Hack:pixelsize=30;0
+
+modules-left = i3 arrow arrow0
+modules-center = middle0 middle1 day middle2 date_symbols middle1 time middle2 middle3
+modules-right = arrow1 arrow2 filesystem arrow3 arrow2 cpu arrow3 arrow2 memory arrow3 arrow2 volume arrow3 arrow2 eth
+
+tray-position = 
+
+[bar/left]
+monitor = DVI-I-1
+width = 100%
+height = 15
+radius = 1.0
+fixed-center = true
+tray-position = left
+tray-background = ${colors.background}
+tray-padding = 8
+
+
+background = ${colors.trans}
+foreground = ${colors.foreground}
+
+border-bottom-size = 3
+border-bottom-color = ${colors.purple}
+
+font-0 = PragmataPro:pixelsize=11:weight=bold;3
+font-1 = PragmataPro:pixelsize=14;3
+
+modules-left = arrow arrow0
+modules-center =
+modules-right = arrow1 arrow2 i3
+
+;-------------------------------------------------------------------------------
+;	D E C O R A T I O N S
+;-------------------------------------------------------------------------------
+
+[module/arrow]
+; background to purple
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.background}
+content-background = ${colors.purple}
+
+[module/arrow0]
+; purple to trans
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.purple}
+content-background = ${colors.trans}
+
+[module/arrow1]
+; trans to purple
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.purple}
+content-background = ${colors.trans}
+
+[module/arrow2]
+; purple to background
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.background}
+content-background = ${colors.purple}
+
+[module/arrow3]
+; trans to purple
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.purple}
+content-background = ${colors.background}
+
+; MIDDLE ---------
+
+[module/middle0]
+type = custom/text
+content = "◥"
+content-font = 4
+content-foreground = ${colors.purple}
+content-background = ${colors.trans}
+
+[module/middle1]
+type = custom/text
+content = "◥"
+content-font = 4
+content-foreground = ${colors.background}
+content-background = ${colors.purple}
+
+[module/middle2]
+type = custom/text
+content = "◤"
+content-font = 4
+content-foreground = ${colors.background}
+content-background = ${colors.purple}
+
+[module/middle3]
+type = custom/text
+content = "◤"
+content-font = 4
+content-foreground = ${colors.purple}
+content-background = ${colors.trans}
+
+[module/date_symbols]
+type = custom/text
+content = " Cookit "
+content-font = 1
+content-foreground = ${colors.background}
+content-background = ${colors.purple}
+
+;-------------------------------------------------------------------------------
+;	M O D U L E S
+;-------------------------------------------------------------------------------
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format-prefix = " KEY "
+format-prefix-font = 1
+format-prefix-foreground = ${colors.blue}
+format-prefix-background = ${colors.background}
+label-layout = %layout%
+label-layout-font = 1
+label-layout-foreground = ${colors.blue}
+label-layout-background = ${colors.background}
+; label-indicator-padding = 2
+; label-indicator-margin = 1
+; label-indicator-background = ${colors.blue}
+; label-indicator-underline = ${colors.blue}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted = " HDD %percentage_used%%"
+label-unmounted = %mountpoint% not mounted
+label-mounted-foreground = ${colors.purple}
+label-mounted-background = ${colors.background}
+
+[module/i3index]
+type = internal/i3
+format = <label-state>
+label-focused = "%name% "
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.pink}
+label-visible = "%name% "
+label-visible-foreground = ${colors.trans}
+label-visible-background = ${colors.pink}
+label-unfocused =
+label-urgent =
+
+[module/i3]
+type = internal/i3
+format = <label-state><label-mode>
+index-sort = false
+enable-click = false
+enable-scroll = false
+ws-icon-0 = 10;0:RUN
+ws-icon-1 = 1;1:COM
+ws-icon-2 = 2;2:WEB
+ws-icon-3 = 3;3:DEV
+ws-icon-4 = 4;4:GIT
+ws-icon-5 = 5;5
+ws-icon-6 = 6;6
+ws-icon-7 = 7;7
+ws-icon-8 = 8;8
+ws-icon-9 = 9;9
+ws-icon-default =
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+label-mode = " <%mode%> "
+label-mode-foreground = ${colors.red}
+label-mode-background = ${colors.background}
+; focused = Active workspace on focused monitor
+label-focused = " %icon% "
+label-focused-foreground = ${colors.pink}
+label-focused-background = ${colors.background}
+label-visible = " %icon% "
+label-visible-foreground = ${colors.purple}
+label-visible-background = ${colors.background}
+; unfocused = Inactive workspace on any monitor
+label-unfocused = " %icon% "
+label-unfocused-foreground = ${colors.grey}
+label-unfocused-background = ${colors.background}
+; urgent = Workspace with urgency hint set
+label-urgent = "  >%icon%<  "
+label-urgent-foreground = ${colors.green}
+label-urgent-background = ${colors.background}
+label-separator = //
+label-separator-padding = 0
+label-separator-foreground = ${colors.purple}
+label-separator-background = ${colors.background}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " CPU "
+format-prefix-foreground = ${colors.purple}
+format-prefix-background = ${colors.background}
+label = %percentage%%
+label-foreground = ${colors.purple}
+label-background = ${colors.background}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " RAM "
+format-prefix-foreground = ${colors.purple}
+format-prefix-background = ${colors.background}
+label = %percentage_used%%
+label-foreground = ${colors.purple}
+label-background = ${colors.background}
+
+[module/wlan]
+type = internal/network
+interface =
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.red}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.red}
+
+[module/eth]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+;format-connected-underline = #55aa55
+;format-connected-prefix = "U "
+;format-connected-prefix-foreground = ${colors.pink}
+;format-connected-prefix-background = ${colors.background}
+label-connected = %local_ip%
+label-connected-foreground = ${colors.purple}
+label-connected-background = ${colors.background}
+label-connected-padding = 1
+
+format-disconnected = ETH DOWN
+format-disconnected-foreground = ${colors.red}
+format-disconnected-background = ${colors.background}
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.red}
+
+[module/day]
+type = internal/date
+interval = 5
+date = " %Y-%m-%d"
+time= %H:%M:%S
+label = %date%
+label-foreground = ${colors.purple}
+label-background = ${colors.background}
+
+[module/time]
+type = internal/date
+interval = 5
+time= %H:%M:%S
+label = %time%
+label-foreground = ${colors.purple}
+label-background = ${colors.background}
+
+[module/volume]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+format-volume = <ramp-volume><label-volume>
+
+label-volume = %percentage%%
+label-volume-foreground = ${colors.purple}
+label-volume-background = ${colors.background}
+label-muted = " MUTED"
+label-muted-foreground = ${colors.white}
+label-muted-background = ${colors.background}
+
+ramp-volume-0 = " VOL "
+ramp-volume-0-foreground = ${colors.purple}
+ramp-volume-0-background = ${colors.background}
+ramp-volume-1 = " VOL "
+ramp-volume-1-foreground = ${colors.purple}
+ramp-volume-1-background = ${colors.background}
+ramp-volume-2 = " VOL "
+ramp-volume-2-foreground = ${colors.purple}
+ramp-volume-2-background = ${colors.background}
+ramp-volume-3 = " VOL "
+ramp-volume-3-foreground = ${colors.purple}
+ramp-volume-3-background = ${colors.background}
+
+[module/battery]
+interval = 5
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.green}
+format-charging-background = ${colors.grey}
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.green}
+format-discharging-background = ${colors.grey}
+format-full = <label-full>
+format-full-foreground = ${colors.green}
+format-full-background = ${colors.grey}
+
+label-charging = "CHR %percentage%%"
+label-discharging = "BAT %percentage%%"
+label-discharging-foreground = ${colors.green}
+label-full = "BAT %percentage%%"
+
+ramp-capacity-0 =
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1 =
+ramp-capacity-1-foreground = ${colors.red}
+ramp-capacity-2 =
+ramp-capacity-3 =
+ramp-capacity-4 =
+animation-charging-0 =
+animation-charging-1 =
+animation-charging-2 =
+animation-charging-3 =
+animation-charging-4 =
+animation-charging-framerate = 100
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.red}
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.red}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[module/music]
+type = custom/script
+interval = 1
+
+label = %output:0:45:...%
+exec = ~/comfy_guration/scripts/polybar/poly_music.sh
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
+
+[module/title]
+type = internal/xwindow
+
+format-background = ${colors.background}
+format-foreground = ${colors.purple}
+format-padding = 1
+
+label-maxlen = 200
