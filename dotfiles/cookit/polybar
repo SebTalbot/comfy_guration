@@ -41,7 +41,7 @@ font-3 = Hack:pixelsize=30;0
 
 modules-left = i3 arrow arrow0
 modules-center = middle0 middle1 day middle2 date_symbols middle1 time middle2 middle3
-modules-right = arrow1 arrow2 filesystem arrow3 arrow2 cpu arrow3 arrow2 memory arrow3 arrow2 volume arrow3 arrow2 eth
+modules-right = arrow1 arrow2 xkeyboard arrow3 arrow2 filesystem arrow3 arrow2 cpu arrow3 arrow2 memory arrow3 arrow2 volume arrow3 arrow2 eth
 
 tray-position = 
 
@@ -157,18 +157,18 @@ content-background = ${colors.purple}
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-format-prefix = " KEY "
-format-prefix-font = 1
-format-prefix-foreground = ${colors.blue}
+blacklist-1 = scroll lock
+blacklist-2 = caps lock
+
+format-prefix = "  "
+format-prefix-font = 3
+format-prefix-foreground = ${colors.purple}
 format-prefix-background = ${colors.background}
-label-layout = %layout%
+
+label-layout = "%layout%"
 label-layout-font = 1
-label-layout-foreground = ${colors.blue}
+label-layout-foreground = ${colors.purple}
 label-layout-background = ${colors.background}
-; label-indicator-padding = 2
-; label-indicator-margin = 1
-; label-indicator-background = ${colors.blue}
-; label-indicator-underline = ${colors.blue}
 
 [module/filesystem]
 type = internal/fs
@@ -321,22 +321,19 @@ format-volume = <ramp-volume><label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${colors.purple}
 label-volume-background = ${colors.background}
-label-muted = " MUTED"
-label-muted-foreground = ${colors.white}
+ramp-volume-0 = "  "
+ramp-volume-1 = "  "
+ramp-volume-2 = "  "
+ramp-volume-3 = "  "
+ramp-volume-4 = "  "
+ramp-volume-5 = "  "
+ramp-volume-font = 3
+ramp-volume-foreground = ${colors.purple}
+ramp-volume-background = ${colors.background}
+label-muted = "  "
+label-muted-font = 3
+label-muted-foreground = ${colors.purple}
 label-muted-background = ${colors.background}
-
-ramp-volume-0 = " VOL "
-ramp-volume-0-foreground = ${colors.purple}
-ramp-volume-0-background = ${colors.background}
-ramp-volume-1 = " VOL "
-ramp-volume-1-foreground = ${colors.purple}
-ramp-volume-1-background = ${colors.background}
-ramp-volume-2 = " VOL "
-ramp-volume-2-foreground = ${colors.purple}
-ramp-volume-2-background = ${colors.background}
-ramp-volume-3 = " VOL "
-ramp-volume-3-foreground = ${colors.purple}
-ramp-volume-3-background = ${colors.background}
 
 [module/battery]
 interval = 5

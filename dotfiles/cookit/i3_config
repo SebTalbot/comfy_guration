@@ -139,6 +139,9 @@ bindsym $mod+Shift+8 move container to workspace $w8
 bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to workspace $w10
 
+# Switch keyboard language
+bindsym $mod+space exec ~/comfy_guration/scripts/keyboard_lang.sh
+
 # - Reload the configuration file
 bindsym $mod+Shift+c reload
 
