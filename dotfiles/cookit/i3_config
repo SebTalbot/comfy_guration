@@ -175,6 +175,7 @@ exec --no-startup-id ~/comfy_guration/scripts/cookit/lauch_screen.sh
 exec --no-startup-id picom --experimental-backends -f --config ~/comfy_guration/dotfiles/cookit/picom.conf
 exec --no-startup-id dunst
 exec --no-startup-id pkill unclutter
+exec --no-startup-id ibus-daemon
 
 # Lockscreen
 bindsym $mod+Ctrl+L exec ~/comfy_guration/scripts/home/i3lock.sh
