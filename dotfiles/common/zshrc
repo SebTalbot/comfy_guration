@@ -6,8 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ZSH configuration
-# export TERM="xterm-256color"
-export TERM=tmux-256color
+# export TERM=tmux-256color
+export TERM=xterm-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
@@ -44,8 +44,9 @@ alias zr=source ~/.zshrc
 alias t=tree
 alias python=python3
 alias pip=pip3
-alias clip=xclip -selection clipboard
+alias clip='xclip -selection clipboard'
 alias vi=nvim
+alias cv='cd /opt/lampp/htdocs/wordpress/wp-content/themes/chefcookit.com'
 
 ## Tmux
 alias ta='tmux attach -t'
@@ -68,3 +69,5 @@ alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias luamake=/home/snowl/tmp/lua-language-server/3rd/luamake/luamake

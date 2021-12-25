@@ -1,8 +1,3 @@
-" - - - - - - - - - - - -
-" D E P E N D E N C I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
-
 " - - - - - - -
 " P L U G I N S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 "
@@ -49,6 +44,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'AndrewRadev/splitjoin.vim'
 
 " AUTOCOMP, SNIPPETS AND LANGUAGE SPECIFIC
+Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat', 'do': ':TSUpdate' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neco-vim'
@@ -56,26 +52,24 @@ Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'jiangmiao/auto-pairs'
+Plug 'xavierchow/vim-swagger-preview'
 
 "" Javascript
-Plug 'jelera/vim-javascript-syntax'
+" Plug 'jelera/vim-javascript-syntax'
 """ React / JSX
-Plug 'mxw/vim-jsx'
-Plug 'epilande/vim-react-snippets'
+" Plug 'mxw/vim-jsx'
+" Plug 'epilande/vim-react-snippets'
 " Plug 'mattn/emmet-vim'
-Plug 'Valloric/MatchTagAlways'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'Valloric/MatchTagAlways'
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """ Typescript
-Plug 'SebTalbot/yats.vim'
+" Plug 'SebTalbot/yats.vim'
 """ GraphQL
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 """ Markdown
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-""" LaTeX
-Plug 'lervag/vimtex'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 """ Ruby
-Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
 filetype plugin indent on
@@ -136,7 +130,7 @@ endif
 highlight Normal guibg=none
 highlight NonText guifg=#e1e1e1 guibg=none
 highlight CocErrorHighlight guifg=#e33400
-highlight CocWarningHighlight guifg=#e39400
+highlight CocWarningHighlight guifg=#f3aaaa
 
 " - - - - - - - - - - - - - - - - - -
 " F E E L S   & &   U T I L I T I E S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -172,6 +166,23 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 if has("autocmd")
   autocmd BufWritePre * :silent !mkdir -p %:p:h
 end
+
+autocmd FileType json set conceallevel=0
+
+" treesitter
+lua <<EOF
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.typescript.used_by = "javascript.jsx"
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+  ignore_install = {  },
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+}
+EOF
 
 " - - - - - - - - - - - - - - - - -
 " L A N G U A G E S   C O N F I G S \ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -234,8 +245,7 @@ let g:coc_global_extensions = [
 	\ 'coc-python',
   \ 'coc-solargraph',
 	\ 'coc-snippets',
-	\ 'coc-tsserver',
-  \ 'coc-vimtex'
+	\ 'coc-tsserver'
 \ ]
 
 " Airline
@@ -374,6 +384,7 @@ nnoremap <Leader>ant :NERDTreeToggle<CR>
 nnoremap <Leader>ar :CocCommand workspace.renameCurrentFile<CR>
 nnoremap <Leader>at :VwmToggle term<CR>
 nnoremap <Leader>au :call lens#toggle()<CR>:MundoToggle<CR>
+nnoremap <Leader>asw <Plug>GenerateDiagram
 
 " Search S-
 nnoremap <Leader>sa :Ag<CR>
@@ -451,5 +462,6 @@ nmap <Leader>gdl :diffget //3 | diffupdate
 
 " Open important files O-
 nnoremap <Leader>ob :e ~/.zshrc<CR>G
+nnoremap <Leader>oi :e ~/.config/i3/config<CR>G
 nnoremap <Leader>oc :e ~/.config/nvim/coc-settings.json<CR>G
 nnoremap <Leader>od :e ~/.config/nvim/init.vim<CR>G
