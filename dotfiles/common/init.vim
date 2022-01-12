@@ -202,7 +202,7 @@ autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 "
 
 " Lens
-let g:lens#disabled = 0
+let g:lens#disabled = 1
 let g:lens#disabled_filetypes = ['Mundo', 'MundoDiff', 'GV', 'git']
 let g:lens#width_resize_max = 200
 let g:lens#width_resize_min = 80
@@ -383,7 +383,7 @@ nnoremap <Leader>anq :NERDTreeClose<CR>
 nnoremap <Leader>ant :NERDTreeToggle<CR>
 nnoremap <Leader>ar :CocCommand workspace.renameCurrentFile<CR>
 nnoremap <Leader>at :VwmToggle term<CR>
-nnoremap <Leader>au :call lens#toggle()<CR>:MundoToggle<CR>
+nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>asw <Plug>GenerateDiagram
 
 " Search S-
