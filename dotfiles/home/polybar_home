@@ -41,7 +41,7 @@ font-3 = HackNerdFont:pixelsize=37;0
 
 modules-left = i3 arrow arrow0
 modules-center = middle0 middle1 day middle2 date_symbols middle1 time middle2 middle3
-modules-right = arrow1 arrow2 filesystem arrow3 arrow2 cpu arrow3 arrow2 memory arrow3 arrow2 volume arrow3 arrow2 eth
+modules-right = arrow1 arrow2 xkeyboard arrow1 arrow2 filesystem arrow3 arrow2 cpu arrow3 arrow2 memory arrow3 arrow2 volume arrow3 arrow2 eth
 
 tray-position = 
 
@@ -157,18 +157,18 @@ content-background = ${colors.purple}
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
+blacklist-1 = scroll lock
+format = "<label-layout><label-indicator>"
+format-spacing = 0
 format-prefix = " KEY "
 format-prefix-font = 1
-format-prefix-foreground = ${colors.blue}
+format-prefix-foreground = ${colors.purple}
 format-prefix-background = ${colors.background}
 label-layout = %layout%
 label-layout-font = 1
-label-layout-foreground = ${colors.blue}
+label-layout-foreground = ${colors.purple}
 label-layout-background = ${colors.background}
-; label-indicator-padding = 2
-; label-indicator-margin = 1
-; label-indicator-background = ${colors.blue}
-; label-indicator-underline = ${colors.blue}
+label-indicator-on-capslock = " CAPS"
 
 [module/filesystem]
 type = internal/fs
