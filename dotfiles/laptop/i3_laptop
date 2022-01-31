@@ -187,8 +187,8 @@ exec_always --no-startup-id ~/comfy_guration/scripts/laptop/polybar.sh
 exec --no-startup-id nm-applet
 
 # Audio
-bindsym XF86AudioRaiseVolume exec "amixer -q set Master 5%+"
-bindsym XF86AudioLowerVolume exec "amixer -q set Master 5%-"
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse set Master 5%+"
+bindsym XF86AudioLowerVolume exec "amixer -D pulse set Master 5%-"
 bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
 
 # Brightness

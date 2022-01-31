@@ -98,28 +98,6 @@ if $CURRENT_DEVICE == 'laptop'
   highlight Symbol guifg=#FE8019
   highlight Symbol gui=bold
   highlight NonText guifg=#B73C33
-  let g:terminal_ansi_colors = [
-        \ '#182725',
-        \ '#B73C33',
-        \ '#AD6143',
-        \ '#A8A392',
-        \ '#C08552',
-        \ '#AA632F',
-        \ '#5D5E5A',
-        \ '#A89984',
-        \ '#888A85',
-        \ '#B73C33',
-        \ '#AD6143',
-        \ '#A8A392',
-        \ '#C08552',
-        \ '#AA632F',
-        \ '#5D5E5A',
-        \ '#D8C5B8',
-     \ ]
-    for i in range(16)
-        let g:terminal_color_{i} = g:terminal_ansi_colors[i]
-    endfor
-    unlet! g:terminal_ansi_colors
 else
   colorscheme spaceduck
   let g:airline_theme = 'spaceduck'
@@ -202,7 +180,7 @@ autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 "
 
 " Lens
-let g:lens#disabled = 0
+let g:lens#disabled = 1
 let g:lens#disabled_filetypes = ['Mundo', 'MundoDiff', 'GV', 'git']
 let g:lens#width_resize_max = 200
 let g:lens#width_resize_min = 80
