@@ -25,6 +25,7 @@ Plug 'camspiers/lens.vim'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'arcticicestudio/nord-vim'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+Plug 'Rigellute/shades-of-purple.vim'
 
 " APPLICATIONS
 Plug 'simnalamburt/vim-mundo'
@@ -53,6 +54,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'jiangmiao/auto-pairs'
 Plug 'xavierchow/vim-swagger-preview'
+
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 "" Javascript
 " Plug 'jelera/vim-javascript-syntax'
@@ -100,7 +104,7 @@ if $CURRENT_DEVICE == 'laptop'
   highlight NonText guifg=#B73C33
 else
   colorscheme spaceduck
-  let g:airline_theme = 'spaceduck'
+  let g:airline_theme = 'shades_of_purple'
   highlight Visual guibg=#b3a1e6 guifg=#1b1c36
   highlight LineNr guifg=#686f9a
   highlight Comment gui=bold guibg=none guifg=#686f9a 
@@ -181,7 +185,7 @@ autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
 " Lens
 let g:lens#disabled = 1
-let g:lens#disabled_filetypes = ['Mundo', 'MundoDiff', 'GV', 'git']
+let g:lens#disabled_filetypes = ['Mundo', 'MundoDiff', 'GV', 'git', 'vim']
 let g:lens#width_resize_max = 200
 let g:lens#width_resize_min = 80
 
@@ -356,20 +360,20 @@ nnoremap <Leader>yy :let @+ = expand('%:r')<CR>
 nnoremap <Leader>ac :ColorToggle<CR>
 nnoremap <Leader>afp :CocCommand prettier.formatFile<CR>
 nnoremap <Leader>afe :CocCommand eslint.executeAutofix<CR>
-nnoremap <Leader>ann :NERDTreeFind<CR>
-nnoremap <Leader>anq :NERDTreeClose<CR>
-nnoremap <Leader>ant :NERDTreeToggle<CR>
+nnoremap <Leader>nn :NERDTreeFind<CR>
+nnoremap <Leader>nq :NERDTreeClose<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>ar :CocCommand workspace.renameCurrentFile<CR>
 nnoremap <Leader>at :VwmToggle term<CR>
-nnoremap <Leader>au :call lens#toggle()<CR>:MundoToggle<CR>
+nnoremap <Leader>au :MundoToggle<CR>
 nnoremap <Leader>asw <Plug>GenerateDiagram
 
 " Search S-
-nnoremap <Leader>sa :Ag<CR>
-nnoremap <Leader>sb :Buffers<CR>
-nnoremap <Leader>sf :FilesPreview<CR>!node_modules !.tests.<Space>
-nnoremap <Leader>ss :AgWithoutDir<CR>
-nnoremap <Leader>st :FilesPreview<CR>!node_modules '.tests.<Space>
+nnoremap <Leader>fa :Ag<CR>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>ff :FilesPreview<CR>!node_modules !.tests.<Space>
+nnoremap <Leader>fw :AgWithoutDir<CR>
+nnoremap <Leader>ft :FilesPreview<CR>!node_modules '.tests.<Space>
 
 " Manipulate windows W-
 nnoremap <Leader>wH <C-W><S-H>
