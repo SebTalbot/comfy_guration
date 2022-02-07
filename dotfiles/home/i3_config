@@ -18,6 +18,9 @@ set $w9 9
 set $w10 10
 
 # - SETTINGS --------------------------------------------------------------------
+# - Floating windows in center
+for_window [class=".*"] move position center
+
 # - No mouse follow
 focus_follows_mouse no
 
@@ -82,6 +85,7 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
+bindsym $mod+z move position center
 
 # - Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
