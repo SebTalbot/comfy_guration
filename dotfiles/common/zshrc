@@ -7,6 +7,7 @@ fi
 
 # ZSH configuration
 # export TERM=tmux-256color
+export CURRENT_DEVICE=laptop
 export TERM=xterm-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH

@@ -45,7 +45,7 @@ font-7 = Pragmata Pro Ligaturized:pixelsize=11:weight=bold;3
 
 modules-left = arrow_l1 arrow_l2 i3 arrow_i3 i3_index arrow_i3_index i3_icon i3_name arrow_i3_name arrow_i3_end arrow_i3_name
 modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4
-modules-right = arrow_r3 arrow_r4 arrow_r3 xkeyboard arrow_r2 volume_symbol volume arrow_r1 ram_symbol ram arrow_r2 cpu_symbol cpu arrow_r1 filesystem_symbol filesystem arrow_r2 battery battery_text arrow_r1 temperature_symbol temperature
+modules-right = arrow_r3 arrow_r4 arrow_r3 xkeyboard arrow_r2 volume arrow_r1 ram_symbol ram arrow_r2 cpu_symbol cpu arrow_r1 filesystem_symbol filesystem arrow_r2 battery battery_text arrow_r1 temperature_symbol temperature
 
 tray-position = left
 tray-background = ${colors.mid}
@@ -418,15 +418,26 @@ content-foreground = ${colors.light}
 content-background = ${colors.mid}
 
 [module/volume]
-type = custom/script
-exec = ~/comfy_guration/scripts/volume_output.sh
-interval = 0.2
+type = internal/pulseaudio
+;link = alsa_output.pci-0000_00_1f.3.analog-stereo
+format-volume = <ramp-volume><label-volume>
 
-format = <label>
-format-background = ${colors.light}
-format-foreground = ${colors.mid}
-
-label = " %output%"
+label-volume = %percentage%%
+label-volume-foreground = ${colors.mid}
+label-volume-background = ${colors.light}
+ramp-volume-0 = "  "
+ramp-volume-1 = "  "
+ramp-volume-2 = "  "
+ramp-volume-3 = "  "
+ramp-volume-4 = "  "
+ramp-volume-5 = "  "
+ramp-volume-font = 3
+ramp-volume-foreground = ${colors.mid}
+ramp-volume-background = ${colors.light}
+label-muted = "  "
+label-muted-font = 3
+label-muted-foreground = ${colors.mid}
+label-muted-background = ${colors.light}
 
 
 [module/volume_symbol]
