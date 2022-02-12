@@ -47,7 +47,7 @@ new_window pixel
 # - Keybindings ---------------------------------------------------------------
 ## - Applications
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec kitty
 
 # - Menu
 bindsym $mod+d exec --no-startup-id ~/comfy_guration/scripts/home/rofi.sh
