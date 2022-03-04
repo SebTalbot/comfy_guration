@@ -23,7 +23,6 @@ plugins=(
   docker
   git
   kubectl
-  npx
   vi-mode
   zsh-syntax-highlighting
 )

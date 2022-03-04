@@ -45,7 +45,7 @@ font-3 = Hack Nerd Font Mono:size=20;6
 
 modules-left = i3 arrow arrow0
 modules-center = middle0 middle1 day middle2 date_symbols middle1 time middle2 middle3
-modules-right = arrow1 arrow2 xkeyboard arrow3 arrow2 filesystem arrow3 arrow2 cpu arrow3 arrow2 memory arrow3 arrow2 volume arrow3 arrow2 eth
+modules-right = arrow1 arrow2 xkeyboard arrow3 arrow2 filesystem arrow3 arrow2 cpu arrow3 arrow2 memory arrow3 arrow2 volume arrow3 arrow2 eth wifi
 
 [bar/left]
 monitor = DP-2
@@ -205,16 +205,16 @@ format = <label-state><label-mode>
 index-sort = false
 enable-click = false
 enable-scroll = false
-ws-icon-0 = 10;0:RUN
-ws-icon-1 = 1;1:COM
-ws-icon-2 = 2;2:WEB
-ws-icon-3 = 3;3:DEV
-ws-icon-4 = 4;4:GIT
+ws-icon-1 = 1;1:WEB
+ws-icon-2 = 2;2:DEV
+ws-icon-3 = 3;3
+ws-icon-4 = 4;4
 ws-icon-5 = 5;5
 ws-icon-6 = 6;6
 ws-icon-7 = 7;7
-ws-icon-8 = 8;8
-ws-icon-9 = 9;9
+ws-icon-8 = 8;8:DATA
+ws-icon-9 = 9;9:RUN
+ws-icon-0 = 10;0:COM
 ws-icon-default =
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
@@ -289,14 +289,35 @@ interface = enp3s0
 interval = 3.0
 
 ;format-connected-underline = #55aa55
-;format-connected-prefix = "U "
-;format-connected-prefix-foreground = ${colors.pink}
-;format-connected-prefix-background = ${colors.background}
+format-connected-prefix = " E: "
+format-connected-prefix-foreground = ${colors.purple}
+format-connected-prefix-background = ${colors.background}
 label-connected = %local_ip%
 label-connected-foreground = ${colors.purple}
 label-connected-background = ${colors.background}
 
-format-disconnected = ETH DOWN
+format-disconnected =
+format-disconnected-foreground = ${colors.red}
+format-disconnected-background = ${colors.background}
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.red}
+
+[module/wifi]
+type = internal/network
+interface = wlo1
+interval = 3.0
+
+;format-connected-underline = #55aa55
+format-connected-prefix = " W: "
+format-connected-prefix-foreground = ${colors.purple}
+format-connected-prefix-background = ${colors.background}
+label-connected = %local_ip%
+label-connected-foreground = ${colors.purple}
+label-connected-background = ${colors.background}
+
+format-disconnected = WIFI DOWN
 format-disconnected-foreground = ${colors.red}
 format-disconnected-background = ${colors.background}
 ;format-disconnected = <label-disconnected>
@@ -323,7 +344,7 @@ label-background = ${colors.background}
 
 [module/volume]
 type = internal/pulseaudio
-sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+sink = alsa_output.pci-0000_01_00.1.hdmi-stereo 
 format-volume = <ramp-volume><label-volume>
 
 label-volume = %percentage%%

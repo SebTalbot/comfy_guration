@@ -169,11 +169,12 @@ bindsym $mod+r mode "resize"
 
 
 # SCRIPTS ---------------------------------------------------------------------
+exec_always --no-startup-id ~/.config/i3/i3-chrome-tab-dragging/i3-chrome-tab-dragging.py
 
 bindsym $mod+space exec ~/comfy_guration/scripts/keyboard_lang.sh
 
 # startup script
-exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
+exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo 
 exec --no-startup-id ~/comfy_guration/scripts/home/lauch_screen.sh
 exec --no-startup-id picom --experimental-backends -f --config ~/comfy_guration/dotfiles/home/picom.conf
 exec --no-startup-id dunst
