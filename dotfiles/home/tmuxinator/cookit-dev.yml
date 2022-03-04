@@ -1,0 +1,22 @@
+# /home/snowl/.config/tmuxinator/cookit-dev.yml
+name: cookit-dev
+root: ~/projects/cookit
+windows:
+  - api: 
+      layout: main-vertical
+      panes:
+        - start:
+          - cd api
+          - nvim
+  - admin: 
+      layout: main-vertical
+      panes:
+        - start:
+          - cd admin
+          - nvim
+  - ecom: 
+      layout: main-vertical
+      panes:
+        - start:
+          - cd ecom
+          - nvim
