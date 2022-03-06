@@ -3,19 +3,16 @@
 ;-------------------------------------------------------------------------------
 
 [colors]
-foreground = #ecf0c1
-background = #30365F
+innerBg = #393E46 
+outterBg = #222831 
 
-trans = #b50f111b
-red = #e33400
-orange = #e39400
-green = #5ccc96
-pink = #ce6f8f
-blue = #00a3cc
-purple = #b3a1e6
-purple2 = #7a5ccc
-grey = #686f9a
-white = #eee
+main = #FFD369
+secondary = #EEEEEE
+
+red = #E33400
+green = #5CCC96
+grey = #797E86 
+white = #EEEEEE
 
 ;-------------------------------------------------------------------------------
 ;	B A R S
@@ -28,131 +25,156 @@ height = 22
 radius = 1.0
 fixed-center = true
 
-background = ${colors.trans}
-foreground = ${colors.foreground}
+background = ${colors.outterBg}
+foreground = ${colors.main}
 
-border-bottom-size = 4
-border-bottom-color = ${colors.purple}
+border-bottom-size = 6
+border-bottom-color = ${colors.main}
 
 ; Text
-font-0 = PragmataPro Mono:style=Bold:size=13;3
-; Arrows
-font-1 = Hack:size=14;3
-; Center Arrows
-font-2 = Hack Nerd Font Mono:size=25:;0
+font-0 = PragmataPro:style=Bold:size=13;3
+; Separators Left
+font-1 = PragmataPro:size=35;20
+; Separators Right
+font-2 = PragmataPro:size=17.5;3
 ; Center Symbol
-font-3 = Hack Nerd Font Mono:size=20;6
+font-3 = PragmataPro:size=17;5
+; Symbols
+font-4 = PragmataPro:size=15;2
 
-modules-left = i3 arrow arrow0
-modules-center = middle0 middle1 day middle2 date_symbols middle1 time middle2 middle3
-modules-right = arrow1 arrow2 xkeyboard arrow3 arrow2 filesystem arrow3 arrow2 cpu arrow3 arrow2 memory arrow3 arrow2 volume arrow3 arrow2 eth wifi
+modules-left =  empty_space i3 srim srmi srim srmo
+modules-center = slio sloi slio sloi slio day srim date_symbols slim time srio sroi srio sroi srio
+modules-right = slmo slim slmi slim xkeyboard sloi slio cpu sloi slio memory sloi slio filesystem sloi slio volume sloi slio eth wifi
 
 [bar/left]
 monitor = DP-2
 width = 100%
-height = 15
+height = 18
 radius = 1.0
 fixed-center = true
 tray-position = left
-tray-background = ${colors.background}
+tray-background = ${colors.innerBg}
 tray-padding = 8
 
 
-background = ${colors.trans}
-foreground = ${colors.foreground}
+background = ${colors.outterBg}
+foreground = ${colors.main}
 
-border-bottom-size = 3
-border-bottom-color = ${colors.purple}
+border-bottom-size = 4
+border-bottom-color = ${colors.main}
 
-/* Text */
-font-0 = PragmataPro Mono:style=Bold:size=12;2
-/* Arrows */
-font-1 = Hack:size=10;2.5
+; Text
+font-0 = PragmataPro:style=Bold:size=12;3
+; Separators Left
+font-1 = PragmataPro:size=35;20
+; Separators Right
+font-2 = PragmataPro:size=17.5;3
 
-modules-left = arrow arrow0
+modules-left = srim srmi srim srmo
 modules-center =
-modules-right = arrow1 arrow2 i3
+modules-right = slmo slim slmi slim i3
 
 ;-------------------------------------------------------------------------------
 ;	D E C O R A T I O N S
 ;-------------------------------------------------------------------------------
 
-[module/arrow]
-; background to purple
+[module/slio]
 type = custom/text
-content = " "
+content = ""
 content-font = 2
-content-foreground = ${colors.background}
-content-background = ${colors.purple}
+content-foreground = ${colors.innerBg}
+content-background = ${colors.outterBg}
 
-[module/arrow0]
-; purple to trans
+[module/sloi]
 type = custom/text
-content = " "
+content = ""
 content-font = 2
-content-foreground = ${colors.purple}
-content-background = ${colors.trans}
+content-foreground = ${colors.outterBg}
+content-background = ${colors.innerBg}
 
-[module/arrow1]
-; trans to purple
+[module/slim]
 type = custom/text
-content = " "
+content = ""
 content-font = 2
-content-foreground = ${colors.purple}
-content-background = ${colors.trans}
+content-foreground = ${colors.innerBg}
+content-background = ${colors.main}
 
-[module/arrow2]
-; purple to background
+[module/slmi]
 type = custom/text
-content = " "
+content = ""
 content-font = 2
-content-foreground = ${colors.background}
-content-background = ${colors.purple}
+content-foreground = ${colors.main}
+content-background = ${colors.innerBg}
 
-[module/arrow3]
-; trans to purple
+[module/slom]
 type = custom/text
-content = " "
+content = ""
 content-font = 2
-content-foreground = ${colors.purple}
-content-background = ${colors.background}
+content-foreground = ${colors.outterBg}
+content-background = ${colors.main}
 
-; MIDDLE ---------
-
-[module/middle0]
+[module/slmo]
 type = custom/text
-content = " "
-content-font = 3
-content-foreground = ${colors.purple}
-content-background = ${colors.trans}
+content = ""
+content-font = 2
+content-foreground = ${colors.main}
+content-background = ${colors.outterBg}
 
-[module/middle1]
-type = custom/text
-content = " "
-content-font = 3
-content-foreground = ${colors.background}
-content-background = ${colors.purple}
-
-[module/middle2]
+[module/srim]
 type = custom/text
 content = " "
 content-font = 3
-content-foreground = ${colors.background}
-content-background = ${colors.purple}
+content-foreground = ${colors.innerBg}
+content-background = ${colors.main}
 
-[module/middle3]
+[module/srmi]
 type = custom/text
 content = " "
 content-font = 3
-content-foreground = ${colors.purple}
-content-background = ${colors.trans}
+content-foreground = ${colors.main}
+content-background = ${colors.innerBg}
+
+[module/srom]
+type = custom/text
+content = " "
+content-font = 3
+content-foreground = ${colors.outterBg}
+content-background = ${colors.main}
+
+[module/srmo]
+type = custom/text
+content = " "
+content-font = 3
+content-foreground = ${colors.main}
+content-background = ${colors.outterBg}
+
+[module/srio]
+type = custom/text
+content = " "
+content-font = 3
+content-foreground = ${colors.innerBg}
+content-background = ${colors.outterBg}
+
+[module/sroi]
+type = custom/text
+content = " "
+content-font = 3
+content-foreground = ${colors.outterBg}
+content-background = ${colors.innerBg}
 
 [module/date_symbols]
 type = custom/text
-content = ""
+content = "  "
 content-font = 4
-content-foreground = ${colors.background}
-content-background = ${colors.purple}
+content-foreground = ${colors.innerBg}
+content-background = ${colors.main}
+
+[module/empty_space]
+type = custom/text
+content = "  "
+content-font = 5
+content-foreground = ${colors.main}
+content-background = ${colors.innerBg}
 
 ;-------------------------------------------------------------------------------
 ;	M O D U L E S
@@ -166,13 +188,13 @@ format = <label-layout><label-indicator>
 format-spacing = 0
 format-prefix = " "
 format-prefix-font = 1
-format-prefix-foreground = ${colors.purple}
-format-prefix-background = ${colors.background}
+format-prefix-foreground = ${colors.main}
+format-prefix-background = ${colors.innerBg}
 label-layout = %icon%
 label-layout-padding = 0
 label-layout-font = 1
-label-layout-foreground = ${colors.purple}
-label-layout-background = ${colors.background}
+label-layout-foreground = ${colors.main}
+label-layout-background = ${colors.innerBg}
 layout-icon-default = failed
 layout-icon-0 = us;EN
 layout-icon-1 = ca;FR
@@ -182,20 +204,21 @@ label-indicator-on-capslock = " CAPS"
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted = " HDD %percentage_used%%"
+label-mounted = "  %percentage_used%%"
+label-mounted-font = 5
 label-unmounted = %mountpoint% not mounted
-label-mounted-foreground = ${colors.purple}
-label-mounted-background = ${colors.background}
+label-mounted-foreground = ${colors.main}
+label-mounted-background = ${colors.innerBg}
 
 [module/i3index]
 type = internal/i3
 format = <label-state>
 label-focused = "%name% "
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.pink}
+label-focused-foreground = ${colors.innerBg}
+label-focused-background = ${colors.secondary}
 label-visible = "%name% "
-label-visible-foreground = ${colors.trans}
-label-visible-background = ${colors.pink}
+label-visible-foreground = ${colors.outterBg}
+label-visible-background = ${colors.secondary}
 label-unfocused =
 label-urgent =
 
@@ -205,61 +228,71 @@ format = <label-state><label-mode>
 index-sort = false
 enable-click = false
 enable-scroll = false
-ws-icon-1 = 1;1:WEB
-ws-icon-2 = 2;2:DEV
-ws-icon-3 = 3;3
-ws-icon-4 = 4;4
-ws-icon-5 = 5;5
-ws-icon-6 = 6;6
-ws-icon-7 = 7;7
-ws-icon-8 = 8;8:DATA
-ws-icon-9 = 9;9:RUN
-ws-icon-0 = 10;0:COM
-ws-icon-default =
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
+
 label-mode = " <%mode%> "
-label-mode-foreground = ${colors.red}
-label-mode-background = ${colors.background}
+label-mode-foreground = ${colors.main}
+label-mode-background = ${colors.innerBg}
+
+ws-icon-0 = 10;0
+ws-icon-1 = 1;1:WEB
+ws-icon-2 = 2;2:DEV
+ws-icon-3 = 3;3:ETC
+ws-icon-4 = 4;4:COM
+ws-icon-5 = 5;5:DATA
+ws-icon-6 = 6;6:SYS
+ws-icon-7 = 7;7
+ws-icon-8 = 8;8
+ws-icon-9 = 9;9
+ws-icon-default =
+
 ; focused = Active workspace on focused monitor
 label-focused = " %icon% "
-label-focused-foreground = ${colors.pink}
-label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.main}
+label-focused-background = ${colors.innerBg}
+
+; visible = Visible but unfocused
 label-visible = " %icon% "
-label-visible-foreground = ${colors.purple}
-label-visible-background = ${colors.background}
-; unfocused = Inactive workspace on any monitor
+label-visible-foreground = ${colors.white}
+label-visible-background = ${colors.innerBg}
+
+; unfocused = Inactive workspace
 label-unfocused = " %icon% "
 label-unfocused-foreground = ${colors.grey}
-label-unfocused-background = ${colors.background}
+label-unfocused-background = ${colors.innerBg}
+
 ; urgent = Workspace with urgency hint set
-label-urgent = "  >%icon%<  "
-label-urgent-foreground = ${colors.green}
-label-urgent-background = ${colors.background}
+label-urgent = " %icon% "
+label-urgent-foreground = ${colors.red}
+label-urgent-background = ${colors.innerBg}
+
 label-separator = //
 label-separator-padding = 0
-label-separator-foreground = ${colors.purple}
-label-separator-background = ${colors.background}
+label-separator-foreground = ${colors.main}
+label-separator-background = ${colors.innerBg}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " CPU "
-format-prefix-foreground = ${colors.purple}
-format-prefix-background = ${colors.background}
+format-prefix = "  "
+format-prefix-font = 5
+format-prefix-foreground = ${colors.main}
+format-prefix-background = ${colors.innerBg}
 label = %percentage%%
-label-foreground = ${colors.purple}
-label-background = ${colors.background}
+label-foreground = ${colors.main}
+label-background = ${colors.innerBg}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " RAM "
-format-prefix-foreground = ${colors.purple}
-format-prefix-background = ${colors.background}
+format-prefix = "  "
+format-prefix-front = 5
+format-prefix-foreground = ${colors.main}
+format-prefix-background = ${colors.innerBg}
 label = %percentage_used%%
-label-foreground = ${colors.purple}
-label-background = ${colors.background}
+label-foreground = ${colors.main}
+label-background = ${colors.innerBg}
 
 [module/wlan]
 type = internal/network
@@ -289,16 +322,16 @@ interface = enp3s0
 interval = 3.0
 
 ;format-connected-underline = #55aa55
-format-connected-prefix = " E: "
-format-connected-prefix-foreground = ${colors.purple}
-format-connected-prefix-background = ${colors.background}
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.main}
+format-connected-prefix-background = ${colors.innerBg}
 label-connected = %local_ip%
-label-connected-foreground = ${colors.purple}
-label-connected-background = ${colors.background}
+label-connected-foreground = ${colors.main}
+label-connected-background = ${colors.innerBg}
 
 format-disconnected =
 format-disconnected-foreground = ${colors.red}
-format-disconnected-background = ${colors.background}
+format-disconnected-background = ${colors.innerBg}
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -310,16 +343,16 @@ interface = wlo1
 interval = 3.0
 
 ;format-connected-underline = #55aa55
-format-connected-prefix = " W: "
-format-connected-prefix-foreground = ${colors.purple}
-format-connected-prefix-background = ${colors.background}
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.main}
+format-connected-prefix-background = ${colors.innerBg}
 label-connected = %local_ip%
-label-connected-foreground = ${colors.purple}
-label-connected-background = ${colors.background}
+label-connected-foreground = ${colors.main}
+label-connected-background = ${colors.innerBg}
 
 format-disconnected = WIFI DOWN
 format-disconnected-foreground = ${colors.red}
-format-disconnected-background = ${colors.background}
+format-disconnected-background = ${colors.innerBg}
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -328,44 +361,44 @@ format-disconnected-background = ${colors.background}
 [module/day]
 type = internal/date
 interval = 5
-date = " %Y-%m-%d"
-time= %H:%M:%S
+date = " %Y-%m-%d "
 label = %date%
-label-foreground = ${colors.purple}
-label-background = ${colors.background}
+label-foreground = ${colors.main}
+label-background = ${colors.innerBg}
 
 [module/time]
 type = internal/date
 interval = 5
-time= %H:%M:%S
+time= " %H:%M:%S "
 label = %time%
-label-foreground = ${colors.purple}
-label-background = ${colors.background}
+label-foreground = ${colors.main}
+label-background = ${colors.innerBg}
 
 [module/volume]
-type = internal/pulseaudio
-sink = alsa_output.pci-0000_01_00.1.hdmi-stereo 
+type = internal/alsa
+;sink = alsa_output.pci-0000_01_00.1.hdmi-stereo 
 format-volume = <ramp-volume><label-volume>
 
 label-volume = %percentage%%
-label-volume-foreground = ${colors.purple}
-label-volume-background = ${colors.background}
-label-muted = " MUTED"
-label-muted-foreground = ${colors.white}
-label-muted-background = ${colors.background}
+label-volume-foreground = ${colors.main}
+label-volume-background = ${colors.innerBg}
 
-ramp-volume-0 = " VOL "
-ramp-volume-0-foreground = ${colors.purple}
-ramp-volume-0-background = ${colors.background}
-ramp-volume-1 = " VOL "
-ramp-volume-1-foreground = ${colors.purple}
-ramp-volume-1-background = ${colors.background}
-ramp-volume-2 = " VOL "
-ramp-volume-2-foreground = ${colors.purple}
-ramp-volume-2-background = ${colors.background}
-ramp-volume-3 = " VOL "
-ramp-volume-3-foreground = ${colors.purple}
-ramp-volume-3-background = ${colors.background}
+label-muted = " 婢"
+label-muted-foreground = ${colors.white}
+label-muted-background = ${colors.innerBg}
+
+ramp-volume-0 = "  "
+ramp-volume-0-foreground = ${colors.main}
+ramp-volume-0-background = ${colors.innerBg}
+ramp-volume-1 = "  "
+ramp-volume-1-foreground = ${colors.main}
+ramp-volume-1-background = ${colors.innerBg}
+ramp-volume-2 = "  "
+ramp-volume-2-foreground = ${colors.main}
+ramp-volume-2-background = ${colors.innerBg}
+ramp-volume-3 = "  "
+ramp-volume-3-foreground = ${colors.main}
+ramp-volume-3-background = ${colors.innerBg}
 
 [module/battery]
 interval = 5
@@ -473,8 +506,8 @@ margin-bottom = 5
 [module/title]
 type = internal/xwindow
 
-format-background = ${colors.background}
-format-foreground = ${colors.purple}
+format-background = ${colors.innerBg}
+format-foreground = ${colors.main}
 format-padding = 1
 
 label-maxlen = 200

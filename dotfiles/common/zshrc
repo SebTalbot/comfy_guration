@@ -10,6 +10,7 @@ fi
 export TERM=xterm-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
 export N_PREFIX=~/.n_version
 export ZSH="/home/snowl/.oh-my-zsh"
@@ -24,9 +25,9 @@ plugins=(
   git
   kubectl
   vi-mode
-  zsh-syntax-highlighting
 )
 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 set show-mode-in-prompt On
 
@@ -152,3 +153,5 @@ reset-v4() {
   lr
   cd ~ecom
 }
+
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

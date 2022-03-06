@@ -10,7 +10,7 @@ V='#ecf0c1ff'  # verifying
 killall -SIGUSR1 dunst # pause
 setxkbmap us
 
-i3lock \
+blurlock \
   --insidever-color=$A   \
   --ringver-color=$V     \
   \
