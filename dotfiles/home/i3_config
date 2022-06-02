@@ -1,179 +1,237 @@
-# Variables
 set $mod Mod4
 
-set $up k
-set $right l
-set $down j
-set $left h
+# --------\
+# SETTINGS ----------
 
-set $w1 1
-set $w2 2
-set $w3 3
-set $w4 4
-set $w5 5
-set $w6 6
-set $w7 7
-set $w8 8
-set $w9 9
-set $w10 10
-
-# - SETTINGS --------------------------------------------------------------------
-# - No mouse follow
+floating_modifier $mod
+for_window [class=".*"] move position center
 focus_follows_mouse no
+workspace_auto_back_and_forth yes
 
-# - STYLE -----------------------------------------------------------------------
-# - Font
-font pango:Hack bold 9
+# ---------\
+# AUTOSTART ----------
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends -b
+# exec --no-startup-id xautolock -time 10 -locker blurlock
 
-# - Border color
-# - class                        border   backgr.  text
-client.focused					         #b3a1e6  #b3a1e6  #30365F  #b3a1e6
-client.unfocused				         #30365F  #30365F  #315858  #30365F
-client.focused_inactive			     #30365F  #30365F  #2c2e2f  #30365F
-client.urgent  	              	 #20ad80  #20ad80  #30365F  #30365F
+# To change for dunst
+exec_always --no-startup-id ff-theme-util
 
-# - Gaps
-# smart_gaps on
-# smart_borders on
+exec_always --no-startup-id fix_xcursor
+
+# applets
+exec --no-startup-id volumeicon
+exec --no-startup-id clipit
+exec --no-startup-id nm-applet
+# exec --no-startup-id blueman-applet
+# exec --no-startup-id pamac-tray
+
+exec --no-startup-id ~/comfy_guration/scripts/home/polybar.sh
+
+# -----\
+# STYLE ----------
+
+font xft:PragmataPro 12
+
+# class                   border  backgr. text    indic.
+  client.focused          #FFD369 #FFD369 #222831 #FFD369
+  client.focused_inactive #222831 #222831 #FFD369 #222831
+  client.unfocused        #222831 #222831 #FFD369 #222831 
+  client.urgent           #222831 #222831 #E07A31 #222831 
+  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.background       #393E46
+
 gaps inner 20
 gaps outer 30
 
-# - Disable title bar
-new_window pixel
+new_window normal
+default_border pixel 3
+default_floating_border normal
+# hide_edge_borders none
 
-# - Keybindings ---------------------------------------------------------------
-## - Applications
+# -----------\
+# KEYBINDINGS ----------
+
+# Printscreen
+bindsym Print exec --no-startup-id i3-scrot
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+bindsym Ctrl+Print --release exec --no-startup-id i3-scrot -wc
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym Ctrl+Shift+Print --release exec --no-startup-id i3-scrot -sc
+
+# Toggle language
+bindsym $mod+space exec ~/comfy_guration/scripts/keyboard_lang.sh
+
+# Lock Screen
+bindsym $mod+Ctrl+L exec ~/comfy_guration/scripts/home/lock_screen.sh
+
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec kitty
 
-# - Menu
-bindsym $mod+d exec --no-startup-id ~/comfy_guration/scripts/home/rofi.sh
-
-# - Audio -----------------------------
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-
-# - Screenshot
-for_window [class="Shutter"] floating enable
-bindsym Print exec shutter -s -e -n -o '~/pictures/screenshots/%y_%m_%d_%T.png'
-
-## - Window manipulations -------------
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# - Kill focused window
+# kill focused window
 bindsym $mod+Shift+q kill
 
-# - Change focus
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+# start program launcher
+bindsym $mod+e exec --no-startup-id rofi -show run
 
-# - Alternatively, you can use the cursor keys:
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# - Move focused window
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
-# - Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# - Split in horizontal orientation
-bindsym $mod+c split h
+bindsym $mod+z move position center
 
-# - Split in vertical orientation
+# workspace back and forth (with/without active container)
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+# split orientation
+bindsym $mod+c split h
 bindsym $mod+v split v
 
-# - Enter fullscreen mode for the focused container
+# change container layout
 bindsym $mod+f fullscreen toggle
-
-# - Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+d layout toggle split
 
-# - Toggle tiling / floating
+# floating
 bindsym $mod+Shift+x floating toggle
-
-# - Change focus between tiling / floating windows
 bindsym $mod+x focus mode_toggle
 
-# - Focus the parent container
+# toggle sticky
+bindsym $mod+Shift+s sticky toggle
+
+# focus the parent container
 bindsym $mod+a focus parent
 
-# - Focus the child container
-#bindsym $mod+d focus child
+#navigate workspaces next / previous
+bindsym $mod+n workspace next
+bindsym $mod+Shift+n workspace prev
 
-# - Switch to workspace
-bindsym $mod+1 workspace $w1
-bindsym $mod+2 workspace $w2
-bindsym $mod+3 workspace $w3
-bindsym $mod+4 workspace $w4
-bindsym $mod+5 workspace $w5
-bindsym $mod+6 workspace $w6
-bindsym $mod+7 workspace $w7
-bindsym $mod+8 workspace $w8
-bindsym $mod+9 workspace $w9
-bindsym $mod+0 workspace $w10
+# Workspace names
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $primaryScreen DP-4
+set $secondaryScreen DP-2
 
-# - Move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $w1
-bindsym $mod+Shift+2 move container to workspace $w2
-bindsym $mod+Shift+3 move container to workspace $w3
-bindsym $mod+Shift+4 move container to workspace $w4
-bindsym $mod+Shift+5 move container to workspace $w5
-bindsym $mod+Shift+6 move container to workspace $w6
-bindsym $mod+Shift+7 move container to workspace $w7
-bindsym $mod+Shift+8 move container to workspace $w8
-bindsym $mod+Shift+9 move container to workspace $w9
-bindsym $mod+Shift+0 move container to workspace $w10
+workspace $ws1 output $primaryScreen
+workspace $ws2 output $primaryScreen
+workspace $ws3 output $primaryScreen
+workspace $ws4 output $secondaryScreen
+workspace $ws5 output $secondaryScreen
+workspace $ws6 output $secondaryScreen
 
-# - Reload the configuration file
-bindsym $mod+Shift+c reload
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
 
-# - Restart i3
-bindsym $mod+Shift+r restart
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
 
-# - Exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 
-# - Resize mode
+# Open applications on specific workspaces
+# assign [class="Thunderbird"] $ws1
+# assign [class="Pale moon"] $ws2
+# assign [class="Pcmanfm"] $ws3
+
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="calamares"] floating enable border normal
+for_window [class="Viewnior"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="fpakman"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
+
+# reload the configuration file
+bindsym $mod+Shift+r reload
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym $left resize shrink width 10 px or 10 ppt
-        bindsym $down resize grow height 10 px or 10 ppt
-        bindsym $up resize shrink height 10 px or 10 ppt
-        bindsym $right resize grow width 10 px or 10 ppt
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
+
+        # exit resize mode: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
 
-
-# SCRIPTS ---------------------------------------------------------------------
-
-bindsym $mod+space exec ~/comfy_guration/scripts/keyboard_lang.sh
-
-# startup script
-exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
-exec --no-startup-id ~/comfy_guration/scripts/home/lauch_screen.sh
-exec --no-startup-id picom --experimental-backends -f --config ~/comfy_guration/dotfiles/home/picom.conf
-exec --no-startup-id dunst
-exec --no-startup-id pkill unclutter
-
-# Lockscreen
-bindsym $mod+Ctrl+L exec ~/comfy_guration/scripts/home/i3lock.sh
+# disabled
+#bindsym $mod+F3 exec pcmanfm
+#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+#bindsym $mod+Ctrl+b exec terminal -e 'bmenu'

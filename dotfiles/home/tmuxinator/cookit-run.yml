@@ -1,0 +1,11 @@
+# /home/snowl/.config/tmuxinator/cookit-dev.yml
+name: cookit-run
+root: ~/projects/cookit
+
+windows:
+  - api: 
+      root: ~/projects/cookit/api
+  - admin: 
+      root: ~/projects/cookit/admin
+  - ecom: 
+      root: ~/projects/cookit/ecom
