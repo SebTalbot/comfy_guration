@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ZSH configuration
+source ~/.zshenv
 # export TERM=tmux-256color
 export TERM=xterm-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -15,7 +16,6 @@ export NPM_CONFIG_PREFIX=~/.npm-global
 export N_PREFIX=~/.n_version
 export ZSH="/home/snowl/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
-export NPM_TOKEN=507ec72962febbc34db630042b282e145a538bbe
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
@@ -155,3 +155,4 @@ reset-v4() {
 }
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/snowl/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

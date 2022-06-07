@@ -39,7 +39,7 @@ font pango:Hack Nerd Font bold 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec kitty --config ~/comfy_guration/dotfiles/laptop/kitty.conf
 
 # kill focused window
 bindsym $mod+Shift+q kill
