@@ -6,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ZSH configuration
-source ~/.zshenv
 # export TERM=tmux-256color
 export TERM=xterm-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -17,8 +16,8 @@ export N_PREFIX=~/.n_version
 export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
 
-if [ -f ~/.secret_env ]; then
-  source ~/.secret_env
+if [ -f ~/.zsh_secret_env ]; then
+  source ~/.zsh_secret_env
 fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -84,4 +83,3 @@ alias lz='lazygit'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/snowl/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
