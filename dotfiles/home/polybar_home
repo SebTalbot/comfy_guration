@@ -375,7 +375,7 @@ label-foreground = ${colors.main}
 label-background = ${colors.innerBg}
 
 [module/volume]
-type = internal/alsa
+type = internal/pulseaudio
 ;sink = alsa_output.pci-0000_01_00.1.hdmi-stereo 
 format-volume = <ramp-volume><label-volume>
 
