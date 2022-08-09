@@ -13,9 +13,12 @@ export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
 export N_PREFIX=~/.n_version
-export ZSH="/home/snowl/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
-export NPM_TOKEN=507ec72962febbc34db630042b282e145a538bbe
+
+if [ -f ~/.secret_env ]; then
+  source ~/.secret_env
+fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
@@ -42,14 +45,17 @@ VI_MODE_SET_CURSOR=true
 MODE_INDICATOR=""
 
 # Alias
-alias zr=source ~/.zshrc
-alias t=tree
-alias python=python3
-alias pip=pip3
+alias cg='cd $(git rev-parse --show-toplevel)'
 alias clip='xclip -selection clipboard'
-alias vi=nvim
 alias cv='cd /opt/lampp/htdocs/wordpress/wp-content/themes/chefcookit.com'
 alias gtc='cd ~/projects/cookit'
+alias l='ls -la --group-directories-first'
+alias pip=pip3
+alias python=python3
+alias t=tree
+alias vi=nvim
+alias vtop='vtop --theme gruvbox'
+alias zr='source ~/.zshrc'
 
 ## Tmux
 alias ta='tmux attach -t'
@@ -57,6 +63,9 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tk='tmux kill-session -t'
 alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
+
+## git
+alias lz='lazygit'
 
 # Autocompletion
 ## pip
@@ -72,86 +81,5 @@ alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias luamake=/home/snowl/tmp/lua-language-server/3rd/luamake/luamake
-
-## Cockit
-
-lc() {
-  # install controller packages, build controllers & create link
-  echo "LINKING COOKIT-ECOM-CONTROLLERS"
-  echo "-------------------------------"
-  echo "1) Re-installing controller dependencies"
-  rm -rf ~/dev/cookit/cookit-ecom/packages/controllers/node_modules
-  cd ~/dev/cookit/cookit-ecom/packages/controllers
-  yarn install
-  echo "2) Generating queries"
-  yarn gen
-  echo "3) Building controllers"
-  yarn build
-  echo "4) Creating @chefcookit/cookit-ecom-controllers link..."
-  yarn link
-  cd ~/dev/cookit/cookit-ecom
-  echo "5) Linking..."
-  yarn link @chefcookit/cookit-ecom-controllers
-  echo "Done!"
-}
-lutils() {
-  echo "LINKING COOKIT-UTILS"
-  echo "-------------------"
-  echo "1) creating link"
-  cd ~/dev/cookit/utils/
-  npm link
-  echo "2) linking ecom"
-  cd ~/dev/cookit/cookit-ecom/
-  npm link @chefcookit/utils
-  echo "3) linking api"
-  cd ~/dev/cookit/cookit-api/
-  npm link @chefcookit/utils
-  echo "4) linking admin"
-  cd ~/dev/cookit/cookit-admin/
-  npm link @chefcookit/utils
-}
-lr() {
-  # delete react node_modules && create link
-  echo "LINKING REACT BETWEEN COOKIT-UI AND COOKIT-ECOM"
-  echo "-----------------------------------------------"
-  echo "1) Removing @cookit-ui/node_modules/react"
-  rm -rf ~/dev/cookit/cookit-ui/node_modules/react
-  cd ~/dev/cookit/cookit-ecom/node_modules/react
-  echo "2) Creating React link"
-  yarn link
-  cd ~/dev/cookit/cookit-ui
-  echo "3) Linking..."
-  yarn link react
-  echo "Done!"
-}
-lui() {
-  echo "LINKING COOKIT-UI AND COOKIT-ECOM"
-  echo "---------------------------------"
-  echo "1) Creating @chefcookit/cookit-ui link"
-  cd ~/dev/cookit/cookit-ui
-  yarn link
-  cd ~/dev/cookit/cookit-ecom
-  yarn link @chefcookit/cookit-ui
-  echo "Done!"
-}
-rebuild-ctrl() {
-  cd ~ecom
-  cd packages/controllers
-  yarn gen && yarn build
-  cd ~ecom
-}
-reset-v4() {
-  cd ~ecom
-  echo "Removing node_modules"
-  rm -rf ~/dev/cookit/cookit-ecom/node_modules
-  rm -rf ~/dev/cookit/cookit-ecom/packages/controllers/node_modules
-  meteor npm i
-  lc
-  lui
-  lr
-  cd ~ecom
-}
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
