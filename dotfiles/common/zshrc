@@ -6,7 +6,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ZSH configuration
-# export TERM=tmux-256color
+DISABLE_AUTO_TITLE="true"
+function precmd () {
+  echo -ne "\033]0;$(pwd | sed -e "s;^$HOME;~;")\a"
+}
+
+#export TERM=tmux-256color
 export TERM=xterm-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
