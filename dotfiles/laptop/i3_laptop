@@ -202,7 +202,7 @@ bindsym Print exec shutter -s -e -n -o '~/pictures/screenshots/%y_%m_%d_%T.png'
 focus_follows_mouse no
 
 # Background
-exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/montreal.jpg
+exec --no-startup-id feh --bg-scale ~/comfy_guration/assets/wallpapers/laptop.jpg
 
 # Picom
 exec --no-startup-id picom --experimental-backends -f --config ~/comfy_guration/dotfiles/laptop/picom.conf
