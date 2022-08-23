@@ -1,4 +1,4 @@
-Do not run manager, there is a chance that it wouldn't work and might broke things on your workspace
+Do not run manager or any scripts, there is a chance that it wouldn't work and might broke things on your workspace
 
 
 Laptop Display
