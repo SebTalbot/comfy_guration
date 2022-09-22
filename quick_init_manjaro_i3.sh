@@ -23,6 +23,8 @@ paru -S polybar
 paru -S rofi
 # - feh
 paru -S feh
+# - pulseaudio
+paru -S pulseaudio
 
 # - fzf
 paru -S zsh
