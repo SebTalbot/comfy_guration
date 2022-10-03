@@ -191,18 +191,18 @@ bindsym XF86AudioRaiseVolume exec "amixer -D pulse set Master 5%+"
 bindsym XF86AudioLowerVolume exec "amixer -D pulse set Master 5%-"
 bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
 
-# Brightness
-bindsym XF86MonBrightnessUp exec "let '$SCREEN_BRIGHTNESS+=0.1' | xrandr --output eDP-1 --brightness $SCREEN_BRIGHTNESS"
-bindsym XF86MonBrightnessDown exec "let '$SCREEN_BRIGHTNESS-=0.1' | xrandr --output eDP-1 --brightness $SCREEN_BRIGHTNESS"
-
 # Screenshots
-bindsym $mod+n exec shutter -s -e -n -o '~/pictures/screenshots/%y_%m_%d_%T.png'
+bindsym Print exec shutter -s -e -n -o '~/Pictures/screenshots/%y_%m_%d_%T.png'
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 
 # no mouse follow
 focus_follows_mouse no
 
 # Background
-exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/montreal.jpg
+exec --no-startup-id feh --bg-scale ~/comfy_guration/assets/wallpapers/laptop.jpg
 
 # Picom
 exec --no-startup-id picom --experimental-backends -f --config ~/comfy_guration/dotfiles/laptop/picom.conf
