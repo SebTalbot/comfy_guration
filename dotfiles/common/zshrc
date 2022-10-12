@@ -20,6 +20,7 @@ export NPM_CONFIG_PREFIX=~/.npm-global
 export N_PREFIX=~/.n_version
 export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
+export LESS=-j25
 
 if [ -f ~/.zsh_secret_env ]; then
   source ~/.zsh_secret_env
