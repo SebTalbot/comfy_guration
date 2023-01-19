@@ -210,7 +210,7 @@ focus_follows_mouse no
 exec --no-startup-id feh --bg-scale ~/comfy_guration/assets/wallpapers/laptop.jpg
 
 # Picom
-exec --no-startup-id picom --experimental-backends -f --config ~/comfy_guration/dotfiles/laptop/picom.conf
+exec --no-startup-id picom -f --config ~/comfy_guration/dotfiles/laptop/picom.conf
 
 # Caps as Esc
 exec --no-startup-id ~/comfy_guration/scripts/switch_caps_escape.sh
