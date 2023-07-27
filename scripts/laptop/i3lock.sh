@@ -12,13 +12,13 @@ function postlock() {
 }
 
 function lock() {
-  local A='#282828cc'  # dark
+  local A='#2c2a38'  # dark
   local B='#00000000'  # blank
   local C='#28282822'  # clear ish
-  local D='#d79921'  # default
-  local T='#d79921'  # text
-  local W='#fb4934'  # wrong
-  local V='#458588'  # verifying
+  local D='#bd93f9'  # default
+  local T='#bd93f9'  # text
+  local W='#ff5555'  # wrong
+  local V='#ff92df'  # verifying
 
   blurlock \
     --insidever-color=$A   \

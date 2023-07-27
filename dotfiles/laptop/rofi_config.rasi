@@ -12,11 +12,11 @@ sidebar-mode: true;
 * {
     red:                         #cc241d;
     blue:                        #458588;
-    grey:                        #928374;
-    lightfg:                     #d79921;
-    lightbg:                     #3c3835;
-    foreground:                  #ebdbb2;
-    background:                  #282828;
+    grey:                        #ccb0c1;
+    lightfg:                     #ffb2ef;
+    lightbg:                     #4c3a58;
+    foreground:                  #bd93f9;
+    background:                  #2c2a38;
     background-color:            transparent;
     spacing:                     2;
 

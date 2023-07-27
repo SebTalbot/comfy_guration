@@ -17,7 +17,7 @@ set $w9 9
 set $w10 10
 
 # Colors
-set $active #a89984
+set $active #BD93F9
 set $inactive #3c3835
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -206,7 +206,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 focus_follows_mouse no
 
 # Background
-exec --no-startup-id feh --bg-scale ~/comfy_guration/assets/wallpapers/laptop.jpg
+exec --no-startup-id feh --bg-scale ~/comfy_guration/assets/wallpapers/montains_purple.jpg
 
 # Picom
 exec --no-startup-id picom -f --config ~/comfy_guration/dotfiles/laptop/picom.conf
