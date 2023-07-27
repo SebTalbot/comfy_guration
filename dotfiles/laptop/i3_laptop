@@ -193,11 +193,10 @@ bindsym XF86AudioLowerVolume exec "amixer -D pulse set Master 5%-"
 bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
 
 # Screenshots
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym Ctrl+Print --release exec --no-startup-id i3-scrot -wc
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym Ctrl+Shift+Print --release exec --no-startup-id i3-scrot -sc
+bindsym Print exec --no-startup-id ~/comfy_guration/scripts/screenshots/screen_save.sh
+bindsym Ctrl+Print --release exec --no-startup-id ~/comfy_guration/scripts/screenshots/screen_clipboard.sh
+bindsym Shift+Print --release exec --no-startup-id ~/comfy_guration/scripts/screenshots/select_save.sh
+bindsym Ctrl+Shift+Print --release exec --no-startup-id ~/comfy_guration/scripts/screenshots/select_clipboard.sh
 
 # Screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
