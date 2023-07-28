@@ -52,6 +52,7 @@ VI_MODE_SET_CURSOR=true
 MODE_INDICATOR=""
 
 # Alias
+alias st='./start.sh'
 alias cg='cd $(git rev-parse --show-toplevel)'
 alias clip='xclip -selection clipboard'
 alias cv='cd /opt/lampp/htdocs/wordpress/wp-content/themes/chefcookit.com'
