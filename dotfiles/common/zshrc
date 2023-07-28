@@ -57,9 +57,11 @@ alias cg='cd $(git rev-parse --show-toplevel)'
 alias clip='xclip -selection clipboard'
 alias cv='cd /opt/lampp/htdocs/wordpress/wp-content/themes/chefcookit.com'
 alias gtc='cd ~/projects/cookit'
+alias kbw='setxkbmap -v us -variant workman'
 alias l='ls -la --group-directories-first'
 alias pip=pip3
 alias python=python3
+alias st='sh start.sh'
 alias t=tree
 alias vi=nvim
 alias vtop='vtop --theme gruvbox'
@@ -74,6 +76,10 @@ alias txp=~/comfy_guration/scripts/tmuxinator_fzf_start.sh
 
 ## git
 alias lz='lazygit'
+
+## npm
+alias npmg='npm -g'
+alias npmgl='npm list -g --depth=0'
 
 # Autocompletion
 ## pip
