@@ -65,6 +65,7 @@ alias t=tree
 alias vi=nvim
 alias vtop='vtop --theme gruvbox'
 alias zr='source ~/.zshrc'
+alias cock='~/comfy_guration/scripts/cook_it_screens.sh'
 
 ## Tmux
 alias ta='tmux attach -t'
@@ -81,13 +82,14 @@ alias npmg='npm -g'
 alias npmgl='npm list -g --depth=0'
 
 # Autocompletion
-## pip
-[[ $commands[pip] ]] && eval "`pip completion --zsh`"
-
 ## kubectl, minikube and skaffold
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 [[ $commands[minikube] ]] && source <(minikube completion zsh)
 [[ $commands[skaffold] ]] && source <(skaffold completion zsh)
+
+## pip
+# [[ $commands[pip] ]] && eval "`pip completion --zsh`"
+
 
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
