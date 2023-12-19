@@ -19,7 +19,7 @@ white = #EEEEEE
 ;-------------------------------------------------------------------------------
 
 [bar/right]
-monitor = DP-4
+monitor = DP-2
 width = 100%
 height = 22
 radius = 1.0
@@ -47,7 +47,7 @@ modules-center = slio sloi slio sloi slio day srim date_symbols slim time srio s
 modules-right = slmo slim slmi slim xkeyboard sloi slio cpu sloi slio memory sloi slio filesystem sloi slio volume sloi slio eth wifi
 
 [bar/left]
-monitor = DP-2
+monitor = DP-4
 width = 100%
 height = 18
 radius = 1.0

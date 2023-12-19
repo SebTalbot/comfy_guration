@@ -11,14 +11,17 @@ workspace_auto_back_and_forth no
 
 # ---------\
 # AUTOSTART ----------
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends -b
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id nitrogen --restore; sleep 1;
+exec --no-startup-id picom -b --config ~/comfy_guration/dotfiles/home/picom.conf
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 
 # To change for dunst
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
+# exec_always --no-startup-id ff-theme-util
+# exec_always --no-startup-id fix_xcursor
 
+# Wallpaper
+exec --no-startup-id feh --bg-center ~/pictures/wallpaper.png --image-bg "#393e46"
 
 # Applets
 exec --no-startup-id clipit
@@ -28,8 +31,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id ~/comfy_guration/scripts/home/polybar.sh
 
 # Audio
-# exec --no-startup-id pactl set-default-sink bluez_sink.4C_87_5D_51_87_50.a2dp_sink
-exec --no-startup-id pamixer --set-volume 50
+exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
+exec --no-startup-id pamixer --set-volume 30
 
 # -----\
 # STYLE ----------
@@ -56,17 +59,16 @@ default_floating_border normal
 # KEYBINDINGS ----------
 
 # Printscreen
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym Ctrl+Print --release exec --no-startup-id i3-scrot -wc
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym Ctrl+Shift+Print --release exec --no-startup-id i3-scrot -sc
+bindsym Print exec --no-startup-id ~/comfy_guration/scripts/screenshots/screen_save.sh
+bindsym Ctrl+Print --release exec --no-startup-id ~/comfy_guration/scripts/screenshots/screen_clipboard.sh
+bindsym Shift+Print --release exec --no-startup-id ~/comfy_guration/scripts/screenshots/select_save.sh
+bindsym Ctrl+Shift+Print --release exec --no-startup-id ~/comfy_guration/scripts/screenshots/select_clipboard.sh
 
 # Toggle language
 bindsym $mod+space exec ~/comfy_guration/scripts/keyboard_lang.sh
 
 # Lock Screen
-bindsym $mod+Ctrl+L exec ~/comfy_guration/scripts/home/lock_screen.sh
+bindsym $mod+Shift+z exec ~/comfy_guration/scripts/home/lock_screen.sh
 
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -136,8 +138,8 @@ set $ws3 3
 set $ws4 4
 set $ws5 5
 set $ws6 6
-set $primaryScreen DP-4
-set $secondaryScreen DP-2
+set $primaryScreen DP-2
+set $secondaryScreen DP-4
 
 workspace $ws1 output $primaryScreen
 workspace $ws2 output $primaryScreen
