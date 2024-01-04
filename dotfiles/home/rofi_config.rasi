@@ -158,11 +158,11 @@ sidebar-mode: true;
 * {
     red:                         rgba ( 220, 50, 47, 100 % );
     blue:                        rgba ( 38, 139, 210, 100 % );
-    grey:                        #797E86;
+    grey:                        #7f7f7f;
     lightfg:                     #FFD369;
-    lightbg:                     #222831;
+    lightbg:                     #393939;
     foreground:                  #FFD369;
-    background:                  #393E46;
+    background:                  #272727;
     background-color:            transparent;
     spacing:                     2;
 

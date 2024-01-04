@@ -1,3 +1,7 @@
+#Infos
+#
+#File Explorer: nemo
+
 set $mod Mod4
 
 # --------\
@@ -15,13 +19,13 @@ workspace_auto_back_and_forth no
 # exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id picom -b --config ~/comfy_guration/dotfiles/home/picom.conf
 # exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id dunst -conf ~/comfy_guration/dotfiles/home/dunstrc
 
-# To change for dunst
 # exec_always --no-startup-id ff-theme-util
 # exec_always --no-startup-id fix_xcursor
 
 # Wallpaper
-exec --no-startup-id feh --bg-center ~/pictures/wallpaper.png --image-bg "#393e46"
+exec --no-startup-id feh --bg-center ~/pictures/wallpaper.png --image-bg "#272727"
 
 # Applets
 exec --no-startup-id clipit
@@ -34,6 +38,11 @@ exec --no-startup-id ~/comfy_guration/scripts/home/polybar.sh
 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
 exec --no-startup-id pamixer --set-volume 30
 
+# Switch caps and escape
+exec --no-startup-id ~/comfy_guration/scripts/switch_caps_escape.sh
+
+exec --no-startup-id xinput --set-prop 14 'libinput Accel Speed' -0.5
+
 # -----\
 # STYLE ----------
 
@@ -41,9 +50,9 @@ font xft:PragmataPro 12
 
 # class                   border  backgr. text    indic.
   client.focused          #FFD369 #FFD369 #222831 #FFD369
-  client.focused_inactive #222831 #222831 #FFD369 #222831
-  client.unfocused        #222831 #222831 #FFD369 #222831 
-  client.urgent           #222831 #222831 #E07A31 #222831 
+  client.focused_inactive #222831 #393939 #FFD369 #272727
+  client.unfocused        #222831 #323232 #FFD369 #272727
+  client.urgent           #222831 #272727 #E07A31 #272727
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
   client.background       #393E46
 
