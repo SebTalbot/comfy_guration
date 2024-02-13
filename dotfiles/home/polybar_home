@@ -21,7 +21,7 @@ white = #EEEEEE
 [bar/right]
 monitor = DP-2
 width = 100%
-height = 22
+height = 25
 radius = 1.0
 fixed-center = true
 
@@ -38,7 +38,7 @@ font-1 = PragmataPro:size=35;20
 ; Separators Right
 font-2 = PragmataPro:size=17.5;3
 ; Center Symbol
-font-3 = PragmataPro:size=17;5
+font-3 = HackNerdFont:size=20;5
 ; Symbols
 font-4 = PragmataPro:size=15;2
 
@@ -164,7 +164,7 @@ content-background = ${colors.innerBg}
 
 [module/date_symbols]
 type = custom/text
-content = "  "
+content = " 󱌃 "
 content-font = 4
 content-foreground = ${colors.innerBg}
 content-background = ${colors.main}
