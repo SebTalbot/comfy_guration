@@ -1,5 +1,0 @@
-# No logs
-dotfiles/weechat/logs/*
-dotfiles/weechat/weechat.log
-.directory
-*.log
