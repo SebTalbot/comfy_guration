@@ -1,5 +1,9 @@
 #!/bin/bash
+config_file="$1"
+
+echo $config_file
+
 killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
-polybar -c ~/comfy_guration/dotfiles/home/polybar_home -r left &
-polybar -c ~/comfy_guration/dotfiles/home/polybar_home -r right &
+polybar --config=$config_file --reload left &
+polybar --config=$config_file --reload right &
