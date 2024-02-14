@@ -1,6 +1,9 @@
 #Infos
 #
 #File Explorer: nemo
+#App Launcher: rofi
+#Notifications Manager: dunst
+#Terminal: kitty
 
 set $mod Mod4
 
@@ -15,14 +18,8 @@ workspace_auto_back_and_forth no
 
 # ---------\
 # AUTOSTART ----------
-# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id nitrogen --restore; sleep 1;
-exec --no-startup-id picom -b --config ~/comfy_guration/dotfiles/home/picom.conf
-# exec --no-startup-id xautolock -time 10 -locker blurlock
-exec --no-startup-id dunst -conf ~/comfy_guration/dotfiles/home/dunstrc
-
-# exec_always --no-startup-id ff-theme-util
-# exec_always --no-startup-id fix_xcursor
+exec --no-startup-id picom -b --config ~/comfy_guration/dotfiles/home/picom
+exec --no-startup-id dunst -conf ~/comfy_guration/dotfiles/home/dunst
 
 # Wallpaper
 exec --no-startup-id feh --bg-center ~/pictures/wallpaper.png --image-bg "#272727"
@@ -32,7 +29,7 @@ exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 
 # Polybar
-exec --no-startup-id ~/comfy_guration/scripts/home/polybar.sh
+exec --no-startup-id ~/comfy_guration/scripts/home/polybar.sh ~/comfy_guration/dotfiles/home/polybar
 
 # Audio
 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
