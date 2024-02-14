@@ -1,5 +1,5 @@
 #!/bin/bash
-source ../../scripts/manager/utils.sh
+source ~/comfy_guration/scripts/manager/utils.sh
 
 u_link_file "LAUNCHER" "Rofi" ~/comfy_guration/dotfiles/home/rofi ~/.config/rofi/config.rasi
 u_link_file "TERMINAL" "Kitty" ~/comfy_guration/dotfiles/home/kitty ~/.config/kitty/kitty.conf
