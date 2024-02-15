@@ -38,7 +38,10 @@ exec --no-startup-id pamixer --set-volume 30
 # Switch caps and escape
 exec --no-startup-id ~/comfy_guration/scripts/common/switch_caps_escape.sh
 
-exec --no-startup-id xinput --set-prop 14 'libinput Accel Speed' -0.5
+# Chrome tag dragging fix
+# Need: https://github.com/Syphdias/i3-chrome-tab-dragging
+exec_always --no-startup-id i3-chrome-tab-dragging
+
 
 # -----\
 # STYLE ----------

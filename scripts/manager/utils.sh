@@ -20,7 +20,6 @@ u_link_file () {
     else
         __create_symlink $tag $name $file_path $destination_path
     fi
-
 }
 
 # Private functions
