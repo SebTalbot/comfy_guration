@@ -46,7 +46,7 @@ __create_symlink () {
 
     echo -e "$bold_name (${destination_path}) ${exists_warning}."
     while : ; do
-        read -p "Do you want to link [${tag}] ${name}?${overwrite_warning} [y/n] :" -n 1 -r; echo
+        read -p "$(echo -e "Do you want to link ${COLOR_CYAN}${bold_name}${COLOR_DEFAULT}?${overwrite_warning} [y/n] :")" -n 1 -r; echo
         case $REPLY in
             y|Y)
                 u_safe_mkdir $destination_path
