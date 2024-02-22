@@ -14,7 +14,10 @@ function precmd () {
 export TERM=xterm-256color
 export UPDATE_ZSH_DAYS=7
 export LESS=-j25
-export LC_ALL="C" # Sort ls
+
+# need to install most
+export PAGER=most
+export PARU_PAGER=most
 
 export GOPATH=$HOME/.go
 export NPM_CONFIG_PREFIX=~/.npm-global
@@ -52,6 +55,8 @@ set show-mode-in-prompt On
 
 # User configuration
 export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=C.UTF-8
 export LANGUAGE=en_US:en
 export EDITOR="nvim"
 
