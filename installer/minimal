@@ -1,34 +1,25 @@
 #!/bin/bash
+# This script was made to easily install the minimum required to clone this repository
+# and run the other scripts. You shouldn't use it.
 
 #Reflector
-if (false); then
-echo 'update pacman'
 sudo pacman -Syu
-echo 'install reflector'
 sudo pacman --needed -S reflector
-echo 'run reflector'
 sudo reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 sudo systemctl enable reflector.service
-fi
 
 #Paru
-if (false); then
-echo 'install paru'
 sudo pacman  --needed base-devel
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 cd ..
 rm -rf paru
-fi
 
 #Graphics
-if (false); then
-echo 'i3-wm'
 sudo pacman --needed -S xorg-server xorg-apps xorg-xinit xterm xclip i3-gaps i3blocks numlockx
 echo 'exec i3' > ~/.xinitrc
 paru -S google-chrome
-fi
 
 #SSH
 sudo pacman --needed -S openssh
@@ -36,6 +27,7 @@ ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
 
 #Power saver
+# To move to the laptop script
 if (false); then
 echo 'power saver'
 sudo pacman --needed -S tlp tlp-rdw powertop acpi acpi_call
