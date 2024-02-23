@@ -205,7 +205,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 focus_follows_mouse no
 
 # Background
-exec --no-startup-id feh --bg-scale ~/comfy_guration/assets/wallpapers/laptop.png
+exec --no-startup-id feh --bg-center ~/comfy_guration/assets/wallpapers/laptop.png --image-bg "#21222c"
 
 # Picom
 exec --no-startup-id picom -f --config ~/comfy_guration/dotfiles/laptop/picom

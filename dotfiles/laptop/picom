@@ -10,15 +10,15 @@ shadow-offset-x = -15;   # The left offset for shadows. (default -15)
 shadow-offset-y = 3;   # The top offset for shadows. (default -15)
 shadow-opacity = 0.5;   # The translucency for shadows. (default .75)
 shadow-exclude = [
-    "! name~=''",
-    "name = 'Notification'",
-    "name = 'xfce4-notifyd'",
-    "name *= 'compton'",
-    "name *= 'polybar'",
-    "class_g = 'Conky'",
-    "class_g ?= 'Notify-osd'",
-    "class_g ?= 'Xfce4-notifyd'",
-    "class_g ?= 'Xfce4-power-manager'"
+  "! name~=''",
+  "window_type = 'dialog'",
+  "window_type = 'dock'",
+  "window_type = 'dropdown_menu'",
+  "window_type = 'menu'",
+  "window_type = 'popup_menu'", #start-menu and r-click men
+  "window_type = 'splash'",
+  "window_type = 'tooltip'",
+  "window_type = 'utility'",
 ];
 
 opacity-rule = [
@@ -29,9 +29,21 @@ opacity-rule = [
 # Need
 backend = "glx";
 glx-no-stencil = true;
-# use-damage = false;
+use-damage = true;
 vsync = true;
 
-# blur-background = false;
-# blur-method = "dual_kawase";
-# blur-strength = 3;
+blur-background = false;
+blur-method = "dual_kawase";
+blur-strength = 2;
+blur-background-exclude = [
+  "class_g ?= 'slop'", # maim selection for screenshots
+  "window_type = 'desktop'",
+  "window_type = 'dialog'",
+  "window_type = 'dock'",
+  "window_type = 'dropdown_menu'",
+  "window_type = 'menu'",
+  "window_type = 'popup_menu'", #start_menu
+  "window_type = 'splash'",
+  "window_type = 'tooltip'",
+  "window_type = 'utility'",
+];

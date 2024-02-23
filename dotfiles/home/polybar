@@ -383,7 +383,7 @@ label-volume = %percentage%%
 label-volume-foreground = ${colors.main}
 label-volume-background = ${colors.innerBg}
 
-label-muted = " 婢"
+label-muted = "  "
 label-muted-foreground = ${colors.white}
 label-muted-background = ${colors.innerBg}
 
