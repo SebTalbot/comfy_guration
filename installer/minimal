@@ -1,0 +1,46 @@
+#!/bin/bash
+
+#Reflector
+if (false); then
+echo 'update pacman'
+sudo pacman -Syu
+echo 'install reflector'
+sudo pacman --needed -S reflector
+echo 'run reflector'
+sudo reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+sudo systemctl enable reflector.service
+fi
+
+#Paru
+if (false); then
+echo 'install paru'
+sudo pacman  --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+cd ..
+rm -rf paru
+fi
+
+#Graphics
+if (false); then
+echo 'i3-wm'
+sudo pacman --needed -S xorg-server xorg-apps xorg-xinit xterm xclip i3-gaps i3blocks numlockx
+echo 'exec i3' > ~/.xinitrc
+paru -S google-chrome
+fi
+
+#SSH
+sudo pacman --needed -S openssh
+ssh-keygen -t rsa
+cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
+
+#Power saver
+if (false); then
+echo 'power saver'
+sudo pacman --needed -S tlp tlp-rdw powertop acpi acpi_call
+sudo systemctl enable tlp
+sudo systemctl mask systemd-rfkill.socket
+sudo systemctl mask systemd-rfkill.service
+fi
+
