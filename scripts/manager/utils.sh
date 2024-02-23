@@ -24,7 +24,7 @@ u_link_file () {
 
 # Private functions
 
-__safe_mkdir () {
+u_safe_mkdir () {
     declare file_path="$1"
     directory_path="$(dirname "${destination_path}")"
     if [ ! -d $directory_path ]; then
