@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# dependencies
+sudo pacman --needed -S zsh rofi kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit picom ttf-hack-nerd zsh-syntax-highlighting fd pamixer dunst
+
+# oh-my-zsh
+if (false); then
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+
+if (false); then
+mkdir ~/.npm-global
+fi
