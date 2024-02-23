@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # dependencies
-sudo pacman --needed -S zsh rofi kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit picom ttf-hack-nerd zsh-syntax-highlighting fd pamixer dunst
+# xbacklight and xf86-video-intel only for laptop need to clean
+sudo pacman --needed -S zsh rofi kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit picom ttf-hack-nerd zsh-syntax-highlighting fd pamixer dunst network-manager-applet xf86-video-intel maim nemo
 
 # oh-my-zsh
 if (false); then
@@ -12,4 +13,6 @@ fi
 
 if (false); then
 mkdir ~/.npm-global
+mkdir ~/pictures
+mkdir ~/pictures/screenshots
 fi
