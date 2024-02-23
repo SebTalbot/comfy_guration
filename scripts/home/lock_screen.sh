@@ -1,16 +1,16 @@
 #!/bin/bash
-A='#30365F74'  # dark
+A='#272727'  # dark
 B='#00000000'  # blank
 C='#30365F22'  # clear ish
-D='#7a5cccff'  # default
-T='#b3a1e6ff'  # text
-W='#ce6f8fff'  # wrong
-V='#ecf0c1ff'  # verifying
+D='#FFD369'  # default
+T='#FFD369'  # text
+W='#FB4833'  # wrong
+V='#393939'  # verifying
 
 killall -SIGUSR1 dunst # pause
 setxkbmap us
 
-blurlock \
+i3lock \
   --insidever-color=$A   \
   --ringver-color=$V     \
   \

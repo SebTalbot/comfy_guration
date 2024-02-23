@@ -4,6 +4,8 @@
 # xbacklight and xf86-video-intel only for laptop need to clean
 sudo pacman --needed -S zsh rofi kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit picom ttf-hack-nerd zsh-syntax-highlighting fd pamixer dunst network-manager-applet xf86-video-intel maim nemo
 
+paru --needed -S i3lock-color
+
 # oh-my-zsh
 if (false); then
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
