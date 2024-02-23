@@ -7,6 +7,8 @@ env CURRENT_DEVICE=home
 remember_window_size  no
 initial_window_width  2200
 initial_window_height 1350
+window_padding_width 4
+placement_strategy center
 
 # Render
 repaint_delay 1
