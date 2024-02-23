@@ -11,3 +11,7 @@ __i3_link () {
   declare tag="$1" name="$2"
   echo -e "${COLOR_CYAN} ? [${tag}] ${name} is linked through i3wm${COLOR_DEFAULT}"
 }
+
+__i3_link "COMPOSITOR" "Picom"
+__i3_link "NOTIFICATION" "Dunst"
+__i3_link "TOP_BAR" "Polybar"

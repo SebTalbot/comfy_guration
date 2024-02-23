@@ -16,7 +16,7 @@ urgent = #ff5555
 
 [bar/main]
 width = 100%
-height = 22
+height = 23
 radius = 1.0
 fixed-center = true
 
@@ -42,8 +42,10 @@ font-5 = Hack Nerd Font:pixelsize=11;0
 font-6 = Hack Nerd Font:pixelsize=1;0
 ; Middle Text
 font-7 = Pragmata Pro Ligaturized:pixelsize=11:weight=bold;3
+; date symbol
+font-8 = Hack Nerd Font:pixelsize=19;4
 
-modules-left = arrow_l1 arrow_l2 i3 arrow_i3 i3_index arrow_i3_index i3_icon i3_name arrow_i3_name arrow_i3_end arrow_i3_name
+modules-left = i3 arrow_i3 arrow_i3_index arrow_i3_name arrow_i3_end arrow_i3_name
 modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4
 modules-right = arrow_r3 arrow_r4 arrow_r3 xkeyboard arrow_r2 volume arrow_r1 ram_symbol ram arrow_r2 cpu_symbol cpu arrow_r1 filesystem_symbol filesystem arrow_r2 battery battery_text arrow_r1 temperature_symbol temperature
 
@@ -123,8 +125,8 @@ content-background = ${colors.border}
 
 [module/date_symbols]
 type = custom/text
-content = " LEGION "
-content-font = 0
+content = " 󱌃 "
+content-font = 9
 content-foreground = ${colors.dark}
 content-background = ${colors.border}
 
@@ -188,42 +190,52 @@ content-background = ${colors.mid}
 [module/i3]
 type = internal/i3
 format = <label-state><label-mode>
-
-label-mode = "%mode% "
-label-mode-foreground = ${colors.urgent}
-label-mode-background = ${colors.mid}
-
-; need to add: https://github.com/kenogo/polybar/commit/c2b6fa3fcc2c54da1d06827eaed16b5155585ec3
-ws-num = 10
-show-all = true
-label-empty-foreground = ${colors.border}
-label-empty-background = ${colors.mid}
-label-empty-font = 3
-label-empty = " "
-
-index-sort = true
+index-sort = false
 enable-click = false
 enable-scroll = false
-
 ; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode = " <%mode%> "
+label-mode-foreground = ${colors.main}
+label-mode-background = ${colors.innerBg}
+
+ws-icon-0 = 10;0
+ws-icon-1 = 1;1
+ws-icon-2 = 2;2
+ws-icon-3 = 3;3
+ws-icon-4 = 4;4
+ws-icon-5 = 5;5
+ws-icon-6 = 6;6
+ws-icon-7 = 7;7
+ws-icon-8 = 8;8
+ws-icon-9 = 9;9
+ws-icon-default =
 
 ; focused = Active workspace on focused monitor
-label-focused = " "
-label-focused-font = 3
+label-focused = " %icon% "
 label-focused-foreground = ${colors.highlight}
 label-focused-background = ${colors.mid}
 
-; unfocused = Inactive workspace on any monitor
-label-unfocused = " "
-label-unfocused-font = 3
+; visible = Visible but unfocused
+label-visible = " %icon% "
+label-visible-foreground = ${colors.light}
+label-visible-background = ${colors.mid}
+
+; unfocused = Inactive workspace
+label-unfocused = " %icon% "
 label-unfocused-foreground = ${colors.light}
 label-unfocused-background = ${colors.mid}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = " "
-label-urgent-font = 3
-label-urgent-foreground = ${colors.urgent}
-label-urgent-background = ${colors.mid}
+label-urgent = " %icon% "
+label-urgent-foreground = ${colors.red}
+label-urgent-background = ${colors.innerBg}
+
+label-separator = //
+label-separator-padding = 0
+label-separator-foreground = ${colors.light}
+label-separator-background = ${colors.mid}
 
 [module/i3_index]
 type = internal/i3
