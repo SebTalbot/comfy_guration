@@ -105,20 +105,18 @@ alias npmg='npm -g'
 alias npmgl='npm list -g --depth=0'
 
 ## pyenv
-alias pip=~/.pyenv/shims/pip
-alias python=~/.pyenv/shims/python
+export PYENV_ROOT=$HOME/.pyenv
+[[ -d $PYENV_ROOT/bin ]] && addToPATH $PYENV_ROOT/bin
+eval "$(pyenv init -)"
+
+# alias pip=~/.pyenv/shims/pip
+# alias python=~/.pyenv/shims/python
 
 # Autocompletion
 ## kubectl, minikube and skaffold
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 [[ $commands[minikube] ]] && source <(minikube completion zsh)
 [[ $commands[skaffold] ]] && source <(skaffold completion zsh)
-
-## pip
-# [[ $commands[pip] ]] && eval "`pip completion --zsh`"
-
-## cheat.sh
-fpath=(~/.zsh.d/ $fpath)
 
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
