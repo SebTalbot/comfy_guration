@@ -107,11 +107,14 @@ alias npmgl='npm list -g --depth=0'
 ## pyenv
 export PYENV_ROOT=$HOME/.pyenv
 [[ -d $PYENV_ROOT/bin ]] && addToPATH $PYENV_ROOT/bin
+[[ $commands[pyenv] ]] && eval "$(pyenv init -)"
 
 # alias pip=~/.pyenv/shims/pip
 # alias python=~/.pyenv/shims/python
 
 # Autocompletion
+[[ $commands[pyenv] ]] && source $HOME/comfy_guration/scripts/common/zsh_completion/pyenv
+
 ## kubectl, minikube and skaffold
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 [[ $commands[minikube] ]] && source <(minikube completion zsh)
