@@ -50,8 +50,8 @@ font xft:PragmataPro 12
 
 # class                   border  backgr. text    indic.
   client.focused          #FFD369 #FFD369 #222831 #FFD369
-  client.focused_inactive #222831 #393939 #FFD369 #272727
-  client.unfocused        #222831 #323232 #FFD369 #272727
+  client.focused_inactive #222831 #393939 #FFD369 #393939
+  client.unfocused        #222831 #323232 #FFD369 #323232
   client.urgent           #222831 #272727 #E07A31 #272727
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
   client.background       #393E46
