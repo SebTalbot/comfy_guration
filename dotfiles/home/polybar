@@ -196,8 +196,8 @@ blacklist-0 = num lock
 blacklist-1 = scroll lock
 format = <label-layout><label-indicator>
 format-spacing = 0
-format-prefix = " "
-format-prefix-font = 1
+format-prefix = " 󰌌 "
+format-prefix-font = 5
 format-prefix-foreground = ${colors.main}
 format-prefix-background = ${colors.innerBg}
 label-layout = %icon%
@@ -209,6 +209,8 @@ layout-icon-default = failed
 layout-icon-0 = us;EN
 layout-icon-1 = ca;FR
 label-indicator-on-capslock = " CAPS"
+label-indicator-on-capslock-foreground = ${colors.red}
+label-indicator-on-capslock-background = ${colors.innerBg}
 
 [module/filesystem]
 type = internal/fs
