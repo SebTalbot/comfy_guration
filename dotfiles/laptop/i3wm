@@ -181,7 +181,7 @@ default_border pixel 5
 
 # Polybar
 # exec_always --no-startup-id xrandr --output HDMI-2 --same-as eDP-1
-exec_always --no-startup-id ~/comfy_guration/scripts/laptop/lauch_polybar.sh ~/comfy_guration/dotfiles/laptop/polybar
+exec_always --no-startup-id ~/comfy_guration/scripts/laptop/launch_polybar.sh ~/comfy_guration/dotfiles/laptop/polybar
 
 # Network manager tray icon
 exec --no-startup-id nm-applet

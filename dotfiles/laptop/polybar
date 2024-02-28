@@ -46,7 +46,7 @@ font-7 = PragmataPro:pixelsize=11:weight=bold;3
 font-8 = Hack Nerd Font:pixelsize=19;4
 
 modules-left = arrow_l1 arrow_l2 i3 arrow_i3 arrow_i3_index arrow_i3_name arrow_i3_end arrow_i3_name
-modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4
+modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4 empty_space
 modules-right = arrow_r3 arrow_r4 arrow_r3 xkeyboard arrow_r2 volume arrow_r1 ram_symbol ram arrow_r2 cpu_symbol cpu arrow_r1 filesystem_symbol filesystem arrow_r2 battery battery_text arrow_r1 temperature_symbol temperature
 
 tray-position = left
@@ -57,129 +57,137 @@ tray-padding = 4
 ;	D E C O R A T I O N S
 ;-------------------------------------------------------------------------------
 
+;Centering the bar
+[module/empty_space]
+type = custom/text
+format = " "
+format-font = 5
+format-foreground = ${colors.main}
+format-background = ${colors.innerBg}
+
 ; LEFT --------
 [module/arrow_l1]
 type = custom/text
-content = ""
-content-font = 2
-content-foreground = ${colors.mid}
-content-background = ${colors.light}
+format = ""
+format-font = 2
+format-foreground = ${colors.mid}
+format-background = ${colors.light}
 
 [module/arrow_l2]
 type = custom/text
-content = ""
-content-font = 2
-content-foreground = ${colors.light}
-content-background = ${colors.mid}
+format = ""
+format-font = 2
+format-foreground = ${colors.light}
+format-background = ${colors.mid}
 
 [module/arrow_i3]
 type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.mid}
-content-background = ${colors.light}
+format = " "
+format-font = 2
+format-foreground = ${colors.mid}
+format-background = ${colors.light}
 
 [module/arrow_i3_index]
 type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.light}
-content-background = ${colors.mid}
+format = " "
+format-font = 2
+format-foreground = ${colors.light}
+format-background = ${colors.mid}
 
 [module/arrow_i3_name]
 type = custom/text
-content = ""
-content-font = 2
-content-foreground = ${colors.mid}
-content-background = ${colors.dark}
+format = ""
+format-font = 2
+format-foreground = ${colors.mid}
+format-background = ${colors.dark}
 
 [module/arrow_i3_end]
 type = custom/text
-content = ""
-content-font = 2
-content-foreground = ${colors.dark}
-content-background = ${colors.mid}
+format = ""
+format-font = 2
+format-foreground = ${colors.dark}
+format-background = ${colors.mid}
 
 ; MIDDLE ---------
 
 [module/middle0]
 type = custom/text
-content = "◥"
-content-font = 5
-content-foreground = ${colors.dark}
-content-background = ${colors.mid}
+format = "◥"
+format-font = 5
+format-foreground = ${colors.dark}
+format-background = ${colors.mid}
 
 [module/middle1]
 type = custom/text
-content = "◥"
-content-font = 5
-content-foreground = ${colors.mid}
-content-background = ${colors.dark}
+format = "◥"
+format-font = 5
+format-foreground = ${colors.mid}
+format-background = ${colors.dark}
 
 [module/middle2]
 type = custom/text
-content = "◤"
-content-font = 5
-content-foreground = ${colors.mid}
-content-background = ${colors.border}
+format = "◤"
+format-font = 5
+format-foreground = ${colors.mid}
+format-background = ${colors.border}
 
 [module/date_symbols]
 type = custom/text
-content = " 󱌃 "
-content-font = 9
-content-foreground = ${colors.dark}
-content-background = ${colors.border}
+format = " 󱌃 "
+format-font = 9
+format-foreground = ${colors.dark}
+format-background = ${colors.border}
 
 [module/middle3]
 type = custom/text
-content = "◥"
-content-font = 5
-content-foreground = ${colors.mid}
-content-background = ${colors.border}
+format = "◥"
+format-font = 5
+format-foreground = ${colors.mid}
+format-background = ${colors.border}
 
 [module/middle4]
 type = custom/text
-content = "◤"
-content-font = 5
-content-foreground = ${colors.mid}
-content-background = ${colors.dark}
+format = "◤"
+format-font = 5
+format-foreground = ${colors.mid}
+format-background = ${colors.dark}
 
 [module/middle5]
 type = custom/text
-content = "◤"
-content-font = 5
-content-foreground = ${colors.dark}
-content-background = ${colors.mid}
+format = "◤"
+format-font = 5
+format-foreground = ${colors.dark}
+format-background = ${colors.mid}
 
 ; RIGHT
 
 [module/arrow_r1]
 type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.mid}
-content-background = ${colors.light}
+format = " "
+format-font = 2
+format-foreground = ${colors.mid}
+format-background = ${colors.light}
 
 [module/arrow_r2]
 type = custom/text
-content = " "
-content-font = 2
-content-foreground = ${colors.light}
-content-background = ${colors.mid}
+format = " "
+format-font = 2
+format-foreground = ${colors.light}
+format-background = ${colors.mid}
 
 [module/arrow_r3]
 type = custom/text
-content = ""
-content-font = 2
-content-foreground = ${colors.mid}
-content-background = ${colors.dark}
+format = ""
+format-font = 2
+format-foreground = ${colors.mid}
+format-background = ${colors.dark}
 
 [module/arrow_r4]
 type = custom/text
-content = ""
-content-font = 2
-content-foreground = ${colors.dark}
-content-background = ${colors.mid}
+format = ""
+format-font = 2
+format-foreground = ${colors.dark}
+format-background = ${colors.mid}
 
 
 ;-------------------------------------------------------------------------------
@@ -390,44 +398,44 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = " %percentage_used%%"
+label-mounted = "%percentage_used%%"
 label-mounted-foreground = ${colors.light}
 label-mounted-background = ${colors.mid}
 
 [module/filesystem_symbol]
 type = custom/text
-content = "  "
-content-font = 4
-content-foreground = ${colors.light}
-content-background = ${colors.mid}
+format = " 󰆼 "
+format-font = 4
+format-foreground = ${colors.light}
+format-background = ${colors.mid}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-label = " %percentage%%"
+label = "%percentage%%"
 label-foreground = ${colors.mid}
 label-background = ${colors.light}
 
 [module/cpu_symbol]
 type = custom/text
-content = "  "
-content-font = 4
-content-foreground = ${colors.mid}
-content-background = ${colors.light}
+format = "  "
+format-font = 4
+format-foreground = ${colors.mid}
+format-background = ${colors.light}
 
 [module/ram]
 type = internal/memory
 interval = 2
-label = " %percentage_used%%"
+label = "%percentage_used%%"
 label-foreground = ${colors.light}
 label-background = ${colors.mid}
 
 [module/ram_symbol]
 type = custom/text
-content = "  "
-content-font = 4
-content-foreground = ${colors.light}
-content-background = ${colors.mid}
+format = " 󱐋 "
+format-font = 4
+format-foreground = ${colors.light}
+format-background = ${colors.mid}
 
 [module/volume]
 type = internal/pulseaudio
@@ -496,7 +504,7 @@ interval = 2
 format = <label>
 format-foreground = ${colors.light}
 format-background = ${colors.mid}
-label = " %temperature% "
+label = " %temperature-c% "
 
 [module/temperature_symbol]
 type = internal/temperature
