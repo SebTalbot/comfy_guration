@@ -35,7 +35,7 @@ font-2 = Hack Nerd Font:pixelsize=16;3
 ; Symbols
 font-3 = Hack Nerd Font:pixelsize=16;3
 ; Middle Arrow
-font-4 = Hack Nerd Font:pixelsize=43;0
+font-4 = Hack Nerd Font:pixelsize=21:weight=bold
 ; COM Symbol
 font-5 = Hack Nerd Font:pixelsize=11;0
 ; RUN Symbol
@@ -47,7 +47,7 @@ font-8 = Hack Nerd Font:pixelsize=19;4
 ; i3 separator
 font-9 = Hack Nerd Font:pixelsize=32;6
 
-modules-left = arrow_l1 arrow_l2 i3 arrow_i3 arrow_i3_index arrow_i3_name arrow_i3_end arrow_i3_name
+modules-left = tray arrow_i3_end arrow_l1 arrow_l2 i3 arrow_i3 arrow_i3_index arrow_i3_name arrow_i3_end arrow_i3_name
 modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4 empty_space
 modules-right = arrow_r3 arrow_r4 arrow_r3 xkeyboard arrow_r2 volume arrow_r1 ram_symbol ram arrow_r2 cpu_symbol cpu arrow_r1 filesystem_symbol filesystem arrow_r2 battery battery_text arrow_r1 temperature_symbol temperature
 
@@ -114,21 +114,21 @@ format-background = ${colors.mid}
 
 [module/middle0]
 type = custom/text
-format = "◥"
+format = ""
 format-font = 5
 format-foreground = ${colors.dark}
 format-background = ${colors.mid}
 
 [module/middle1]
 type = custom/text
-format = "◥"
+format = ""
 format-font = 5
 format-foreground = ${colors.mid}
 format-background = ${colors.dark}
 
 [module/middle2]
 type = custom/text
-format = "◤"
+format = ""
 format-font = 5
 format-foreground = ${colors.mid}
 format-background = ${colors.border}
@@ -142,21 +142,21 @@ format-background = ${colors.border}
 
 [module/middle3]
 type = custom/text
-format = "◥"
+format = ""
 format-font = 5
 format-foreground = ${colors.mid}
 format-background = ${colors.border}
 
 [module/middle4]
 type = custom/text
-format = "◤"
+format = ""
 format-font = 5
 format-foreground = ${colors.mid}
 format-background = ${colors.dark}
 
 [module/middle5]
 type = custom/text
-format = "◤"
+format = ""
 format-font = 5
 format-foreground = ${colors.dark}
 format-background = ${colors.mid}
@@ -195,6 +195,12 @@ format-background = ${colors.mid}
 ;-------------------------------------------------------------------------------
 ;	M O D U L E S
 ;-------------------------------------------------------------------------------
+
+[module/tray]
+type = internal/tray
+tray-size = 90%
+tray-padding = 5px
+tray-spacing = 0px
 
 
 [module/i3]
@@ -248,64 +254,6 @@ label-separator-foreground = ${colors.dark}
 label-separator-background = ${colors.mid}
 label-separator-font = 10
 
-[module/i3_index]
-type = internal/i3
-format = <label-state>
-
-label-focused = "%index% "
-label-focused-foreground = ${colors.mid}
-label-focused-background = ${colors.light}
-
-label-unfocused =
-label-urgent =
-
-[module/i3_icon]
-type = internal/i3
-format = <label-state>
-
-ws-icon-default = 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-
-label-focused = "%icon% "
-label-focused-font = 3
-label-focused-foreground = ${colors.light}
-label-focused-background = ${colors.mid}
-
-label-unfocused =
-label-urgent =
-
-[module/i3_name]
-type = internal/i3
-format = <label-state>
-
-ws-icon-default = FREE
-ws-icon-0 = 1;WEB
-ws-icon-1 = 2;DEV
-ws-icon-2 = 3;GIT
-ws-icon-3 = 4;FREE
-ws-icon-4 = 5;FREE
-ws-icon-5 = 6;FREE
-ws-icon-6 = 7;FREE
-ws-icon-7 = 8;RUN
-ws-icon-8 = 9;DATA
-ws-icon-9 = 10;COM
-
-label-focused = " %icon% "
-label-focused-foreground = ${colors.light}
-label-focused-background = ${colors.mid}
-
-label-unfocused =
-label-urgent =
-
 ; MIDDLE --------
 
 [module/day]
@@ -316,7 +264,7 @@ date = " %Y-%m-%d"
 
 time= %H:%M:%S
 
-label = %date%
+label = " %date% "
 label-foreground = ${colors.light}
 label-background = ${colors.mid}
 
@@ -326,7 +274,7 @@ interval = 5
 
 time= %H:%M:%S
 
-label = %time%
+label = " %time% "
 label-foreground = ${colors.light}
 label-background = ${colors.mid}
 
@@ -350,6 +298,8 @@ format-discharging = <ramp-capacity>
 format-discharging-font = 4
 format-discharging-foreground = ${colors.mid}
 format-discharging-background = ${colors.light}
+ramp-capacity-0-foreground = ${colors.urgent}
+ramp-capacity-1-foreground = ${colors.urgent}
 ramp-capacity-2-foreground = ${colors.urgent}
 ramp-capacity-0 = "  "
 ramp-capacity-1 = "  "
@@ -531,15 +481,3 @@ ramp-6 = " "
 ramp-7 = " "
 ramp-8 = " "
 ramp-9 = " "
-
-
-;-------------------------------------------------------------------------------
-;	S E T T I N G S
-;-------------------------------------------------------------------------------
-
-[settings]
-screenchange-reload = true
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
