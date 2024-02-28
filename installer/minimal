@@ -17,7 +17,7 @@ cd ..
 rm -rf paru
 
 #Graphics + chrome
-sudo pacman --needed -S xorg-server xorg-apps xorg-xinit xterm xclip i3-gaps i3blocks numlockx
+sudo pacman --needed -S xorg-server xorg-apps xorg-xinit xterm xclip i3-gaps i3blocks numlockx ttf-dejavu-nerd
 echo 'exec i3' > ~/.xinitrc
 paru -S google-chrome
 

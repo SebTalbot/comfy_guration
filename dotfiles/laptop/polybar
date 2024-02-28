@@ -44,6 +44,8 @@ font-6 = Hack Nerd Font:pixelsize=1;0
 font-7 = PragmataPro:pixelsize=11:weight=bold;3
 ; date symbol
 font-8 = Hack Nerd Font:pixelsize=19;4
+; i3 separator
+font-9 = Hack Nerd Font:pixelsize=32;6
 
 modules-left = arrow_l1 arrow_l2 i3 arrow_i3 arrow_i3_index arrow_i3_name arrow_i3_end arrow_i3_name
 modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4 empty_space
@@ -205,19 +207,19 @@ enable-scroll = false
 pin-workspaces = true
 
 label-mode = " <%mode%> "
-label-mode-foreground = ${colors.main}
-label-mode-background = ${colors.innerBg}
+label-mode-foreground = ${colors.urgent}
+label-mode-background = ${colors.mid}
 
-ws-icon-0 = 10;0
-ws-icon-1 = 1;1
-ws-icon-2 = 2;2
-ws-icon-3 = 3;3
-ws-icon-4 = 4;4
-ws-icon-5 = 5;5
-ws-icon-6 = 6;6
-ws-icon-7 = 7;7
-ws-icon-8 = 8;8
-ws-icon-9 = 9;9
+ws-icon-0 = 10;X
+ws-icon-1 = 1;I
+ws-icon-2 = 2;II
+ws-icon-3 = 3;III
+ws-icon-4 = 4;VI
+ws-icon-5 = 5;V
+ws-icon-6 = 6;VI
+ws-icon-7 = 7;VII
+ws-icon-8 = 8;VIII
+ws-icon-9 = 9;IX
 ws-icon-default =
 
 ; focused = Active workspace on focused monitor
@@ -240,10 +242,11 @@ label-urgent = " %icon% "
 label-urgent-foreground = ${colors.red}
 label-urgent-background = ${colors.innerBg}
 
-label-separator = //
+label-separator = ""
 label-separator-padding = 0
-label-separator-foreground = ${colors.light}
+label-separator-foreground = ${colors.dark}
 label-separator-background = ${colors.mid}
+label-separator-font = 10
 
 [module/i3_index]
 type = internal/i3
