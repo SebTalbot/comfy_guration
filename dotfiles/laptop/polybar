@@ -51,10 +51,6 @@ modules-left = tray arrow_i3_end arrow_l1 arrow_l2 i3 arrow_i3 arrow_i3_index ar
 modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4 empty_space
 modules-right = arrow_r3 arrow_r4 arrow_r3 xkeyboard arrow_r2 volume arrow_r1 ram_symbol ram arrow_r2 cpu_symbol cpu arrow_r1 filesystem_symbol filesystem arrow_r2 battery battery_text arrow_r1 temperature_symbol temperature
 
-tray-position = left
-tray-background = ${colors.mid}
-tray-padding = 4
-
 ;-------------------------------------------------------------------------------
 ;	D E C O R A T I O N S
 ;-------------------------------------------------------------------------------
@@ -64,8 +60,8 @@ tray-padding = 4
 type = custom/text
 format = " "
 format-font = 5
-format-foreground = ${colors.main}
-format-background = ${colors.innerBg}
+format-foreground = ${colors.mid}
+format-background = ${colors.dark}
 
 ; LEFT --------
 [module/arrow_l1]
@@ -245,8 +241,8 @@ label-unfocused-background = ${colors.mid}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = " %icon% "
-label-urgent-foreground = ${colors.red}
-label-urgent-background = ${colors.innerBg}
+label-urgent-foreground = ${colors.urgent}
+label-urgent-background = ${colors.mid}
 
 label-separator = ""
 label-separator-padding = 0

@@ -2,13 +2,12 @@
 # Need Blurlocker https://github.com/SafwanLjd/BlurLocker
 function prelock() {
   killall -SIGUSR1 dunst
-  amixer -D pulse set Master 1+ mute
+  pamixer -t
   setxkbmap us
 }
 
 function postlock() {
   killall -SIGUSR2 dunst
-  amixer -D pulse set Master 1+ unmute
 }
 
 function lock() {
@@ -20,7 +19,7 @@ function lock() {
   local W='#ff5555'  # wrong
   local V='#ff92df'  # verifying
 
-  blurlock \
+  i3lock \
     --insidever-color=$A   \
     --ringver-color=$V     \
     \
