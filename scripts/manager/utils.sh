@@ -22,7 +22,6 @@ u_link_file () {
     fi
 }
 
-# Private functions
 
 u_safe_mkdir () {
     declare file_path="$1"
@@ -32,6 +31,8 @@ u_safe_mkdir () {
         mkdir -p $directory_path
     fi
 }
+
+# Private functions
 
 __create_symlink () {
     declare tag="$1" name="$2" file_path="$3" destination_path="$4"
