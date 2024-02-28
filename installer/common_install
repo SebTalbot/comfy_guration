@@ -2,7 +2,7 @@
 
 # dependencies
 # xbacklight and xf86-video-intel only for laptop need to clean
-sudo pacman --needed -S zsh rofi kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit picom ttf-hack-nerd zsh-syntax-highlighting fd pamixer dunst network-manager-applet xf86-video-intel maim nemo
+sudo pacman --needed -S man-db most zsh rofi kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit picom ttf-hack-nerd zsh-syntax-highlighting fd pamixer dunst network-manager-applet xf86-video-intel maim nemo
 
 paru --needed -S i3lock-color
 
