@@ -31,8 +31,8 @@ export GOPATH=$HOME/.go
 addToPATH $GOROOT/bin
 addToPATH $GOPATH/bin
 
-export NPM_CONFIG_PREFIX=~/.npm-global
-addToPATH $HOME/$NPM_CONFIG_PREFIX/bin
+export NPM_CONFIG_PREFIX=$HOME/.npm-global
+addToPATH $NPM_CONFIG_PREFIX/bin
 
 export N_PREFIX=~/.n_version
 export ZSH="$HOME/.oh-my-zsh"
@@ -107,7 +107,6 @@ alias npmgl='npm list -g --depth=0'
 ## pyenv
 export PYENV_ROOT=$HOME/.pyenv
 [[ -d $PYENV_ROOT/bin ]] && addToPATH $PYENV_ROOT/bin
-eval "$(pyenv init -)"
 
 # alias pip=~/.pyenv/shims/pip
 # alias python=~/.pyenv/shims/python
