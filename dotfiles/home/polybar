@@ -42,7 +42,7 @@ font-3 = HackNerdFont:size=20;5
 ; Symbols
 font-4 = HackNerdFont:size=15;3
 
-modules-left =  empty_space i3 srim srmi srim srmo
+modules-left =  i3 srim srmi srim srmo
 modules-center = slio sloi slio sloi slio day srim date_symbols slim time srio sroi srio sroi srio
 modules-right = slmo slim slmi slim xkeyboard sloi slio volume sloi slio memory_symbol memory sloi slio cpu_symbol cpu sloi slio filesystem_symbol filesystem sloi slio eth wifi
 
