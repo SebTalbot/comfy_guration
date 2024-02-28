@@ -229,18 +229,6 @@ format-font = 5
 format-foreground = ${colors.main}
 format-background = ${colors.innerBg}
 
-[module/i3index]
-type = internal/i3
-format = <label-state>
-label-focused = "%name% "
-label-focused-foreground = ${colors.innerBg}
-label-focused-background = ${colors.secondary}
-label-visible = "%name% "
-label-visible-foreground = ${colors.outterBg}
-label-visible-background = ${colors.secondary}
-label-unfocused =
-label-urgent =
-
 [module/i3]
 type = internal/i3
 format = <label-state><label-mode>
@@ -250,8 +238,9 @@ enable-scroll = false
 pin-workspaces = true
 
 label-mode = " <%mode%> "
-label-mode-foreground = ${colors.main}
+label-mode-foreground = ${colors.rer}
 label-mode-background = ${colors.innerBg}
+label-mode-font = 1
 
 ws-icon-0 = 10;0
 ws-icon-1 = 1;1:WEB
@@ -318,34 +307,11 @@ format-font = 5
 format-foreground = ${colors.main}
 format-background = ${colors.innerBg}
 
-[module/wlan]
-type = internal/network
-interface =
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.red}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.red}
-
 [module/eth]
 type = internal/network
 interface = enp4s0
 interval = 3.0
 
-;format-connected-underline = #55aa55
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.main}
 format-connected-prefix-background = ${colors.innerBg}
@@ -356,17 +322,12 @@ label-connected-background = ${colors.innerBg}
 format-disconnected =
 format-disconnected-foreground = ${colors.red}
 format-disconnected-background = ${colors.innerBg}
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.red}
 
 [module/wifi]
 type = internal/network
 interface = wlo1
 interval = 3.0
 
-;format-connected-underline = #55aa55
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.main}
 format-connected-prefix-background = ${colors.innerBg}
@@ -377,10 +338,6 @@ label-connected-background = ${colors.innerBg}
 format-disconnected = WIFI DOWN
 format-disconnected-foreground = ${colors.red}
 format-disconnected-background = ${colors.innerBg}
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.red}
 
 [module/day]
 type = internal/date
@@ -400,7 +357,6 @@ label-background = ${colors.innerBg}
 
 [module/volume]
 type = internal/pulseaudio
-;sink = alsa_output.pci-0000_01_00.1.hdmi-stereo 
 format-volume = <ramp-volume><label-volume>
 
 label-volume = %percentage%%
@@ -410,6 +366,7 @@ label-volume-background = ${colors.innerBg}
 label-muted = "  "
 label-muted-foreground = ${colors.red}
 label-muted-background = ${colors.innerBg}
+label-muted-font = 5
 
 ramp-volume-0 = "  "
 ramp-volume-0-foreground = ${colors.main}
@@ -423,115 +380,4 @@ ramp-volume-2-background = ${colors.innerBg}
 ramp-volume-3 = "  "
 ramp-volume-3-foreground = ${colors.main}
 ramp-volume-3-background = ${colors.innerBg}
-
-[module/battery]
-interval = 5
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 100
-
-format-charging = <animation-charging> <label-charging>
-format-charging-foreground = ${colors.green}
-format-charging-background = ${colors.grey}
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-foreground = ${colors.green}
-format-discharging-background = ${colors.grey}
-format-full = <label-full>
-format-full-foreground = ${colors.green}
-format-full-background = ${colors.grey}
-
-label-charging = "CHR %percentage%%"
-label-discharging = "BAT %percentage%%"
-label-discharging-foreground = ${colors.green}
-label-full = "BAT %percentage%%"
-
-ramp-capacity-0 =
-ramp-capacity-0-foreground = ${colors.red}
-ramp-capacity-1 =
-ramp-capacity-1-foreground = ${colors.red}
-ramp-capacity-2 =
-ramp-capacity-3 =
-ramp-capacity-4 =
-animation-charging-0 =
-animation-charging-1 =
-animation-charging-2 =
-animation-charging-3 =
-animation-charging-4 =
-animation-charging-framerate = 100
-
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.red}
-
-[module/powermenu]
-type = custom/menu
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.red}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-[module/music]
-type = custom/script
-interval = 1
-
-label = %output:0:45:...%
-exec = ~/comfy_guration/scripts/polybar/poly_music.sh
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
-; vim:ft=dosini
-
-[module/title]
-type = internal/xwindow
-
-format-background = ${colors.innerBg}
-format-foreground = ${colors.main}
-format-padding = 1
-
-label-maxlen = 200
+ramp-volume-font = 5
