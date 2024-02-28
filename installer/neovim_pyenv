@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pyenv install 3.11
+pyenv virtualenv 3.11 py3nvim
+pyenv activate py3nvim
+python3 -m pip install pynvim
