@@ -12,13 +12,13 @@ FONT_WEIGHT_REGULAR="\033[0m"
 # Public functions
 
 u_link_file () {
-    declare tag="$1" name="$2" file_path="$3" destination_path="$4"
+    declare tag="$1" name="$2" file_path="$3" destination_path="$4" sudo="$5"
     bold_name="${FONT_WEIGHT_BOLD}[${tag}] ${name}${FONT_WEIGHT_REGULAR}"
 
     if [ "$(readlink -- "$destination_path")" = $file_path ]; then
         echo -e "${COLOR_GREY} = ${bold_name}${COLOR_GREY} is already linked to comfy_guration${COLOR_DEFAULT}"
     else
-        __create_symlink $tag $name $file_path $destination_path
+        __create_symlink $tag $name $file_path $destination_path $sudo
     fi
 }
 
@@ -35,7 +35,7 @@ u_safe_mkdir () {
 # Private functions
 
 __create_symlink () {
-    declare tag="$1" name="$2" file_path="$3" destination_path="$4"
+    declare tag="$1" name="$2" file_path="$3" destination_path="$4" sudo="$5"
     bold_name="${FONT_WEIGHT_BOLD}[${tag}] ${name}${FONT_WEIGHT_REGULAR}"
 
     exists_warning="does not exist"
@@ -51,7 +51,11 @@ __create_symlink () {
         case $REPLY in
             y|Y)
                 u_safe_mkdir $destination_path
-                ln --symbolic --force $file_path $destination_path
+                if [ $sudo = "sudo" ] ; then
+                  sudo ln --symbolic --force $file_path $destination_path
+                else
+                  ln --symbolic --force $file_path $destination_path
+                fi
                 echo -e "${COLOR_GREEN} + ${bold_name}${COLOR_GREEN} LINKED${COLOR_DEFAULT}"
                 break ;;
             n|N)

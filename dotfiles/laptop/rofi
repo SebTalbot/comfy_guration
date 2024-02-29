@@ -1,7 +1,7 @@
 configuration {
 /* Settings */
 modi: "run,window,keys";
-font: "PragmataPro 14";
+font: "PragmataPro 12";
 terminal: "kitty";
 sidebar-mode: true;
 }

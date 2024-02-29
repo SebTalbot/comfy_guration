@@ -48,7 +48,7 @@ font-8 = Hack Nerd Font:pixelsize=19;4
 font-9 = Hack Nerd Font:pixelsize=32;6
 
 modules-left = tray arrow_i3_end arrow_l1 arrow_l2 i3 arrow_i3 arrow_i3_index arrow_i3_name arrow_i3_end arrow_i3_name
-modules-center = middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4 empty_space
+modules-center = middle1 middle0 middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4 middle5 middle4 empty_space
 modules-right = arrow_r3 arrow_r4 arrow_r3 xkeyboard arrow_r2 volume arrow_r1 ram_symbol ram arrow_r2 cpu_symbol cpu arrow_r1 filesystem_symbol filesystem arrow_r2 battery battery_text arrow_r1 temperature_symbol temperature
 
 ;-------------------------------------------------------------------------------
@@ -256,21 +256,16 @@ label-separator-font = 10
 type = internal/date
 interval = 5
 
-date = " %Y-%m-%d"
-
-time= %H:%M:%S
-
-label = " %date% "
+date = " %Y-%m-%d "
+label = %date%
 label-foreground = ${colors.light}
 label-background = ${colors.mid}
 
 [module/time]
 type = internal/date
 interval = 5
-
-time= %H:%M:%S
-
-label = " %time% "
+time = " %H:%M:%S "
+label = %time%
 label-foreground = ${colors.light}
 label-background = ${colors.mid}
 
