@@ -1,4 +1,3 @@
-# Reflector configuration file for the systemd service.
 --save /etc/pacman.d/mirrorlist
 --protocol https
 --latest 5

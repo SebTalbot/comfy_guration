@@ -431,10 +431,17 @@ format-prefix-font = 4
 format-prefix-foreground = ${colors.light}
 format-prefix-background = ${colors.mid}
 
-label-layout = " %layout%"
+label-layout = %icon%
+label-layout-padding = 0
 label-layout-font = 1
 label-layout-foreground = ${colors.light}
 label-layout-background = ${colors.mid}
+layout-icon-default = failed
+layout-icon-0 = us;EN
+layout-icon-1 = ca;FR
+label-indicator-on-capslock = " CAPS"
+label-indicator-on-capslock-foreground = ${colors.urgent}
+label-indicator-on-capslock-background = ${colors.mid}
 
 [module/temperature]
 type = internal/temperature
