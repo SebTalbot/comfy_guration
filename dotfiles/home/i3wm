@@ -60,7 +60,7 @@ gaps inner 20
 gaps outer 30
 
 new_window normal
-default_border pixel 3
+default_border pixel 6
 default_floating_border normal
 # hide_edge_borders none
 
