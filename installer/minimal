@@ -4,12 +4,12 @@
 
 #Reflector
 sudo pacman -Syu
-sudo pacman --needed -S reflector
+sudo pacman --needed --noconfirm -S reflector
 sudo reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 sudo systemctl enable reflector.service
 
 #Paru
-sudo pacman  --needed base-devel
+sudo pacman  --needed --noconfirm base-devel
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
@@ -17,12 +17,12 @@ cd ..
 rm -rf paru
 
 #Graphics + chrome
-sudo pacman --needed -S xorg-server xorg-apps xorg-xinit xterm xclip i3-gaps i3blocks numlockx ttf-dejavu-nerd
+sudo pacman --needed --noconfirm -S xorg-server xorg-apps xorg-xinit xterm xclip i3-gaps i3blocks numlockx ttf-dejavu-nerd
 echo 'exec i3' > ~/.xinitrc
 paru -S google-chrome
 
 #SSH
-sudo pacman --needed -S openssh
+sudo pacman --needed --noconfirm -S openssh
 ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
 
