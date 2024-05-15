@@ -2,7 +2,7 @@
 source ~/comfy_guration/scripts/manager/utils.sh
 
 # dependencies
-sudo pacman --needed --noconfirm -S man-db most zsh rofi kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit picom ttf-hack-nerd noto-fonts-emoji zsh-syntax-highlighting fd pamixer dunst network-manager-applet maim nemo python-pipx pyenv
+sudo pacman --needed --noconfirm -S man-db most zsh rofi kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit picom ttf-hack-nerd noto-fonts-emoji zsh-syntax-highlighting fd pamixer dunst network-manager-applet maim nemo python-pipx pyenv wget ruby
 
 paru --needed -S i3lock-color pyenv-virtualenv
 
