@@ -1,0 +1,12 @@
+{
+  "venvPath": "/home/snowl/.pyenv/versions/",
+  "venv": "omy-backend",
+  "executionEnvironments": [
+    {
+      "root": "src"
+    }
+  ],
+  "reportIncompatibleMethodOverride": "information",
+  "reportIncompatibleVariableOverride": "information"
+}
+
