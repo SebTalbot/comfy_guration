@@ -238,7 +238,7 @@ enable-scroll = false
 pin-workspaces = true
 
 label-mode = " <%mode%> "
-label-mode-foreground = ${colors.rer}
+label-mode-foreground = ${colors.red}
 label-mode-background = ${colors.innerBg}
 label-mode-font = 1
 
