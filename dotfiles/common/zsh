@@ -79,7 +79,11 @@ VI_MODE_SET_CURSOR=true
 MODE_INDICATOR=""
 
 # Alias
+## job
 alias st='./start.sh'
+alias dcu='docker compose up'
+alias dcb='docker compose build'
+
 alias cg='cd $(git rev-parse --show-toplevel)'
 alias clip='xclip -selection clipboard'
 alias cv='cd /opt/lampp/htdocs/wordpress/wp-content/themes/chefcookit.com'
