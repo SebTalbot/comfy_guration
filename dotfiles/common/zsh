@@ -58,6 +58,7 @@ plugins=(
     docker-compose
     git
     kubectl
+    poetry
     vi-mode
     zsh-syntax-highlighting
 )
