@@ -77,7 +77,7 @@ bindsym Ctrl+Shift+Print --release exec --no-startup-id ~/comfy_guration/scripts
 bindsym $mod+space exec --no-startup-id ~/comfy_guration/scripts/common/keyboard_lang.sh
 
 # Lock Screen
-bindsym $mod+Shift+z exec --no-startup-id ~/comfy_guration/scripts/home/lock_screen.sh
+bindsym $mod+Shift+u exec --no-startup-id ~/comfy_guration/scripts/home/lock_screen.sh
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
@@ -111,6 +111,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+z move position center
+bindsym $mod+Shift+z resize set width 2600 height 1300
 
 # workspace back and forth (with/without active container)
 bindsym $mod+b workspace back_and_forth
