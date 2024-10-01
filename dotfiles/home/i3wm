@@ -136,6 +136,7 @@ bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
 
 #navigate workspaces next / previous
 bindsym $mod+n workspace next
