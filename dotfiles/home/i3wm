@@ -38,6 +38,9 @@ exec --no-startup-id pamixer --set-volume 30
 # Switch caps and escape
 exec --no-startup-id ~/comfy_guration/scripts/common/switch_caps_escape.sh
 
+# xborder
+exec --no-startup-id ~/comfy_guration/scripts/home/xborders.sh
+
 # Chrome tag dragging fix
 # Need: https://github.com/Syphdias/i3-chrome-tab-dragging
 exec_always --no-startup-id i3-chrome-tab-dragging
@@ -60,7 +63,7 @@ gaps inner 20
 gaps outer 30
 
 new_window normal
-default_border pixel 6
+default_border pixel 0
 default_floating_border normal
 # hide_edge_borders none
 
