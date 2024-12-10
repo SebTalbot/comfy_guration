@@ -114,7 +114,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+z move position center
-bindsym $mod+Shift+z resize set width 2600 height 1300
+bindsym $mod+Shift+z resize set width 1920 height 1310
 
 # workspace back and forth (with/without active container)
 bindsym $mod+b workspace back_and_forth

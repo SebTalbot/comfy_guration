@@ -5,8 +5,8 @@ env CURRENT_DEVICE=home
 
 # Window
 remember_window_size  no
-initial_window_width  2500
-initial_window_height 1300
+initial_window_width  1920
+initial_window_height 1320
 window_padding_width 8
 placement_strategy center
 
