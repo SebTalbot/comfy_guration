@@ -107,22 +107,22 @@ separator_color = frame
 browser = /usr/bin/google-chrome-stable -new-tab
 
 frame_width = 3
-frame_color = "#8EC07C"
+frame_color = "#5CCC96"
 
 [urgency_low]
-frame_color = "#FFD369"
-foreground = "#FFD369"
-background = "#272727"
+frame_color = "#dbbc7f"
+foreground = "#dbbc7f"
+background = "#2d353b"
 timeout = 0
 
 [urgency_normal]
-frame_color = "#FFD369"
-foreground = "#FFD369"
-background = "#272727"
+frame_color = "#dbbc7f"
+foreground = "#dbbc7f"
+background = "#2d353b"
 timeout = 0
 
 [urgency_critical]
-frame_color = "#B7472A"
-foreground = "#B7472A"
-background = "#191311"
+frame_color = "#e67e80"
+foreground = "#e67e80"
+background = "#2d353b"
 timeout = 0

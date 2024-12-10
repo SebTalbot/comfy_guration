@@ -158,11 +158,11 @@ sidebar-mode: true;
 * {
     red:                         rgba ( 220, 50, 47, 100 % );
     blue:                        rgba ( 38, 139, 210, 100 % );
-    grey:                        #7f7f7f;
-    lightfg:                     #FFD369;
-    lightbg:                     #393939;
-    foreground:                  #FFD369;
-    background:                  #272727;
+    grey:                        #475258;
+    lightfg:                     #dbbc7f;
+    lightbg:                     #3d484d;
+    foreground:                  #dbbc7f;
+    background:                  #2d353b;
     background-color:            transparent;
     spacing:                     2;
 
@@ -244,7 +244,7 @@ element-icon {
 window {
     padding:          5;
     background-color: var(background);
-    border:           1;
+    border:           0;
 }
 mainbox {
     padding: 0;
