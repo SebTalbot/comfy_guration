@@ -5,8 +5,8 @@ env CURRENT_DEVICE=home
 
 # Window
 remember_window_size  no
-initial_window_width  2500
-initial_window_height 1300
+initial_window_width  1920
+initial_window_height 1320
 window_padding_width 8
 placement_strategy center
 
@@ -36,8 +36,8 @@ map kitty_mod+home scroll_home
 map kitty_mod+end scroll_end
 
 map kitty_mod+1 change_font_size all 13.0
-map kitty_mod+2 change_font_size all -2.0
-map kitty_mod+3 change_font_size all +2.0
+map kitty_mod+2 change_font_size all -1.0
+map kitty_mod+3 change_font_size all +1.0
 
 # -= STYLE =-------------------------------------------------------------------
 # cursor
@@ -53,44 +53,44 @@ adjust_line_height  1
 
 
 # Colorscheme
+# Everforest
 dim_opacity 1.0
-background_opacity 0.90
+background_opacity 1.0
 
-foreground            #ebdbb2
-background            #272727
-selection_foreground  #655b53
-selection_background  #ebdbb2
-url_color             #d65c0d
+foreground            #d3c6aa
+background            #2d353b
+selection_foreground  #7a8478
+selection_background  #a7c080
+url_color             #e69875
 
 # black
-color0   #272727
-color8   #928373
+color0   #3d484d
+color8  #475258
 
 # red
-color1   #cc231c
-color9   #fb4833
+color1   #e67e80
+color9   #f3bfc0
 
 # green
-color2   #989719
-color10  #b8ba25
+color2   #a7c080
+color10  #d3e0c0
 
 # yellow
-color3   #d79920
-color11  #fabc2e
+color3   #dbbc7f
+color11  #eddebf
 
 # blue
-color4  #448488
-color12 #83a597
+color4  #7fbbb3
+color12 #bfddd9
 
 # magenta
-color5   #b16185
-color13  #d3859a
+color5   #d699b6
+color13  #ebccdb
 
 # cyan
-color6   #689d69
-color14  #8ec07b
+color6   #83c092
+color14  #c1e0c9
 
 # white
-color7   #a89983
-color15  #ebdbb2
-
+color7   #d3c6aa
+color15   #d3c6aa

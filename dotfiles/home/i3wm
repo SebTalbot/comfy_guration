@@ -22,7 +22,7 @@ exec --no-startup-id picom -b --config ~/comfy_guration/dotfiles/home/picom
 exec --no-startup-id dunst -conf ~/comfy_guration/dotfiles/home/dunst
 
 # Wallpaper
-exec --no-startup-id feh --bg-center ~/comfy_guration/assets/wallpapers/home.png --image-bg "#272727"
+exec --no-startup-id feh --bg-center ~/comfy_guration/assets/wallpapers/home.png --image-bg "#283036"
 
 # Applets
 exec --no-startup-id clipit
@@ -38,6 +38,9 @@ exec --no-startup-id pamixer --set-volume 30
 # Switch caps and escape
 exec --no-startup-id ~/comfy_guration/scripts/common/switch_caps_escape.sh
 
+# xborder
+exec --no-startup-id ~/comfy_guration/scripts/home/xborders.sh
+
 # Chrome tag dragging fix
 # Need: https://github.com/Syphdias/i3-chrome-tab-dragging
 exec_always --no-startup-id i3-chrome-tab-dragging
@@ -49,18 +52,18 @@ exec_always --no-startup-id i3-chrome-tab-dragging
 font xft:PragmataPro 12
 
 # class                   border  backgr. text    indic.
-  client.focused          #FFD369 #FFD369 #222831 #FFD369
-  client.focused_inactive #222831 #393939 #FFD369 #393939
-  client.unfocused        #222831 #323232 #FFD369 #323232
-  client.urgent           #222831 #272727 #E07A31 #272727
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
-  client.background       #393E46
+  client.focused          #dbbc7f #dbbc7f #3d484d #dbbc7f
+  client.focused_inactive #3d484d #3d484d #dbbc7f #3d484d
+  client.unfocused        #3d484d #3d484d #dbbc7f #3d484d
+  client.urgent           #3d484d #3d484d #e67e80 #3d484d
+  client.placeholder      #2d353b #2d353b #ffffff #2d353b 
+  client.background       #2d353b
 
 gaps inner 20
 gaps outer 30
 
 new_window normal
-default_border pixel 6
+default_border pixel 0
 default_floating_border normal
 # hide_edge_borders none
 
@@ -77,7 +80,7 @@ bindsym Ctrl+Shift+Print --release exec --no-startup-id ~/comfy_guration/scripts
 bindsym $mod+space exec --no-startup-id ~/comfy_guration/scripts/common/keyboard_lang.sh
 
 # Lock Screen
-bindsym $mod+Shift+z exec --no-startup-id ~/comfy_guration/scripts/home/lock_screen.sh
+bindsym $mod+Shift+u exec --no-startup-id ~/comfy_guration/scripts/home/lock_screen.sh
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
@@ -87,6 +90,11 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+e exec --no-startup-id rofi -show run
+
+# notifications
+bindsym $mod+Ctrl+e exec dunstctl action
+bindsym $mod+Ctrl+n exec dunstctl close
+bindsym $mod+Ctrl+p exec dunstctl history-pop
 
 # change focus
 bindsym $mod+h focus left
@@ -111,10 +119,12 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+z move position center
+bindsym $mod+Shift+z resize set width 1920 height 1310
 
 # workspace back and forth (with/without active container)
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
 
 # split orientation
 bindsym $mod+c split h
@@ -135,6 +145,7 @@ bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
 
 #navigate workspaces next / previous
 bindsym $mod+n workspace next

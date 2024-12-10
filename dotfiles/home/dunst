@@ -46,7 +46,7 @@ shrink = no
 # The transparency of the window.  Range: [0; 100].
 # This option will only work if a compositing windowmanager is
 # present (e.g. xcompmgr, compiz, etc.).
-transparency = 15
+transparency = 0
 
 # Don't remove messages, if the user is idle (no mouse or keyboard input)
 # for longer than idle_threshold seconds.
@@ -106,23 +106,23 @@ separator_color = frame
 # Browser for opening urls in context menu.
 browser = /usr/bin/google-chrome-stable -new-tab
 
-frame_width = 3
-frame_color = "#8EC07C"
+frame_width = 0
+frame_color = "#5CCC96"
 
 [urgency_low]
-frame_color = "#FFD369"
-foreground = "#FFD369"
-background = "#272727"
+frame_color = "#dbbc7f"
+foreground = "#dbbc7f"
+background = "#3d484d"
 timeout = 0
 
 [urgency_normal]
-frame_color = "#FFD369"
-foreground = "#FFD369"
-background = "#272727"
+frame_color = "#dbbc7f"
+foreground = "#dbbc7f"
+background = "#3d484d"
 timeout = 0
 
 [urgency_critical]
-frame_color = "#B7472A"
-foreground = "#B7472A"
-background = "#191311"
+frame_color = "#e67e80"
+foreground = "#e67e80"
+background = "#3d484d"
 timeout = 0

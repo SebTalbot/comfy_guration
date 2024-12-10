@@ -3,16 +3,16 @@
 ;-------------------------------------------------------------------------------
 
 [colors]
-innerBg = #393939
-outterBg = #272727
+innerBg = #3d484d
+outterBg = #2d353b
 
-main = #FFD369
-secondary = #EEEEEE
+main = #dbbc7f
+secondary = #d3c6aa
 
-red = #FB4833
+red = #e67e80
 green = #5CCC96
-grey = #7F7F7F
-white = #EEEEEE
+grey = #7a8478
+white = #d3c6aa
 
 ;-------------------------------------------------------------------------------
 ;	B A R S
