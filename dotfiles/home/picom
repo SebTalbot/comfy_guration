@@ -4,12 +4,25 @@ fading = true
 fade-in-step = 0.04
 fade-out-step = 1
 
+corner-radius=14
+rounded-corners-exclude = [
+  # "! name~=''", # Remove tab bar shaddow
+  "window_type = 'dialog'",
+  "window_type = 'dock'",
+  "window_type = 'dropdown_menu'",
+  "window_type = 'menu'",
+  "window_type = 'popup_menu'", #start-menu and r-click men
+  "window_type = 'splash'",
+  "window_type = 'tooltip'",
+  "window_type = 'utility'",
+]
+
 # Shadow
 shadow = true;      # Enabled client-side shadows on windows.
-shadow-radius = 4;    # The blur radius for shadows. (default 12)
-shadow-offset-x = -3;   # The left offset for shadows. (default -15)
-shadow-offset-y = 3;   # The top offset for shadows. (default -15)
-shadow-opacity = 0.6;   # The translucency for shadows. (default .75)
+shadow-radius = 25;    # The blur radius for shadows. (default 12)
+shadow-offset-x = -25;   # The left offset for shadows. (default -15)
+shadow-offset-y = -20;   # The top offset for shadows. (default -15)
+shadow-opacity = 0.8;   # The translucency for shadows. (default .75)
 shadow-exclude = [
   "! name~=''", # Remove tab bar shaddow
   "window_type = 'dialog'",
@@ -58,4 +71,5 @@ blur-background-exclude = [
   "window_type = 'splash'",
   "window_type = 'tooltip'",
   "window_type = 'utility'",
+  "role   = 'xborder'",
 ];
