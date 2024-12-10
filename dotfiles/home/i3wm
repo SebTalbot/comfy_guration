@@ -91,6 +91,11 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+e exec --no-startup-id rofi -show run
 
+# notifications
+bindsym $mod+Ctrl+e exec dunstctl action
+bindsym $mod+Ctrl+n exec dunstctl close
+bindsym $mod+Ctrl+p exec dunstctl history-pop
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -119,6 +124,7 @@ bindsym $mod+Shift+z resize set width 1920 height 1310
 # workspace back and forth (with/without active container)
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
 
 # split orientation
 bindsym $mod+c split h
