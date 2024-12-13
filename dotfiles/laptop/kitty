@@ -7,7 +7,7 @@ env CURRENT_DEVICE=laptop
 remember_window_size  no
 initial_window_width  1750
 initial_window_height 950
-window_padding_width 5
+window_padding_width 8
 placement_strategy center
 
 # Render
@@ -53,62 +53,44 @@ adjust_line_height  1
 
 
 # Colorscheme
+# Everforest
 dim_opacity 1.0
-background_opacity 0.9
+background_opacity 1.0
 
-foreground            #fce0f1
-background            #2c2a38 
-selection_foreground  #ffffff
-selection_background  #44475a
-
-url_color #8be9fd
+foreground            #d3c6aa
+background            #2d353b
+selection_foreground  #7a8478
+selection_background  #a7c080
+url_color             #e69875
 
 # black
-color0  #21222c
-color8  #6272a4
+color0   #3d484d
+color8  #475258
 
 # red
-color1  #ff5555
-color9  #ff6e6e
+color1   #e67e80
+color9   #f3bfc0
 
 # green
-color2  #50fa7b
-color10 #69ff94
+color2   #a7c080
+color10  #d3e0c0
 
 # yellow
-color3  #e1ea7c
-color11 #ffffa5
+color3   #dbbc7f
+color11  #eddebf
 
 # blue
-color4  #bd93f9
-color12 #d6acff
+color4  #7fbbb3
+color12 #bfddd9
 
 # magenta
-color5  #ff79c6
-color13 #ff92df
+color5   #d699b6
+color13  #ebccdb
 
 # cyan
-color6  #8be9fd
-color14 #a4ffff
+color6   #83c092
+color14  #c1e0c9
 
 # white
-color7  #f8f8f2
-color15 #ffffff
-
-# Cursor colors
-cursor            #f8f8f2
-cursor_text_color background
-
-# Tab bar colors
-active_tab_foreground   #282a36
-active_tab_background   #f8f8f2
-inactive_tab_foreground #282a36
-inactive_tab_background #6272a4
-
-# Marks
-mark1_foreground #282a36
-mark1_background #ff5555
-
-# Splits/Windows
-active_border_color #f8f8f2
-inactive_border_color #6272a4
+color7   #d3c6aa
+color15   #d3c6aa

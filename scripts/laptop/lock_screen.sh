@@ -14,10 +14,10 @@ function lock() {
   local A='#2c2a38'  # dark
   local B='#00000000'  # blank
   local C='#28282822'  # clear ish
-  local D='#bd93f9'  # default
-  local T='#bd93f9'  # text
-  local W='#ff5555'  # wrong
-  local V='#ff92df'  # verifying
+  local D='#7a8478'  # default
+  local T='#d3c6aa'  # text
+  local W='#e67e80'  # wrong
+  local V='#7fbbb3'  # verifying
 
   i3lock \
     --insidever-color=$A   \

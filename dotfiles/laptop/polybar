@@ -3,12 +3,15 @@
 ;-------------------------------------------------------------------------------
 
 [colors]
-dark = #2c2a38 
-mid = #4c3a58
-border = #bd93f9
-light = #ffb2ef
-highlight = #bd93f9
-urgent = #ff5555
+dark = #2d353b 
+mid = #3d484d
+
+border = #7a8478
+light = #7a8478
+
+highlight = #d3c6aa
+urgent = #e67e80
+urgent_dark = #962e30
 
 ;-------------------------------------------------------------------------------
 ;	B A R S
@@ -289,9 +292,9 @@ format-discharging = <ramp-capacity>
 format-discharging-font = 4
 format-discharging-foreground = ${colors.mid}
 format-discharging-background = ${colors.light}
-ramp-capacity-0-foreground = ${colors.urgent}
-ramp-capacity-1-foreground = ${colors.urgent}
-ramp-capacity-2-foreground = ${colors.urgent}
+ramp-capacity-0-foreground = ${colors.urgent_dark}
+ramp-capacity-1-foreground = ${colors.urgent_dark}
+ramp-capacity-2-foreground = ${colors.urgent_dark}
 ramp-capacity-0 = "  "
 ramp-capacity-1 = "  "
 ramp-capacity-2 = "  "

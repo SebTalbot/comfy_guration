@@ -17,8 +17,8 @@ set $w9 9
 set $w10 10
 
 # Colors
-set $active #BD93F9
-set $inactive #3c3835
+set $active #7a8478
+set $inactive #2d353b
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -115,16 +115,16 @@ bindsym $mod+9 workspace $w9
 bindsym $mod+0 workspace $w10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $w1
-bindsym $mod+Shift+2 move container to workspace $w2
-bindsym $mod+Shift+3 move container to workspace $w3
-bindsym $mod+Shift+4 move container to workspace $w4
-bindsym $mod+Shift+5 move container to workspace $w5
-bindsym $mod+Shift+6 move container to workspace $w6
-bindsym $mod+Shift+7 move container to workspace $w7
-bindsym $mod+Shift+8 move container to workspace $w8
-bindsym $mod+Shift+9 move container to workspace $w9
-bindsym $mod+Shift+0 move container to workspace $w10
+bindsym $mod+Shift+1 move container to workspace $w1; workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2; workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3; workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4; workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5; workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6; workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7; workspace $w7
+bindsym $mod+Shift+8 move container to workspace $w8; workspace $w8
+bindsym $mod+Shift+9 move container to workspace $w9; workspace $w9
+bindsym $mod+Shift+0 move container to workspace $w10; workspace $w10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -171,17 +171,21 @@ bindsym $mod+r mode "resize"
 # class                          border     backgr.    text
 client.focused		               $active    $active    $inactive  $active
 client.unfocused	               $inactive  $inactive  $active    $inactive
-client.focused_inactive	         $inactive  $inactive  #d79921    $inactive
-client.urgent  	              	 $inactive  $inactive  #d79921    $inactive
+client.focused_inactive	         $inactive  $inactive  #7fbbb3    $inactive
+client.urgent  	              	 $inactive  $inactive  #7fbbb3    $inactive
 
-new_window pixel
-default_border pixel 5
+new_window normal
+default_border pixel 0
+default_floating_border normal
 
 # Disable title bar
 
 # Polybar
 # exec_always --no-startup-id xrandr --output HDMI-2 --same-as eDP-1
 exec_always --no-startup-id ~/comfy_guration/scripts/laptop/launch_polybar.sh ~/comfy_guration/dotfiles/laptop/polybar
+
+# xborder
+exec --no-startup-id ~/comfy_guration/scripts/home/xborders.sh
 
 # Network manager tray icon
 exec --no-startup-id nm-applet
@@ -212,6 +216,9 @@ exec --no-startup-id picom -f --config ~/comfy_guration/dotfiles/laptop/picom
 
 # Dunst
 exec --no-startup-id dunst -conf ~/comfy_guration/dotfiles/laptop/dunst
+bindsym $mod+Ctrl+e exec dunstctl action
+bindsym $mod+Ctrl+n exec dunstctl close
+bindsym $mod+Ctrl+p exec dunstctl history-pop
 
 # Caps as Esc
 exec --no-startup-id ~/comfy_guration/scripts/common/switch_caps_escape.sh
@@ -231,7 +238,7 @@ bindsym $mod+Shift+z exec --no-startup-id ~/comfy_guration/scripts/laptop/lock_s
 # Gaps
 #smart_gaps on
 #smart_borders on
-gaps inner 10
-gaps outer 15
+gaps inner 20
+gaps outer 5
 
 bindsym button2+w j

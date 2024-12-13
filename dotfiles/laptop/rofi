@@ -10,13 +10,13 @@ sidebar-mode: true;
 /* Theme */
 
 * {
-    red:                         #cc241d;
-    blue:                        #458588;
-    grey:                        #ccb0c1;
-    lightfg:                     #ffb2ef;
-    lightbg:                     #4c3a58;
-    foreground:                  #bd93f9;
-    background:                  #2c2a38;
+    red:                         rgba ( 220, 50, 47, 100 % );
+    blue:                        rgba ( 38, 139, 210, 100 % );
+    grey:                        #475258;
+    lightfg:                     #7a8478;
+    lightbg:                     #3d484d;
+    foreground:                  #d3c6aa;
+    background:                  #2d353b;
     background-color:            transparent;
     spacing:                     2;
 
@@ -98,7 +98,7 @@ element-icon {
 window {
     padding:          5;
     background-color: var(background);
-    border:           1;
+    border:           0;
 }
 mainbox {
     padding: 0;
