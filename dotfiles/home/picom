@@ -19,10 +19,10 @@ rounded-corners-exclude = [
 
 # Shadow
 shadow = true;      # Enabled client-side shadows on windows.
-shadow-radius = 25;    # The blur radius for shadows. (default 12)
-shadow-offset-x = -25;   # The left offset for shadows. (default -15)
-shadow-offset-y = -20;   # The top offset for shadows. (default -15)
-shadow-opacity = 0.8;   # The translucency for shadows. (default .75)
+shadow-radius = 35;    # The blur radius for shadows. (default 12)
+shadow-offset-x = -35;   # The left offset for shadows. (default -15)
+shadow-offset-y = -30;   # The top offset for shadows. (default -15)
+shadow-opacity = 0.9;   # The translucency for shadows. (default .75)
 shadow-exclude = [
   "! name~=''", # Remove tab bar shaddow
   "window_type = 'dialog'",

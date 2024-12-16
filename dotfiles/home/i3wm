@@ -22,7 +22,7 @@ exec --no-startup-id picom -b --config ~/comfy_guration/dotfiles/home/picom
 exec --no-startup-id dunst -conf ~/comfy_guration/dotfiles/home/dunst
 
 # Wallpaper
-exec --no-startup-id feh --bg-center ~/comfy_guration/assets/wallpapers/home.png --image-bg "#283036"
+exec --no-startup-id feh --bg-center ~/comfy_guration/assets/wallpapers/home.png
 
 # Applets
 exec --no-startup-id clipit
