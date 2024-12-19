@@ -40,7 +40,7 @@ __create_symlink () {
 
     exists_warning="does not exist"
     overwrite_warning=
-    if [ -f $destination_path ] || [ -L $destination_path ]; then
+    if [ -f $destination_path ] || [ -d $destination_path ] || [ -L $destination_path ]; then
         exists_warning="exists but is not linked to comfy_guration"
         overwrite_warning=" It will overwrite the destination."
     fi
@@ -50,7 +50,14 @@ __create_symlink () {
         read -p "$(echo -e "Do you want to link ${COLOR_CYAN}${bold_name}${COLOR_DEFAULT}?${overwrite_warning} [y/n] :")" -n 1 -r; echo
         case $REPLY in
             y|Y)
-                u_safe_mkdir $destination_path
+                if [ ! -d $file_path]; then
+                  echo "file"
+                  u_safe_mkdir $destination_path
+                else
+                  echo "directory"
+                  rm -rf $destination_path
+                fi
+
                 if [ $sudo = "sudo" ] ; then
                   sudo ln --symbolic --force $file_path $destination_path
                 else
