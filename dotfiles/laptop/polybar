@@ -32,13 +32,13 @@ border-bottom-color = ${colors.border}
 ; Normal Text
 font-0 = PragmataPro:pixelsize=12:weight=bold;3
 ; Arrow
-font-1 = Hack Nerd Font:pixelsize=14;3
+font-1 = Hack Nerd Font:pixelsize=15;3
 ; Workspaces
 font-2 = Hack Nerd Font:pixelsize=16;3
 ; Symbols
 font-3 = Hack Nerd Font:pixelsize=16;3
 ; Middle Arrow
-font-4 = Hack Nerd Font:pixelsize=21:weight=bold
+font-4 = Hack Nerd Font:pixelsize=20;0
 ; COM Symbol
 font-5 = Hack Nerd Font:pixelsize=11;0
 ; RUN Symbol
@@ -267,7 +267,7 @@ label-background = ${colors.mid}
 [module/time]
 type = internal/date
 interval = 5
-time = " %H:%M:%S "
+time = " %H:%M:%S  "
 label = %time%
 label-foreground = ${colors.light}
 label-background = ${colors.mid}

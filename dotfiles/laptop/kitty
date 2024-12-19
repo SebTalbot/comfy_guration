@@ -55,7 +55,7 @@ adjust_line_height  1
 # Colorscheme
 # Everforest
 dim_opacity 1.0
-background_opacity 1.0
+background_opacity 0.98
 
 foreground            #d3c6aa
 background            #2d353b
