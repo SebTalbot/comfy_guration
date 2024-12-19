@@ -51,10 +51,8 @@ __create_symlink () {
         case $REPLY in
             y|Y)
                 if [ ! -d $file_path]; then
-                  echo "file"
                   u_safe_mkdir $destination_path
                 else
-                  echo "directory"
                   rm -rf $destination_path
                 fi
 
