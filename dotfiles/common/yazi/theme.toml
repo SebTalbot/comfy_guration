@@ -1,16 +1,8 @@
 # vim:fileencoding=utf-8:foldmethod=marker
-
-# : Flavor {{{
-
-[flavor]
-use = ""
-
-# : }}}
-
 # : Manager {{{
 
 [manager]
-cwd = { fg = "cyan" }
+cwd = { fg = "yellow", bold = true }
 
 # Hovered
 hovered         = { reversed = true }
