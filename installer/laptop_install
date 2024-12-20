@@ -2,7 +2,10 @@
 
 sudo pacman --needed --noconfirm -S xorg-xbacklight xf86-video-intel
 
-sudo pacman --needed --noconfirm -S tlp tlp-rdw powertop acpi acpi_call
-sudo systemctl enable tlp
+sudo pacman --needed --noconfirm -S auto-cpufreq acpi acpi_call
+
+sudo auto-cpufreq --install
+sudo systemctl enable --now auto-cpufreq
+
 sudo systemctl mask systemd-rfkill.socket
 sudo systemctl mask systemd-rfkill.service
