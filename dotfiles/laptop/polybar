@@ -38,7 +38,7 @@ font-2 = Hack Nerd Font:pixelsize=16;3
 ; Symbols
 font-3 = Hack Nerd Font:pixelsize=16;3
 ; Middle Arrow
-font-4 = Hack Nerd Font:pixelsize=20;0
+font-4 = Hack Nerd Font:pixelsize=21;0
 ; COM Symbol
 font-5 = Hack Nerd Font:pixelsize=11;0
 ; RUN Symbol
@@ -361,7 +361,7 @@ label-background = ${colors.light}
 
 [module/cpu_symbol]
 type = custom/text
-format = "  "
+format = "   "
 format-font = 4
 format-foreground = ${colors.mid}
 format-background = ${colors.light}
