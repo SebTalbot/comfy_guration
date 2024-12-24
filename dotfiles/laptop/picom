@@ -1,6 +1,6 @@
 # Fading
 fading = true
-fade-in-step = 0.04
+fade-in-step = 1
 fade-out-step = 1
 
 corner-radius=12
