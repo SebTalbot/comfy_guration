@@ -30,25 +30,25 @@ border-bottom-size = 4
 border-bottom-color = ${colors.border}
 
 ; Normal Text
-font-0 = PragmataPro:pixelsize=12:weight=bold;3
+font-0 = PragmataPro:pixelsize=11:weight=bold;3
 ; Arrow
-font-1 = Hack Nerd Font:pixelsize=15;3
+font-1 = Hack Nerd Font:pixelsize=13;2
 ; Workspaces
 font-2 = Hack Nerd Font:pixelsize=16;3
 ; Symbols
-font-3 = Hack Nerd Font:pixelsize=16;3
+font-3 = Hack Nerd Font:pixelsize=15;3
 ; Middle Arrow
-font-4 = Hack Nerd Font:pixelsize=21;0
+font-4 = Hack Nerd Font:pixelsize=20;0
 ; COM Symbol
 font-5 = Hack Nerd Font:pixelsize=11;0
 ; RUN Symbol
 font-6 = Hack Nerd Font:pixelsize=1;0
 ; Middle Text
-font-7 = PragmataPro:pixelsize=11:weight=bold;3
+font-7 = PragmataPro:pixelsize=10:weight=bold;3
 ; date symbol
-font-8 = Hack Nerd Font:pixelsize=19;4
+font-8 = Hack Nerd Font:pixelsize=15;3
 ; i3 separator
-font-9 = Hack Nerd Font:pixelsize=32;6
+font-9 = Hack Nerd Font:pixelsize=23;4
 
 modules-left = tray arrow_i3_end arrow_l1 arrow_l2 i3 arrow_i3 arrow_i3_index arrow_i3_name arrow_i3_end arrow_i3_name
 modules-center = middle1 middle0 middle1 middle0 middle1 day middle2 date_symbols middle3 time middle4 middle5 middle4 middle5 middle4 empty_space
