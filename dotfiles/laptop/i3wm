@@ -41,6 +41,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
 
+# emoji picker
+bindsym $mod+period exec --no-startup-id rofi -modi emoji -show emoji -emoji-format '{emoji} {keywords}'
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
