@@ -22,7 +22,7 @@ window_alert_on_bell no
 
 # Mappings
 clear_all_shortcuts yes
-kitty_mod ctrl+shift
+kitty_mod ctrl+alt+shift
 map kitty_mod+c copy_to_clipboard
 map kitty_mod+v paste_from_clipboard
 map kitty_mod+space clear_terminal reset active
@@ -30,8 +30,10 @@ map kitty_mod+up scroll_line_up
 map kitty_mod+k scroll_line_up
 map kitty_mod+down scroll_line_down
 map kitty_mod+j scroll_line_down
-map kitty_mod+p scroll_page_up
-map kitty_mod+n scroll_page_down
+map kitty_mod+page_up remote_control scroll-window 0.5p-
+map kitty_mod+p remote_control scroll-window 0.5p-
+map kitty_mod+page_down remote_control scroll-window 0.5p+
+map kitty_mod+n remote_control scroll-window 0.5p+
 map kitty_mod+home scroll_home
 map kitty_mod+end scroll_end
 
