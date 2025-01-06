@@ -22,7 +22,7 @@ window_alert_on_bell no
 
 # Mappings
 clear_all_shortcuts yes
-kitty_mod ctrl+alt+shift
+kitty_mod ctrl+shift
 map kitty_mod+c copy_to_clipboard
 map kitty_mod+v paste_from_clipboard
 map kitty_mod+space clear_terminal reset active
