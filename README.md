@@ -1,7 +1,5 @@
 > [!CAUTION]
-> DO NOT USE ANYTHING IN THE /installer.
->
-> It will break your workspace. Feel free to read and copy the configs you find interesting.
+> This repo is public to inspire and display some ideas. Using it as is will break your workspace!
 
 Laptop Display
 ----
