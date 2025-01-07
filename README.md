@@ -1,4 +1,7 @@
-Do not run /installer or any scripts, there is a chance that it might break things on your workspace
+> [!CAUTION]
+> DO NOT USE ANYTHING IN THE /installer.
+>
+> It will break your workspace. Feel free to read and copy the configs you find interesting.
 
 Laptop Display
 ----
