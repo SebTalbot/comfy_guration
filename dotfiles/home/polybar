@@ -67,7 +67,7 @@ font-1 = PragmataPro:size=35;20
 font-2 = PragmataPro:size=17.5;3
 
 modules-left = tray srbm srmi srim srmo
-modules-center =
+modules-center = sroi srim now_playing slim sloi
 modules-right = slmo slim slmi slim i3
 
 ;-------------------------------------------------------------------------------
@@ -183,6 +183,14 @@ format-background = ${colors.outterBg}
 ;-------------------------------------------------------------------------------
 ;	M O D U L E S
 ;-------------------------------------------------------------------------------
+
+[module/now_playing]
+type = custom/script
+exec = playerctl metadata -f "{{artist}} - {{title}}" -F
+format-background = ${colors.main}
+format-foreground = ${colors.outterBg}
+tail = true
+label = " %output% "
 
 [module/tray]
 type = internal/tray
