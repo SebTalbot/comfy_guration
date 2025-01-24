@@ -97,6 +97,7 @@ alias vi=nvim
 alias vtop='vtop --theme gruvbox'
 alias zr='source ~/.zshrc'
 alias cock='~/comfy_guration/scripts/cook_it_screens.sh'
+alias listpath='echo $PATH | sed "s/:/\n/g"'
 
 ## Tmux
 alias ta='tmux attach -t'
