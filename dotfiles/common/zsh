@@ -85,6 +85,8 @@ alias st='./start.sh'
 alias dcu='docker compose up'
 alias dcb='docker compose build'
 
+alias vir='NVIM_APPNAME=nvim_refactor nvim'
+
 alias cg='cd $(git rev-parse --show-toplevel)'
 alias clip='xclip -selection clipboard'
 alias cv='cd /opt/lampp/htdocs/wordpress/wp-content/themes/chefcookit.com'
