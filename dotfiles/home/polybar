@@ -67,7 +67,7 @@ font-1 = PragmataPro:size=35;20
 font-2 = PragmataPro:size=17.5;3
 
 modules-left = tray srbm srmi srim srmo
-modules-center =
+modules-center = sroi srim now_playing slim sloi
 modules-right = slmo slim slmi slim i3
 
 ;-------------------------------------------------------------------------------
@@ -184,6 +184,14 @@ format-background = ${colors.outterBg}
 ;	M O D U L E S
 ;-------------------------------------------------------------------------------
 
+[module/now_playing]
+type = custom/script
+exec = playerctl metadata -f "{{artist}} - {{title}}" -F
+format-background = ${colors.main}
+format-foreground = ${colors.outterBg}
+tail = true
+label = " %output% "
+
 [module/tray]
 type = internal/tray
 tray-size = 90%
@@ -242,16 +250,16 @@ label-mode-foreground = ${colors.red}
 label-mode-background = ${colors.innerBg}
 label-mode-font = 1
 
-ws-icon-0 = 10;0
 ws-icon-1 = 1;I  WEB
 ws-icon-2 = 2;II  DEV
 ws-icon-3 = 3;III  ETC
-ws-icon-4 = 4;IV  COM
-ws-icon-5 = 5;V  DATA
-ws-icon-6 = 6;VI  SYS
-ws-icon-7 = 7;7
-ws-icon-8 = 8;8
-ws-icon-9 = 9;9
+ws-icon-4 = 4;IV  ETC
+ws-icon-5 = 5;V  ETC
+ws-icon-6 = 6;VI  ETC
+ws-icon-7 = 7;VII  ETC
+ws-icon-8 = 8;VIII  COM
+ws-icon-9 = 9;IX  DATA
+ws-icon-0 = 10;X  SYS
 ws-icon-default =
 
 ; focused = Active workspace on focused monitor

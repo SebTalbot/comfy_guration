@@ -36,7 +36,8 @@ exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-
 exec --no-startup-id pamixer --set-volume 30
 
 # Switch caps and escape
-exec --no-startup-id ~/comfy_guration/scripts/common/switch_caps_escape.sh
+# Not necessary if moonlander
+# exec --no-startup-id ~/comfy_guration/scripts/common/switch_caps_escape.sh
 
 # xborder
 exec --no-startup-id ~/comfy_guration/scripts/home/xborders.sh
@@ -161,14 +162,23 @@ set $ws3 3
 set $ws4 4
 set $ws5 5
 set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws0 10
 set $primaryScreen DP-2
 set $secondaryScreen DP-4
 
 workspace $ws1 output $primaryScreen
 workspace $ws2 output $primaryScreen
 workspace $ws3 output $primaryScreen
-workspace $ws4 output $secondaryScreen
-workspace $ws5 output $secondaryScreen
+workspace $ws4 output $primaryScreen
+workspace $ws5 output $primaryScreen
+
+workspace $ws0 output $secondaryScreen
+workspace $ws9 output $secondaryScreen
+workspace $ws8 output $secondaryScreen
+workspace $ws7 output $secondaryScreen
 workspace $ws6 output $secondaryScreen
 
 # switch to workspace
@@ -178,6 +188,10 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -186,6 +200,10 @@ bindsym $mod+Ctrl+3 move container to workspace $ws3
 bindsym $mod+Ctrl+4 move container to workspace $ws4
 bindsym $mod+Ctrl+5 move container to workspace $ws5
 bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws0
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -194,6 +212,10 @@ bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 
 # Audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer -u -i 5"
