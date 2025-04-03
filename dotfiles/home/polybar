@@ -250,16 +250,16 @@ label-mode-foreground = ${colors.red}
 label-mode-background = ${colors.innerBg}
 label-mode-font = 1
 
-ws-icon-1 = 1;I  WEB
-ws-icon-2 = 2;II  DEV
-ws-icon-3 = 3;III  ETC
-ws-icon-4 = 4;IV  ETC
-ws-icon-5 = 5;V  ETC
-ws-icon-6 = 6;VI  ETC
-ws-icon-7 = 7;VII  ETC
-ws-icon-8 = 8;VIII  COM
-ws-icon-9 = 9;IX  DATA
-ws-icon-0 = 10;X  SYS
+ws-icon-1 = 1;1  WEB
+ws-icon-2 = 2;2  DEV
+ws-icon-3 = 3;3  ETC
+ws-icon-4 = 4;4  ETC
+ws-icon-5 = 5;5  ETC
+ws-icon-6 = 6;6  ETC
+ws-icon-7 = 7;7  ETC
+ws-icon-8 = 8;8  COM
+ws-icon-9 = 9;9  DATA
+ws-icon-0 = 10;0  SYS
 ws-icon-default =
 
 ; focused = Active workspace on focused monitor
