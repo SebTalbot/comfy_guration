@@ -42,6 +42,10 @@ addToPATH $HOME/.meteor
 
 addToPATH $HOME/.local/share/gem/ruby/3.0.0/bin
 
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [ -f ~/.zsh_secret_env ]; then
     source ~/.zsh_secret_env
 fi
