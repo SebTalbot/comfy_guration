@@ -41,6 +41,8 @@ map kitty_mod+1 change_font_size all 13.0
 map kitty_mod+2 change_font_size all -1.0
 map kitty_mod+3 change_font_size all +1.0
 
+map kitty_mod+e launch --cwd=current --type=os-window
+
 # -= STYLE =-------------------------------------------------------------------
 # cursor
 cursor_shape block
