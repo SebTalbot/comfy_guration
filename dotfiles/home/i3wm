@@ -166,8 +166,8 @@ set $ws7 7
 set $ws8 8
 set $ws9 9
 set $ws0 10
-set $primaryScreen DP-2
-set $secondaryScreen DP-4
+set $primaryScreen DP-4
+set $secondaryScreen DP-2
 
 workspace $ws1 output $primaryScreen
 workspace $ws2 output $primaryScreen

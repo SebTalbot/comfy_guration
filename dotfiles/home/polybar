@@ -19,7 +19,7 @@ white = #d3c6aa
 ;-------------------------------------------------------------------------------
 
 [bar/right]
-monitor = DP-2
+monitor = DP-4
 width = 100%
 height = 25
 radius = 1.0
@@ -44,10 +44,10 @@ font-4 = HackNerdFont:size=15;3
 
 modules-left =  i3 srim srmi srim srmo
 modules-center = slio sloi slio sloi slio day srim date_symbols slim time srio sroi srio sroi srio empty_space
-modules-right = slmo slim slmi slim xkeyboard sloi slio volume sloi slio memory_symbol memory sloi slio cpu_symbol cpu sloi slio filesystem_symbol filesystem sloi slio eth wifi
+modules-right = slmo slim slmi slim xkeyboard sloi slio volume sloi slio memory_symbol memory sloi slio cpu_symbol cpu sloi slio filesystem_symbol filesystem sloi slio eth
 
 [bar/left]
-monitor = DP-4
+monitor = DP-2
 width = 100%
 height = 18
 radius = 1.0
