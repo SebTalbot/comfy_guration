@@ -2,7 +2,7 @@
 source ~/comfy_guration/scripts/manager/utils.sh
 
 # dependencies
-sudo paru --needed --noconfirm -S man-db most zsh playerctl rofi rofi-emoji xdotool kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit yazi picom ttf-hack-nerd noto-fonts-emoji zsh-syntax-highlighting fd pamixer dunst network-manager-applet maim nemo python-pipx pyenv wget ruby downgrade i3lock-color pyenv-virtualenv
+sudo paru --needed --noconfirm -S man-db zsh playerctl rofi rofi-emoji xdotool kitty tree polybar feh nodejs npm ripgrep go luarocks stylua lazygit yazi picom ttf-hack-nerd noto-fonts-emoji zsh-syntax-highlighting fd pamixer dunst network-manager-applet maim nemo python-pipx pyenv wget ruby downgrade i3lock-color pyenv-virtualenv
 
 # OMY Dependency
 downgrade 'ruby-json=2.6.3-1'
