@@ -180,7 +180,7 @@ client.focused_inactive	         $inactive  $inactive  #7fbbb3    $inactive
 client.urgent  	              	 $inactive  $inactive  #7fbbb3    $inactive
 
 new_window normal
-default_border pixel 0
+default_border pixel 3
 default_floating_border normal
 
 # Disable title bar
@@ -188,9 +188,6 @@ default_floating_border normal
 # Polybar
 # exec_always --no-startup-id xrandr --output HDMI-2 --same-as eDP-1
 exec_always --no-startup-id ~/comfy_guration/scripts/laptop/launch_polybar.sh ~/comfy_guration/dotfiles/laptop/polybar
-
-# xborder
-exec --no-startup-id ~/comfy_guration/scripts/home/xborders.sh
 
 # Network manager tray icon
 exec --no-startup-id nm-applet
