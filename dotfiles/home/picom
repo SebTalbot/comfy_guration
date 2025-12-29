@@ -65,5 +65,4 @@ blur-background-exclude = [
   "window_type = 'splash'",
   "window_type = 'tooltip'",
   "window_type = 'utility'",
-  "role   = 'xborder'",
 ];
