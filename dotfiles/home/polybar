@@ -65,9 +65,11 @@ font-0 = PragmataPro:style=Bold:size=12;3
 font-1 = PragmataPro:size=35;20
 ; Separators Right
 font-2 = PragmataPro:size=17.5;3
+; Center Symbol
+font-3 = HackNerdFont:size=16;3
 
 modules-left = tray srbm srmi srim srmo
-modules-center = sroi srim now_playing slim sloi
+modules-center = sroi srim date_symbols slim sloi
 modules-right = slmo slim slmi slim i3
 
 ;-------------------------------------------------------------------------------
