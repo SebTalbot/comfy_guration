@@ -1,12 +1,15 @@
-# NEED PICOM V9 and --experimental-backends flag
-# Fading
-fading = true
-fade-in-step = 1
-fade-out-step = 1
+backend = "glx";
+vsync = true;
 
-corner-radius=14
+opacity-rule = [
+  "100:class_g = 'Kitty' && !_NET_WM_STATE@",
+  "0:_NET_WM_STATE@[*] = '_NET_WM_STATE_HIDDEN'",
+];
+
+# Rounded Corners
+corner-radius=12;
 rounded-corners-exclude = [
-  # "! name~=''", # Remove tab bar shaddow
+  "! name~=''", # i3 tabbed title bar
   "window_type = 'dialog'",
   "window_type = 'dock'",
   "window_type = 'dropdown_menu'",
@@ -15,16 +18,16 @@ rounded-corners-exclude = [
   "window_type = 'splash'",
   "window_type = 'tooltip'",
   # "window_type = 'utility'",
-]
+];
 
 # Shadow
-shadow = true;      # Enabled client-side shadows on windows.
-shadow-radius = 35;    # The blur radius for shadows. (default 12)
+shadow = true;           # Enabled client-side shadows on windows.
+shadow-radius = 35;      # The blur radius for shadows. (default 12)
 shadow-offset-x = -35;   # The left offset for shadows. (default -15)
 shadow-offset-y = -30;   # The top offset for shadows. (default -15)
-shadow-opacity = 0.9;   # The translucency for shadows. (default .75)
+shadow-opacity = 0.9;    # The translucency for shadows. (default .75)
 shadow-exclude = [
-  "! name~=''", # Remove tab bar shaddow
+  "! name~=''", # i3 tabbed title bar
   "window_type = 'dialog'",
   # "window_type = 'dock'",
   "window_type = 'dropdown_menu'",
@@ -35,25 +38,9 @@ shadow-exclude = [
   # "window_type = 'utility'",
 ];
 
-opacity-rule = [
-  "100:class_g = 'Kitty' && !_NET_WM_STATE@:32a",
-
-  "0:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_HIDDEN'",
-  "0:_NET_WM_STATE@[1]:32a = '_NET_WM_STATE_HIDDEN'",
-  "0:_NET_WM_STATE@[2]:32a = '_NET_WM_STATE_HIDDEN'",
-  "0:_NET_WM_STATE@[3]:32a = '_NET_WM_STATE_HIDDEN'",
-  "0:_NET_WM_STATE@[4]:32a = '_NET_WM_STATE_HIDDEN'",
-];
-
-# Need
-backend = "glx";
-glx-no-stencil = true;
-use-damage = true;
-vsync = true;
-
-blur-background = false;
+blur-background = true;
 blur-method = "dual_kawase";
-blur-strength = 4;
+blur-strength = 5;
 blur-background-exclude = [
   "class_g ?= 'slop'", # maim selection for screenshots
   "window_type = 'desktop'",

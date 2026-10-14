@@ -6,7 +6,7 @@ env CURRENT_DEVICE=home
 # Window
 remember_window_size  no
 initial_window_width  1920
-initial_window_height 1320
+initial_window_height 1310
 window_padding_width 8
 placement_strategy center
 
@@ -25,7 +25,6 @@ clear_all_shortcuts yes
 kitty_mod ctrl+shift
 map kitty_mod+c copy_to_clipboard
 map kitty_mod+v paste_from_clipboard
-map kitty_mod+space clear_terminal reset active
 map kitty_mod+up scroll_line_up
 map kitty_mod+k scroll_line_up
 map kitty_mod+down scroll_line_down
@@ -58,8 +57,8 @@ adjust_line_height  1
 
 # Colorscheme
 # Everforest
-dim_opacity 1.0
-background_opacity 1.0
+dim_opacity 0.95
+background_opacity 0.95
 
 foreground            #d3c6aa
 background            #2d353b
