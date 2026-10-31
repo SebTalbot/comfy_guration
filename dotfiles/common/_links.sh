@@ -10,4 +10,5 @@ u_link_file "TUI_FILES_MANAGER" "YAZI" ~/comfy_guration/dotfiles/common/yazi ~/.
 
 # temporary copy because sym link doesn't work
 # sudo cp -f ./reflector /etc/xdg/reflector/reflector.conf
+# sudo cp -f ./reflector-systemd /etc/systemd/system/reflector.service.d/override.conf
 # cp -f ./xdg_directories ~/.config/user-dirs.dirs
