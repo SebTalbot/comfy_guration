@@ -89,7 +89,7 @@ alias st='./start.sh'
 alias dcu='docker compose up'
 alias dcb='docker compose build'
 
-alias vir='NVIM_APPNAME=nvim_refactor nvim'
+alias vir='NVIM_APPNAME=nvim_refactor ~/softwares/nvim-v12.4'
 
 alias cg='cd $(git rev-parse --show-toplevel)'
 alias clip='xclip -selection clipboard'

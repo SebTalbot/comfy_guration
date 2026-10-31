@@ -183,6 +183,12 @@ new_window normal
 default_border pixel 3
 default_floating_border normal
 
+# Frameless Electron apps (e.g. Bruno) request no decorations via Motif hints; force the border back
+for_window [class="(?i)bruno"] border pixel 3
+
+# Drop borders only on tabbed/stacked windows (build: go build in scripts/common/i3-tabbed-borders)
+exec_always --no-startup-id pkill -x i3-tabbed-borde; ~/comfy_guration/scripts/common/i3-tabbed-borders/i3-tabbed-borders -width 3
+
 # Disable title bar
 
 # Polybar
